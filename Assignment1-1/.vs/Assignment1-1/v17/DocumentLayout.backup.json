@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|c:\\users\\andre\\source\\repos\\assignment1-1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|c:\\users\\andre\\source\\repos\\assignment1-1\\exit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|solutionrelative:exit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|c:\\users\\andre\\source\\repos\\assignment1-1\\part-1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|solutionrelative:part-1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|c:\\users\\andre\\source\\repos\\assignment1-1\\part-3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|solutionrelative:part-3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|c:\\users\\andre\\source\\repos\\assignment1-1\\part-2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC24D21-75E4-42D1-9818-B5FA231E618F}|Assignment1-1.csproj|solutionrelative:part-2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T16:51:46.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "part-1.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\part-1.cs",
+              "RelativeDocumentMoniker": "part-1.cs",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\part-1.cs",
+              "RelativeToolTip": "part-1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:18:34.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "part-2.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\part-2.cs",
+              "RelativeDocumentMoniker": "part-2.cs",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\part-2.cs",
+              "RelativeToolTip": "part-2.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:08:16.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "part-3.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\part-3.cs",
+              "RelativeDocumentMoniker": "part-3.cs",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\part-3.cs",
+              "RelativeToolTip": "part-3.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAUwBcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:39:25.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "exit.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\exit.cs",
+              "RelativeDocumentMoniker": "exit.cs",
+              "ToolTip": "C:\\Users\\andre\\source\\repos\\Assignment1-1\\exit.cs",
+              "RelativeToolTip": "exit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T19:32:53.804Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
