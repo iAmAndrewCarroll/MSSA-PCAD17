@@ -10,30 +10,30 @@ namespace Assignment1_1 // similar to python modules and packages, namespaces he
         public static void Run()// this method is called by Program.Main() upon user selection.
                                 // It's the entry point for this part.
         {
-            int runningTotal = 0;
+            int runningTotal = 0; // variable stores the running total 
 
-            while (true)
+            while (true) // our loop that keeps us doing math until we get sick of it
             {
                 Console.WriteLine("\nSum Calculator");
-                Console.WriteLine("Current sum: " + runningTotal);
+                Console.WriteLine("Current sum: " + runningTotal); // displays the running total
 
-                Console.Write("Enter the first number: ");
-                bool valid1 = int.TryParse(Console.ReadLine(), out int number1);
+                Console.Write("Enter the first number: "); 
+                bool valid1 = int.TryParse(Console.ReadLine(), out int number1); // checks for valid input
 
-                Console.Write("Enter the second number: ");
-                bool valid2 = int.TryParse(Console.ReadLine(), out int number2);
+                Console.Write("Enter the second number: "); 
+                bool valid2 = int.TryParse(Console.ReadLine(), out int number2); // checks for valid input
 
-                if (!valid1 || !valid2)
+                if (!valid1 || !valid2) // if input was not valid it lets us know
                 {
                     Console.WriteLine("Invalid input.  Whole numbers only.");
                     continue;
                 }
 
-                int sum = number1 + number2;
-                runningTotal = sum; // replaces the running total by default
-                Console.WriteLine("The sum is: " + sum);
+                int sum = number1 + number2; // input was valid so now we do math
+                runningTotal = sum; // updates the running total by default
+                Console.WriteLine("The sum is: " + sum); // displays the sum total
 
-                while (true)
+                while (true) // running menu options
                 {
                     Console.WriteLine("\nWhat would you like to do next?");
                     Console.WriteLine("1 - Add another pair (new total)");
@@ -49,14 +49,14 @@ namespace Assignment1_1 // similar to python modules and packages, namespaces he
                     }
                     else if (nextChoice == "2")
                     {
-                        Console.Write("Enter a number to add to the current sum: ");
-                        bool validAdd = int.TryParse(Console.ReadLine(), out int addVal);
-                        if (validAdd)
+                        Console.Write("Enter a number to add to the current sum: "); // here we can continue adding to previous runningTotal
+                        bool validAdd = int.TryParse(Console.ReadLine(), out int addVal); // TryParse is safely working to convert input to integer
+                        if (validAdd) // valid input is added to runningTotal and display updated value
                         {
-                            runningTotal += addVal;
+                            runningTotal += addVal; //
                             Console.WriteLine("New sum: " + runningTotal);
                         }
-                        else
+                        else // if parsing failed it is handled gracefully and stay in menu
                         {
                             {
                                 Console.WriteLine("Invalid input.  Must be a number.");
@@ -69,7 +69,7 @@ namespace Assignment1_1 // similar to python modules and packages, namespaces he
                     }
                     else
                     {
-                        Console.WriteLine("Invalid option. Please try again.");
+                        Console.WriteLine("Invalid option. Please try again."); // used to handle unexpected or other invalid inputs
                     }
                 }
             }

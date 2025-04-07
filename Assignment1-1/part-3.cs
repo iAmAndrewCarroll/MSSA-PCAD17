@@ -10,29 +10,30 @@ namespace Assignment1_1 // similar to python modules and packages, namespaces he
         public static void Run() // this method is called by Program.Main() upon user selection.
                                  // It's the entry point for this part.
         {
-            while (true)
+            while (true) // the main loop that runs the division module until user exits
             {
                 Console.WriteLine("\nDivision Calculator: Quotient & Remainder");
 
-                // input + validation loop
+                // declaring input variables; outside validation loop so these int variables can be reused after parsing
                 int dividend = 0;
                 int divisor = 0;
 
-                while (true)
+                while (true) // this loop ensure both inputs are clean and useable
                 {
                     // enter the dividend
                     Console.Write("Enter the first number (dividend): ");
-                    string dividendInput = Console.ReadLine();
+                    string dividendInput = Console.ReadLine(); // naming the variable makes debugging easier
 
                     // enter the divisor
                     Console.Write("Enter the second number (divisor): ");
-                    string divisorInput = Console.ReadLine();
+                    string divisorInput = Console.ReadLine(); // naming the variable makes debugging easier
 
-                    // parse both inputs
-                    bool dividendValid = int.TryParse(dividendInput, out dividend);
-                    bool divisorValid = int.TryParse(divisorInput, out divisor);
+                    // parse both inputs 
+                    bool dividendValid = int.TryParse(dividendInput, out dividend); // TryParse checks that input can be safely converted to an integer
+                    bool divisorValid = int.TryParse(divisorInput, out divisor); // avoids crashes from invalid inputs (someone types 'dog')
+                                                                                 // 'out' variables store the parsed result if it is valid
 
-                    if (!dividendValid || !divisorValid)
+                    if (!dividendValid || !divisorValid) // logic check if parsing passed
                     {
                         Console.WriteLine("Invalid input.  Whole numbers only.");
                         Console.WriteLine(); // readability spacing
@@ -44,17 +45,17 @@ namespace Assignment1_1 // similar to python modules and packages, namespaces he
                     {
                         Console.WriteLine("Division by zero breaks the world.");
                         Console.WriteLine();
-                        continue;
+                        continue; // back to top of loop
                     }
 
-                    break;
+                    break; // if everything passes parsing checks then we can break out of the input validation loop and do math
                 }
 
                 // computation
                 int quotient = dividend / divisor; // div result
                 int remainder = dividend % divisor; // modulo (%) give the remainder
 
-                // results
+                // results output to console for user
                 Console.WriteLine("Quotient: " + quotient);
                 Console.WriteLine("Remainder: " + remainder);
 
@@ -78,7 +79,7 @@ namespace Assignment1_1 // similar to python modules and packages, namespaces he
                     }
                     else
                     {
-                        Console.WriteLine("Invalid option. Try AGAIN!!!!!!");
+                        Console.WriteLine("Invalid option. Try AGAIN!!!!!!"); // gracefully handles other bad inputs without breaking the loop
                     }
                 }
             }

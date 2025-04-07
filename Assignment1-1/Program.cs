@@ -18,6 +18,7 @@ namespace Assignment1_1
                 string choice = Console.ReadLine();
                 Console.WriteLine(); // readability
 
+                // menu options call the Run() method from the corresponding module
                 if (choice == "1")
                 {
                     Part1.Run();
