@@ -1,0 +1,7 @@
+# Ignore VS temp files
+.vs/
+*.vsidx
+
+# Ignore build output
+bin/
+obj/
