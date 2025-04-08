@@ -1,20 +1,21 @@
-# C# Assignment 1.1 – Technical ELI5 Code Patterns
+# C# Code Patterns – Assignments 1.1 & 1.2
 
 | Code Pattern | Beginner-Friendly Definition | Example Usage |
 |--------------|------------------------------|----------------|
-| `int i = 0; i < count; i++` | This is a loop structure that runs a block of code multiple times. It starts with `i = 0`, checks if `i` is less than `count`, runs the code, then increases `i` by 1. It’s used to go through items one by one or repeat something a set number of times. | `for (int i = 0; i < people.Count; i++) { Console.WriteLine(people[i].Name); }` |
-| `if (!valid)` | This means 'if NOT valid.' The exclamation mark `!` means 'not.' So this runs the next block of code if a value is false (invalid). It's used for error checking or handling unexpected input. | `if (!validAge) { Console.WriteLine("Invalid age"); continue; }` |
-| `if (!TryParse(...))` | `TryParse` attempts to convert a string into a number (like '25' into 25). If it fails, it doesn't crash—just returns false. The `!` checks if it failed, so we can respond safely if the input was bad. | `if (!int.TryParse(input, out number)) { Console.WriteLine("Invalid input"); continue; }` |
-| `if (string.IsNullOrWhiteSpace(input))` | This checks if the input is empty or just spaces. It helps ensure that the user actually typed something meaningful. Prevents saving blank data. | `if (string.IsNullOrWhiteSpace(newPerson.Name)) { Console.WriteLine("Name cannot be empty"); continue; }` |
-| `List<Type> list = new List<Type>();` | A `List` is a dynamic collection—it grows as needed. You can add, remove, or access items by index. It’s like an expandable array. | `List<Person> people = new List<Person>();` |
-| `list[index - 1]` | Lists count from 0, but users think in terms starting from 1. So if the user picks option 2, we access index 1. This adjusts user-friendly input to system indexing. | `Person person = people[index - 1];` |
-| `while (true)` | An infinite loop. It keeps running the same block of code until something inside it breaks or returns. Common in menus or programs that wait for user actions. | `while (true) { ShowMenu(); if (choice == "4") return; }` |
-| `Console.Write("..."); Console.ReadLine();` | This pair shows a message to the user and waits for them to type something. `ReadLine()` captures their input as text. | `Console.Write("Enter age: "); string input = Console.ReadLine();` |
-| `break;` | Stops the current loop immediately and moves on to the next part of the program. Useful to escape early. | `if (choice == "1") { break; }` |
-| `continue;` | Skips the rest of the current loop’s code and jumps to the next iteration. Used to skip invalid cases without stopping the whole loop. | `if (!valid) { Console.WriteLine("Invalid"); continue; }` |
-| `return;` | Ends a method early and optionally returns a value. It hands control back to the caller. | `if (choice == "4") { return; }` |
-| `out int variable` | `out` lets a method give back multiple outputs. With `TryParse`, it means 'if this worked, put the result into this variable.' | `int.TryParse(input, out int result)` |
-| `Console.WriteLine($"Name: {obj.Name}")` | This is called string interpolation. It lets you embed variables inside a string by wrapping them in curly braces `{}` and prefixing the string with `$`. | `Console.WriteLine($"Age: {person.Age}");` |
-| `int quotient = a / b; int remainder = a % b;` | This divides one number by another. `/` gives the whole-number result (quotient), `%` gives what’s left over (remainder). | `int q = dividend / divisor; int r = dividend % divisor;` |
-| `choice == "1"` | Checks if the user's input is exactly equal to the string "1". It's a string comparison, used for menu selections. | `if (choice == "1") { RunAddPerson(); }` |
-| `runningTotal += value;` | `+=` means 'add this value to the current total.' It’s shorthand for: `runningTotal = runningTotal + value;` | `runningTotal += addVal;` |
+| `int i = 0; i < count; i++` | A loop that starts at 0 and runs while `i` is less than `count`, increasing `i` each time. | `for (int i = 0; i < people.Count; i++) { Console.WriteLine(people[i].Name); }` |
+| `while (true)` | Creates a loop that repeats forever unless a `return` or `break` stops it. | `while (true) { ShowMenu(); if (choice == "4") return; }` |
+| `if (!valid)` | `!` means NOT. This checks if something is NOT valid before running the code inside. | `if (!validAge) { Console.WriteLine("Invalid age"); continue; }` |
+| `if (!TryParse(...))` | Checks whether `TryParse` failed (returns false). Used for safe input validation. | `if (!int.TryParse(input, out number)) { Console.WriteLine("Invalid input"); continue; }` |
+| `if (string.IsNullOrWhiteSpace(input))` | Checks if the input is empty or just spaces. Prevents saving blank values. | `if (string.IsNullOrWhiteSpace(name)) { Console.WriteLine("Name required"); continue; }` |
+| `List<Type> list = new List<Type>();` | Creates an empty list that can store multiple items of a specific type. | `List<Person> people = new List<Person>();` |
+| `list[index - 1]` | Adjusts for 0-based indexing in lists when the user sees 1-based menus. | `Person person = people[index - 1];` |
+| `Console.Write(); Console.ReadLine();` | First prints a prompt, then waits for the user to enter text. | `Console.Write("Enter name: "); string name = Console.ReadLine();` |
+| `break;` | Stops a loop early and moves on to the next part of the program. | `if (choice == "1") { break; }` |
+| `continue;` | Skips the rest of the current loop and jumps to the next round. | `if (!valid) { continue; }` |
+| `return;` | Ends a method and goes back to wherever it was called from. | `if (choice == "4") { return; }` |
+| `out int variable` | Stores the result of a successful `TryParse()` conversion. | `int.TryParse(input, out int number)` |
+| `$"...{variable}..."` | String interpolation: lets you insert variable values inside a string. | `Console.WriteLine($"You entered: {value}");` |
+| `a / b; a % b;` | `/` gets how many times `b` fits in `a`; `%` gives what's left over. | `int q = 10 / 3; int r = 10 % 3;` |
+| `choice == "1"` | Checks if user input matches the string '1'. Common for menus. | `if (choice == "1") { RunPart1(); }` |
+| `runningTotal += value;` | Adds a value to the total. Same as `runningTotal = runningTotal + value;`. | `runningTotal += 5;` |
+| `switch (choice)` | Selects one of several possible blocks of code based on a variable's value. | `switch (choice) { case "1": DoThing(); break; default: Console.WriteLine("Invalid"); break; }` |

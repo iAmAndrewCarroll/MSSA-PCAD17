@@ -1,41 +1,48 @@
-# C# Assignment 1.1 – Keywords and Functions Reference
+# C# Keywords and Functions – Assignments 1.1 & 1.2
 
 | Keyword/Function | Definition |
 |------------------|------------|
-| `using` | Directive to include namespaces that provide classes and functions. |
-| `namespace` | Defines a scope to organize code and prevent naming conflicts. |
-| `class` | Blueprint for creating objects; groups data (fields) and behavior (methods). |
-| `public` | Access modifier that makes members accessible from other code. |
-| `static` | Indicates the method or variable belongs to the type itself rather than an instance. |
-| `void` | Return type indicating the method does not return a value. |
-| `int` | Integer data type used to store whole numbers. |
-| `string` | Data type used to store sequences of characters. |
-| `bool` | Boolean data type used to store true or false. |
-| `List<T>` | Generic collection that stores an ordered list of elements of type T. |
-| `Console.WriteLine()` | Writes a line of text to the console. |
-| `Console.Write()` | Writes text to the console without a newline. |
-| `Console.ReadLine()` | Reads the next line of input from the user. |
-| `TryParse` | Safely attempts to parse a string into a specific data type. |
-| `if` | Conditional statement that runs code only if a condition is true. |
-| `else` | Specifies code to run if the if-condition is false. |
-| `while` | Loop that runs as long as its condition is true. |
-| `break` | Exits the current loop. |
-| `continue` | Skips the rest of the loop body and starts the next iteration. |
-| `return` | Exits a method and optionally returns a value. |
-| `Environment.Exit()` | Terminates the program with a specified exit code. |
-| `out` | Keyword that passes an argument by reference and returns multiple outputs from a method. |
-| `Count` | Gets the number of elements in a List. |
-| `foreach` | Iterates over each item in a collection. |
-| `for` | Traditional loop that uses a counter to iterate. |
-| `+` | Addition operator. |
-| `-` | Subtraction operator. |
-| `*` | Multiplication operator. |
-| `/` | Division operator; returns the quotient. |
-| `%` | Modulo operator; returns the remainder. |
-| `==` | Equality operator; checks if two values are equal. |
-| `!=` | Inequality operator; checks if two values are not equal. |
-| `<` | Less than comparison. |
-| `<=` | Less than or equal to comparison. |
-| `>` | Greater than comparison. |
-| `>=` | Greater than or equal to comparison. |
-| `IsNullOrWhiteSpace` | Checks whether a string is null, empty, or whitespace. |
+| `using` | Directive to include namespaces that provide access to classes and methods. |
+| `namespace` | Defines a logical grouping for related classes and methods to avoid naming conflicts. |
+| `class` | Defines a container for methods and fields; used to build objects or group logic. |
+| `public` | Makes a class or method accessible from outside its current file or namespace. |
+| `static` | Means the method or variable belongs to the class itself rather than an instance. |
+| `void` | Specifies that a method does not return any value. |
+| `int` | Used to store whole numbers like 1, 42, or -7. |
+| `double` | Used to store decimal numbers, more precise than int. |
+| `string` | Stores text, like names or typed input. |
+| `bool` | Stores true/false values for logic decisions. |
+| `List<T>` | A growable collection used to store multiple values of the same type. |
+| `Console.WriteLine()` | Displays a line of output to the console and moves to the next line. |
+| `Console.Write()` | Displays text to the console without adding a new line. |
+| `Console.ReadLine()` | Waits for the user to type something and hit enter, then returns it as text. |
+| `TryParse` | Tries to convert text into a number or other type safely, without crashing. |
+| `Parse` | Converts text into a number or other type, but will crash if the input is invalid. |
+| `out` | Used with TryParse to store the result if the conversion succeeds. |
+| `if` | Runs a block of code only when a specific condition is true. |
+| `else` | Runs a different block of code if the `if` condition was false. |
+| `switch` | A way to check many possible values of a variable and pick one block of code to run. |
+| `case` | Each possible match in a switch statement. |
+| `default` | Runs if no switch case matches. |
+| `while` | Repeats a block of code while a condition is true. |
+| `while (true)` | A loop that keeps running until you manually stop it. |
+| `for` | A loop that runs a specific number of times, often using a counter. |
+| `break` | Exits the current loop or switch statement. |
+| `continue` | Skips the rest of the loop body and starts the next loop cycle. |
+| `return` | Ends the current method and optionally sends a value back. |
+| `Environment.Exit()` | Closes the entire program. |
+| `Count` | Returns the number of items in a list. |
+| `foreach` | Loops through every item in a collection. |
+| `+` | Adds two values. |
+| `-` | Subtracts one value from another. |
+| `*` | Multiplies two values. |
+| `/` | Divides one value by another. |
+| `%` | Returns the remainder of a division. |
+| `==` | Checks if two values are exactly the same. |
+| `!=` | Checks if two values are not the same. |
+| `<` | Checks if the left side is less than the right. |
+| `<=` | Checks if the left side is less than or equal to the right. |
+| `>` | Checks if the left side is greater than the right. |
+| `>=` | Checks if the left side is greater than or equal to the right. |
+| `IsNullOrWhiteSpace` | Checks if a string is null, empty, or only whitespace. |
+| `Thread.Sleep()` | Pauses the program for a specific number of milliseconds. |
