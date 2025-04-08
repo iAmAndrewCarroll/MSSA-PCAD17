@@ -1,7 +1,7 @@
 ﻿using System; // how we access built in capabilities for C#
 using System.Threading; // gives access to Thread.Sleep
 
-namespace Assignment1_2 // keeps this part groupt with the rest of the project
+namespace Assignment1_2 // keeps this part grouped with the rest of the project
 {
     public class Part2 // defines a container for this part of the assignment
     {
