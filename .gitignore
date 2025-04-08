@@ -1,7 +1,72 @@
-# Ignore VS temp files
-.vs/
-*.vsidx
-
-# Ignore build output
+# Build results
 bin/
 obj/
+[Bb]uild/
+[Ll]og/
+*.log
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Visual Studio temporary files, caches, and settings
+.vs/
+*.vsidx
+*.db
+*.db-wal
+*.db-shm
+*.tlog
+*.cache
+*.pdb
+*.sdf
+*.opensdf
+*.VC.db
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# DotCover
+.idea/
+*.dotCover
+
+# Rider
+.idea/
+*.sln.iml
+
+# Rider caches
+.idea/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+# NuGet
+*.nupkg
+# The packages folder can be ignored if you use PackageReference
+packages/
+*.snupkg
+
+# Backup & temp files
+*.bak
+*.tmp
+*.temp
+*.old
+
+# Mac/Linux junk
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Windows junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Debug and release folders
+**/Debug/
+**/Release/
