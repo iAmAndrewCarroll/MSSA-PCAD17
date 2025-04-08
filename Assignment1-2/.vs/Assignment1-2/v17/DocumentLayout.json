@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8F460E23-16B9-465C-9D35-A8F24259346F}|Assignment1-2.csproj|c:\\users\\andre\\mssa-pcad17\\assignment1-2\\part2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F460E23-16B9-465C-9D35-A8F24259346F}|Assignment1-2.csproj|solutionrelative:part2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F460E23-16B9-465C-9D35-A8F24259346F}|Assignment1-2.csproj|c:\\users\\andre\\mssa-pcad17\\assignment1-2\\part1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F460E23-16B9-465C-9D35-A8F24259346F}|Assignment1-2.csproj|solutionrelative:part1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F460E23-16B9-465C-9D35-A8F24259346F}|Assignment1-2.csproj|c:\\users\\andre\\mssa-pcad17\\assignment1-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F460E23-16B9-465C-9D35-A8F24259346F}|Assignment1-2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F460E23-16B9-465C-9D35-A8F24259346F}|Assignment1-2.csproj|c:\\users\\andre\\mssa-pcad17\\assignment1-2\\part3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F460E23-16B9-465C-9D35-A8F24259346F}|Assignment1-2.csproj|solutionrelative:part3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Part3.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\Part3.cs",
+              "RelativeDocumentMoniker": "Part3.cs",
+              "ToolTip": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\Part3.cs",
+              "RelativeToolTip": "Part3.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T23:18:35.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Part2.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\Part2.cs",
+              "RelativeDocumentMoniker": "Part2.cs",
+              "ToolTip": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\Part2.cs",
+              "RelativeToolTip": "Part2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T23:15:38.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Part1.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\Part1.cs",
+              "RelativeDocumentMoniker": "Part1.cs",
+              "ToolTip": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\Part1.cs",
+              "RelativeToolTip": "Part1.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwDAAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T23:11:59.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\andre\\MSSA-PCAD17\\Assignment1-2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T22:55:22.08Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
