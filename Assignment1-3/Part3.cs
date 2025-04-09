@@ -18,7 +18,7 @@ namespace Assignment1_3 // groups this file with the defined project
                     continue; // restart loop if input is invalid
                 }
 
-                int[] values = new int[size]; // delcare arry with user-defined size
+                int[] values = new int[size]; // delcare array with user-defined size
 
                 for (int i = 0; i < size; i++) // loop to collect each individual number
                 {

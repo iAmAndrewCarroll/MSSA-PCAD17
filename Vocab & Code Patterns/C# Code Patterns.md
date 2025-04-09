@@ -19,3 +19,7 @@
 | `choice == "1"` | Checks if user input matches the string '1'. Common for menus. | `if (choice == "1") { RunPart1(); }` |
 | `runningTotal += value;` | Adds a value to the total. Same as `runningTotal = runningTotal + value;`. | `runningTotal += 5;` |
 | `switch (choice)` | Selects one of several possible blocks of code based on a variable's value. | `switch (choice) { case "1": DoThing(); break; default: Console.WriteLine("Invalid"); break; }` |
+| `Math.Pow(value, 2)` | Used to square a number in C#. Exponentiation is not done with `^` like in some other languages. | `double area = Math.PI * Math.Pow(radius, 2);` |
+| `for (int i = array.Length - 1; i >= 0; i--)` | A reverse loop used to iterate through an array backward. | `for (int i = array.Length - 1; i >= 0; i--) { Console.Write(array[i]); }` |
+| `i--` | Decrements the loop counter by 1 each time. Often used in reverse loops. | `i--;` |
+| `i-- // re-prompt` | Used to retry input for the same array index when invalid data is entered. | `if (!valid) { i--; continue; }` |
