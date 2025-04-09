@@ -60,7 +60,7 @@ namespace Assignment1_3 // groups this file with the defined project
                         Console.WriteLine(); // re-run from top of loop
                         continue;
                     case "2": 
-                        Console.WriteLine(); // exit to main menu
+                        Console.Clear(); // exit to main menu
                         return;
                     default:
                         Console.WriteLine("Bad input! Returning to Main Menu."); // catch invalid options

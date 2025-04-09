@@ -35,6 +35,7 @@ namespace Assignment1_3 // helps organize files under main project
                         CalculateCircleArea();
                         break;
                     case "5":
+                        Console.Clear();
                         return; // back to Program.cs main menu
                     default:
                         Console.WriteLine("Bad Selection. Try again."); // gracefully handles unexpected input

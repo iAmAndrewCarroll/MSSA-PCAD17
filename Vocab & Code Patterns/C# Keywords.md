@@ -60,6 +60,7 @@
 | **Data types** | |
 | bool | Stores true/false values for logic decisions. |
 | double | Used to store decimal numbers, more precise than int. |
+| double.Parse() | Converts text to a double. Will crash if input is invalid. Safer alternative is `TryParse`. |
 | int | Used to store whole numbers like 1, 42, or -7. |
 | IsNullOrWhiteSpace | Checks if a string is null, empty, or only whitespace. |
 | List<T> | A growable collection used to store multiple values of the same type. |
@@ -72,7 +73,11 @@
 | Array.Reverse() | Reverses the sequence of elements in the entire one-dimensional array. |
 | Array.Sort() | Sorts the elements in a one-dimensional array in ascending order. |
 | Count | Returns the number of items in a list. |
+| double[] | Declares an array of double values. Use `new double[size]` or initialize with values directly. |
 | Length | Gets the number of elements in the array. |
+| PrintArray() | A helper method that prints all elements of an array. Keeps the code clean by avoiding repeated loops (applies DRY principle). |
+| PrintArrayReversed() | Similar to `PrintArray()` but prints the array in reverse order. Used to demonstrate reverse traversal logic in a reusable, clean format. |
+
 |
 | **Timing & control** | |
 | Environment.Exit() | Closes the entire program. |

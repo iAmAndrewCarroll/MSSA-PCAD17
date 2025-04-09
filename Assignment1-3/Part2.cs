@@ -34,6 +34,7 @@ namespace Assignment1_3 // keeps this part grouped with the rest of the project
                         ExploreArrayMethods(); // method to demo built in tools that operate on arrays
                         break;
                     case "4":
+                        Console.Clear();
                         return; // exit this part and return to Program.cs main menu
                     default:
                         Console.WriteLine("Bad Selection. Go again."); // graceful handling of invalid inputs
