@@ -41,8 +41,7 @@ namespace Assignment2_1
             {
                 new Exercise // triggers the default constructor (implicit)
                 {
-                    Name = "Barbell Bench Press", // assigning a value to Name (move down to 
-                    // private string Name)
+                    Name = "Barbell Bench Press", // triggers the setter, which validates then assigns _name
                     Category = LiftCategory.Push,
                     Equipment = EquipmentType.Barbell,
                     TargetMuscle = "Chest, Shoulders, Triceps"
@@ -91,11 +90,14 @@ namespace Assignment2_1
     }
 
     // The Exercise class represents a single lift with descriptive properties
+    // It is made up of backing fields and public properties
     public class Exercise
     {
-        // The following fields are stored privately and exposed through public properties
+        // This is a backing field: private variables used to store actual data for the public properties
         private string _name;
-        public string Name // Barbell Bench Press comes down here
+
+        // This is a public property
+        public string Name // "Barbell Bench Press" is passed here when the object is created and assigned via the setter
         {
             get => _name;
             set
@@ -121,11 +123,11 @@ namespace Assignment2_1
 
         public EquipmentType Equipment { get; set; }
 
-        // Prints the information about this lift in a formatted way
+        // The Describe method accesses each public property,
+        // which in turn exposes the underlying data safely through the getter.
         public void Describe()
         {
-            Console.WriteLine($"\n{Name}"); // here Name is activating the getter and pulls the private
-            // _name field safely and displays all the associated properties of the object
+            Console.WriteLine($"\n{Name}"); // accesses the public getter, which returns the private _name value
             Console.WriteLine($"  Category       : {Category}");
             Console.WriteLine($"  Equipment Used : {Equipment}");
             Console.WriteLine($"  Target Muscles : {TargetMuscle}\n");
