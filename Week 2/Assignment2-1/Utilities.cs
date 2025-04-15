@@ -109,26 +109,6 @@ namespace Assignment_Tools
             }
         }
 
-        // String Validator
-        public static bool IsValidString(string input, string? fieldName = null)
-        {
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                if (!string.IsNullOrEmpty(fieldName))
-                {
-                    Console.WriteLine($"{fieldName} cannot be blank.");
-                }
-                else
-                {
-                    Console.WriteLine("Input cannot be blank.");
-                }
-
-                return false;
-            }
-
-            return true;
-        }
-
         // -------------------------------------------------------------
         // ARRAY HELPERS – GENERIC
         // -------------------------------------------------------------

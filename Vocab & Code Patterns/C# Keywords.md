@@ -11,8 +11,12 @@
 | method | An action a class or object can do (like Run(), Bark(), Calculate()). |
 | object | A real thing created from a class; it holds data and can perform actions. |
 | variable | A labeled box that stores a piece of data (number, word, object, etc.). |
+| abstract | Defines a class or method that must be implemented by child classes but cannot be used directly. |
+| override | Used in a subclass to provide a new implementation for a method declared in the parent class. |
+| enum | A user-defined set of named constant values, like `Push`, `Pull`, `Legs`. Enforces safe category grouping. |
 |
 | **Access modifiers / structure keywords** | |
+| get; set; | Define property accessors. `get` reads a value; `set` assigns a value. These can be written short (`{ get; set; }`) or with full validation. |
 | namespace | Defines a logical grouping for related classes and methods to avoid naming conflicts. |
 | public | Makes a class or method accessible from outside its current file or namespace. |
 | static | Means the method or variable belongs to the class itself rather than an instance. |
@@ -23,6 +27,13 @@
 | Console.ReadLine() | Waits for the user to type something and hit enter, then returns it as text. |
 | Console.Write() | Displays text to the console without adding a new line. |
 | Console.WriteLine() | Displays a line of output to the console and moves to the next line. |
+| Utilities.ReadInt() | Reads user input and returns a validated integer. Keeps prompting until the input is a valid whole number. |
+| Utilities.ReadPositiveDouble() | Prompts the user for a decimal number and ensures it is greater than zero. |
+| Utilities.ReadString() | Prompts for a non-empty string. Uses validation to reject blank or whitespace-only responses. |
+| Utilities.Pause() | Waits for the user to press a key before continuing. Used for pacing between output steps. |
+| Utilities.Delay() | Creates a short pause before continuing, usually for polished flow in UI. |
+| Utilities.Confirm() | Prompts the user with a Yes/No question and returns true or false based on their response. |
+| Utilities.DisplayMenu() | Dynamically builds a console menu and returns the selected index as an integer. Simplifies menu logic. |
 |
 | **Conditionals and branching** | |
 | break | Exits the current loop or switch statement. |
@@ -61,6 +72,7 @@
 | bool | Stores true/false values for logic decisions. |
 | double | Used to store decimal numbers, more precise than int. |
 | double.Parse() | Converts text to a double. Will crash if input is invalid. Safer alternative is `TryParse`. |
+| enum TypeName { A, B, C } | Declares an enum type to restrict values to a defined list of options. |
 | int | Used to store whole numbers like 1, 42, or -7. |
 | IsNullOrWhiteSpace | Checks if a string is null, empty, or only whitespace. |
 | List<T> | A growable collection used to store multiple values of the same type. |

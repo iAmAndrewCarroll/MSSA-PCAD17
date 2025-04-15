@@ -1,77 +1,76 @@
-using System;
-using System.Text; // for stringbuilder
+using System;                                // provides access to core tools like Console and string methods
+using System.Text;                           // gives us access to StringBuilder for efficient string manipulation
 
-namespace Assignment1_4
+namespace Assignment1_4                      // groups this code as part of Assignment 1.4
 {
     public class LeetPalindrome
     {
-        // Core logic to check if a string is a palindrome after cleaning
+        // ===================================================
+        // Determines whether a string is a valid palindrome
+        // Ignores punctuation, spaces, and is case-insensitive
+        // ===================================================
         public static bool IsPalindrome(string s)
         {
-            // early return: if the input is null or empty (whitespace), treat it as a valid palindrome
-            if (string.IsNullOrWhiteSpace(s)) return true; // empty or all spaces = valid palindrome
+            // return true immediately if string is null, empty, or whitespace
+            if (string.IsNullOrWhiteSpace(s)) return true;       // empty or space-only input counts as valid palindrome
 
-            // Step 1: Normalize the input
-            // Convert to lowercase
-            // remove non-alphanumerics (ignores punctuation & spaces)
-            var cleanedChars = new StringBuilder();
+            // normalize input: lowercase + strip non-alphanumeric chars
+            var cleanedChars = new StringBuilder();              // efficient way to build the cleaned version of the string
 
-            foreach (char c in s.ToLower())
+            foreach (char c in s.ToLower())                      // loop through each character in lowercase version of string
             {
-                // IsLetterOrDigit filters out spaces, commas, symbols, etc.
-                if (char.IsLetterOrDigit(c))
+                if (char.IsLetterOrDigit(c))                    // keep only letters and numbers (ignore punctuation and symbols)
                 {
-                    // build the cleaned string
-                    cleanedChars.Append(c);
+                    cleanedChars.Append(c);                     // add cleaned char to StringBuilder
                 }
             }
 
-            // Step 2: Check if cleaned string reads the same forward and backward
-            string cleaned = cleanedChars.ToString(); // finalize the cleaned string
-            int left = 0, right = cleaned.Length - 1; // -1 because array 0
+            string cleaned = cleanedChars.ToString();            // convert cleaned StringBuilder to a regular string
+            int left = 0, right = cleaned.Length - 1;            // use two pointers: start and end of the string
 
-            while (left < right)
+            while (left < right)                                 // loop until the pointers meet or cross
             {
-                // Compare characters from each end
-                if (cleaned[left] != cleaned[right])
-                    return false; // mismatch - not a palindrome
+                if (cleaned[left] != cleaned[right])             // if mismatch found, it's not a palindrome
+                    return false;
 
-                left++; // counting UP the 'normal' array
-                right--; // counting down the 'reversed' array
+                left++;                                          // move left pointer toward center
+                right--;                                         // move right pointer toward center
             }
 
-            return true; // all checks passed/ it's a palindrome
+            return true;                                         // all characters matched — valid palindrome
         }
 
-        // Console interface: asks user for input, shows result
-        public static void Run() // called by Program.cs
+        // ===================================================
+        // Console UI: asks for input, shows result, repeats
+        // Called from Program.cs and runs its own loop
+        // ===================================================
+        public static void Run()
         {
-            while (true) // keep running until user chooses to quit
+            while (true)                                         // infinite loop until user chooses to exit
             {
-                Console.Write("Enter a phrase to check: ");
-                string input = Console.ReadLine(); // user enters phrase
-                bool result = IsPalindrome(input); // run logic
+                Console.Write("Enter a phrase to check: ");     // prompt user for input
+                string input = Console.ReadLine();              // read user input
+                bool result = IsPalindrome(input);              // run palindrome logic and store result
 
-                // Display the result based on the boolean outcome
-                Console.WriteLine(result 
-                    ? "Yes, it's a palindrome." 
+                Console.WriteLine(result                         // show message based on true/false result
+                    ? "Yes, it's a palindrome."
                     : "Nope, not a palindrome.");
 
-                // follow-up menu
+                // follow-up menu to repeat or exit
                 Console.WriteLine("\nWhat would you like to do?");
                 Console.WriteLine("1 - Try another");
                 Console.WriteLine("2 - Return to Main Menu");
                 Console.Write("Choice: ");
 
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine();              // read follow-up choice
 
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine();  // clear spacing
-                        continue; // rerun loop
+                        Console.WriteLine();                    // add spacing
+                        continue;                               // rerun loop
                     case "2":
-                        return; // exit back to main menu
+                        return;                                 // exit to main menu
                     default:
                         Console.WriteLine("Invalid option. Returning to main menu.");
                         return;
