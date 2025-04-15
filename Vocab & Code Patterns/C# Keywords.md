@@ -14,7 +14,11 @@
 | abstract | Defines a class or method that must be implemented by child classes but cannot be used directly. |
 | override | Used in a subclass to provide a new implementation for a method declared in the parent class. |
 | enum | A user-defined set of named constant values, like `Push`, `Pull`, `Legs`. Enforces safe category grouping. |
-|
+| backing field | A private variable that stores the actual data for a public property. Typically named with an underscore (e.g., `_name`). Used to control how values are set or read. |
+| public property | A class member that exposes a private field using `get` and `set`. Allows validation or logic before setting values. |
+| auto-property | A shorthand version of a property with no logic — just `get; set;`. The backing field is created automatically by the compiler. |
+| encapsulation | The OOP principle of hiding internal data (using private fields) and exposing access through public methods or properties. Helps protect data and enforce rules. |
+
 | **Access modifiers / structure keywords** | |
 | get; set; | Define property accessors. `get` reads a value; `set` assigns a value. These can be written short (`{ get; set; }`) or with full validation. |
 | namespace | Defines a logical grouping for related classes and methods to avoid naming conflicts. |
