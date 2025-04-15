@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 using System.Threading;
 
 namespace Assignment_Tools
@@ -109,6 +111,26 @@ namespace Assignment_Tools
             }
         }
 
+        // String Validator
+        public static bool IsValidString(string input, string? fieldName = null)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                if (!string.IsNullOrEmpty(fieldName))
+                {
+                    Console.WriteLine($"{fieldName} cannot be blank.");
+                }
+                else
+                {
+                    Console.WriteLine("Input cannot be blank.");
+                }
+
+                return false;
+            }
+
+            return true;
+        }
+
         // -------------------------------------------------------------
         // ARRAY HELPERS – GENERIC
         // -------------------------------------------------------------
@@ -211,6 +233,94 @@ namespace Assignment_Tools
         // Usage:
         // int selection = Utilities.GetIndexedChoice("Select a record", people.Count);
         // if (selection == people.Count + 1) return;
+
+        // -------------------------------------------------------------
+        // FILE I/O HELPERS – TEXT FILES
+        // -------------------------------------------------------------
+
+        // Overwrites or creates a file with a full block of content
+        public static void WriteTextFile(string path, string content)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write(content);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error writing file: " + e.Message);
+            }
+        }
+
+        // Appends content to an existing file. Creates the file if it doesn't exist.
+        public static void AppendTextFile(string path, string content)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path, append: true))
+                {
+                    sw.WriteLine(content);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error appending to file: " + e.Message);
+            }
+        }
+
+        // Reads all text from a file and returns it as a string.
+        // Returns empty string if the file does not exist or an error occurs.
+        public static string ReadTextFile(string path)
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    return sr.ReadToEnd();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error reading file: " + e.Message);
+                return "";
+            }
+        }
+
+        // Checks whether a file exists at the specified path
+        public static bool FileExists(string path)
+        {
+            return File.Exists(path);
+        }
+
+        // Writes an array of strings to a file (each element on a new line)
+        public static void WriteLinesToFile(string path, string[] lines)
+        {
+            try
+            {
+                File.WriteAllLines(path, lines);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error writing lines to file: " + e.Message);
+            }
+        }
+
+        // Reads all lines from a file and returns them as an array of strings
+        public static string[] ReadLinesFromFile(string path)
+        {
+            try
+            {
+                return File.ReadAllLines(path);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error reading lines from file: " + e.Message);
+                return new string[0];
+            }
+        }
+
 
         // -------------------------------------------------------------
         // UI DRAWING TOOLS
