@@ -4,7 +4,7 @@ PART1.cs – Week 2 Challenge: Temperature to Message (Switch Expression)
 =======================================================================
 
 This version demonstrates:
-- Refactoring conditional logic into a modern switch expression
+- Refactoring conditional logic into switch expression after seeing other examples in class
 - Using relational patterns (e.g. >=, <=) inside `switch`
 - Assigning the matched result to a variable
 - Using DRY principles with a single output line
