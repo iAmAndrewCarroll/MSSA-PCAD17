@@ -32,6 +32,14 @@
 
 ---
 
+### Pattern Matching & Tuple Switch
+
+| `switch ((x, y))` | Matches against multiple values at once using a tuple. Allows clean multi-condition checks. | `switch (x, y) { case (0, 0): ... }` |
+| `case (> 0, < 0):` | Uses pattern matching to match value ranges inside a tuple switch. | `case (< 0, > 0): Console.WriteLine("Second quadrant");` |
+| `(x, y)` tuple | A temporary pairing of values, like a grouped coordinate. | `switch (x, y)` matches both values together. |
+
+---
+
 ### Loop Controls
 
 | `break;` | Stops a loop early and moves on to the next part of the program. | `if (choice == "1") { break; }` |
