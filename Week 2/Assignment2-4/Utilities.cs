@@ -374,4 +374,6 @@ string choice = Utilities.DisplayMenu("Main Menu", new[] { "A", "B", "Exit" });
 Every method is tested against Assignments 1.1–1.3 and reusable across future parts.
 This is your permanent toolbox for clean, DRY, production-quality console code.
 =============================================================================
+✓ Pattern-Friendly Input:
+  - ReadInt(prompt), ReadDouble(prompt) pair well with `switch (x, y)` logic using tuples.
 */

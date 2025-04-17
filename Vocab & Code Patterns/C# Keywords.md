@@ -49,7 +49,7 @@
 | if | Runs a block of code only when a specific condition is true. |
 | return | Ends the current method and optionally sends a value back. |
 | switch | A way to check many possible values of a variable and pick one block of code to run. |
-|| pattern matching | A modern C# feature used with `switch` to match values based on shapes, ranges, or types. |
+||pattern matching | A modern C# feature used with `switch` to match values based on shapes, ranges, or types. |
 | case (> 0, < 0) | An example of pattern matching in a tuple `switch`. Matches range-based conditions directly in a `case`. |
 | switch (x, y) | A modern usage of `switch` with a tuple as the input, allowing pattern-based cases like `(0, 0)` or `(> 0, < 0)`. |
 |
