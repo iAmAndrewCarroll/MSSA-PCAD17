@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - CareerTimelineApp</title>
+    
+    <link rel="stylesheet" href="Live%20-%20CareerTimelineApp_files/bootstrap.min.css">
+    <link rel="stylesheet" href="Live%20-%20CareerTimelineApp_files/site.css">
+    <link rel="stylesheet" href="Live%20-%20CareerTimelineApp_files/CareerTimelineApp.styles.css">
+</head>
+
+<body>
+    <div b-74af8gt2kb="" class="page-wrapper">
+        <header b-74af8gt2kb="">
+            <nav b-74af8gt2kb="" class="navbar navbar-expand-sm navbar-toggleable-sm bg-black border-bottom box-shadow mb-3 neon-navbar">
+                <div b-74af8gt2kb="" class="container-fluid">
+                    <a class="navbar-brand text-neon" href="http://localhost:5079/">iAmAndrewCarroll</a>
+                    <button b-74af8gt2kb="" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                        <span b-74af8gt2kb="" class="navbar-toggler-icon"></span>
+                    </button>
+                    <div b-74af8gt2kb="" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul b-74af8gt2kb="" class="navbar-nav flex-grow-1">
+                            <li b-74af8gt2kb="" class="nav-item">
+                                <a b-74af8gt2kb="" class="nav-link text-neon" href="https://www.carrollmediagroup.com/" target="_blank">Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main b-74af8gt2kb="" class="main-content">
+            <div b-74af8gt2kb="" class="container">
+                    <script src="Live%20-%20CareerTimelineApp_files/d3.v6.min.js"></script>
+    <script src="Live%20-%20CareerTimelineApp_files/d3.layout.cloud.min.js"></script>
+
+
+    <h1>Andrew Carroll – Career Timeline</h1>
+    <h2 class="tagline">Creative problem solver fusing media and tech to disrupt disinformation and empower people through human-first design.</h2>
+
+    <div id="wordCloud" style="width: 100%; height: 350px;"><svg width="696" height="350"><g transform="translate(348,175)"><text style="font-size: 45px; font-family: Segoe UI; fill: rgb(0, 255, 229);" text-anchor="middle" transform="translate(-89,-66) rotate(0)">Narrative engineering</text><text style="font-size: 45px; font-family: Segoe UI; fill: rgb(255, 0, 127);" text-anchor="middle" transform="translate(-5,-22) rotate(0)">Content strategy</text><text style="font-size: 45px; font-family: Segoe UI; fill: rgb(0, 255, 255);" text-anchor="middle" transform="translate(145,23) rotate(0)">AI integration</text><text style="font-size: 45px; font-family: Segoe UI; fill: rgb(255, 102, 204);" text-anchor="middle" transform="translate(-62,-111) rotate(0)">Software development</text><text style="font-size: 25px; font-family: Segoe UI; fill: rgb(57, 255, 20);" text-anchor="middle" transform="translate(-124,9) rotate(0)">Brand leadership</text><text style="font-size: 25px; font-family: Segoe UI; fill: rgb(255, 74, 255);" text-anchor="middle" transform="translate(14,57) rotate(0)">Podcast production</text><text style="font-size: 25px; font-family: Segoe UI; fill: rgb(0, 255, 144);" text-anchor="middle" transform="translate(-206,40) rotate(0)">Platform design</text><text style="font-size: 25px; font-family: Segoe UI; fill: rgb(255, 170, 0);" text-anchor="middle" transform="translate(-23,89) rotate(0)">Public speaking</text><text style="font-size: 25px; font-family: Segoe UI; fill: rgb(0, 255, 255);" text-anchor="middle" transform="translate(85,123) rotate(0)">Video editing (Davinci Resolve)</text></g></svg></div>
+    <script>
+    const skillData = [{"Skill":"Creative direction","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"Narrative engineering","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"Content strategy","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"AI integration","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"Software development","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"Brand leadership","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"Podcast production","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"Platform design","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"Public speaking","Count":1,"Jobs":["Creative Director / Owner"]},{"Skill":"Video editing (Davinci Resolve)","Count":1,"Jobs":["Creative Director / Owner"]}];
+
+    // Center the top word
+    const words = skillData.map((d, i) => ({
+        text: d.Skill,
+        size: i === 0 ? 80 : (i < 5 ? 45 : 25), // 1st = largest, next 4 = medium, rest = smaller
+        jobs: d.Jobs,
+        rank: i
+    }));
+
+    const width = document.getElementById("wordCloud").offsetWidth;
+    const height = 350;
+
+    d3.layout.cloud()
+        .size([width, height])
+        .words(words)
+        .padding(5)
+        .rotate(() => 0)
+        .font("Segoe UI")
+        .fontSize(d => d.size)
+        .on("end", draw)
+        .start();
+
+    function draw(words) {
+        const svg = d3.select("#wordCloud")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", `translate(${width / 2},${height / 2})`);
+
+        const neonPalette = ["#00ffe5", "#ff007f", "#00ffff", "#ff66cc", "#39ff14", "#ff4aff", "#00ff90", "#fa0", "#0ff", "#f0f"];
+
+        svg.selectAll("text")
+            .data(words)
+            .enter().append("text")
+            .style("font-size", d => `${d.size}px`)
+            .style("font-family", "Segoe UI")
+            .style("fill", (d, i) => neonPalette[i % neonPalette.length])
+            .attr("text-anchor", "middle")
+            .attr("transform", d => `translate(${d.x},${d.y}) rotate(${d.rotate})`)
+            .text(d => d.text)
+            .on("mouseover", function (event, d) {
+                tooltip
+                    .style("opacity", 1)
+                    .html(`<strong>${d.text}</strong><br/>Used in:<br/><ul>${d.jobs.map(j => `<li>${j}</li>`).join('')}</ul>`)
+                    .style("left", (event.pageX + 15) + "px")
+                    .style("top", (event.pageY - 50) + "px");
+            })
+            .on("mouseout", () => {
+                tooltip.style("opacity", 0);
+            });
+    }
+
+    const tooltip = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .style("background", "#111")
+        .style("color", "#00ffe5")
+        .style("padding", "10px")
+        .style("border", "1px solid #ff007f")
+        .style("border-radius", "6px")
+        .style("opacity", 0)
+        .style("pointer-events", "none")
+        .style("font-family", "Segoe UI")
+        .style("box-shadow", "0px 2px 8px rgba(255, 0, 127, 0.5)");
+    </script>
+
+
+
+    <section class="timeline">
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Creative Director / Owner</h2>
+                <p><em><strong>Carroll Media Group</strong></em></p>
+                <p><strong>May 2014 – Present</strong></p>
+                <ul>
+                    <li>Creative direction</li>
+                    <li>Narrative engineering</li>
+                    <li>Content strategy</li>
+                    <li>AI integration</li>
+                    <li>Software development</li>
+                    <li>Brand leadership</li>
+                    <li>Podcast production</li>
+                    <li>Platform design</li>
+                    <li>Public speaking</li>
+                    <li>Video editing (Davinci Resolve)</li>
+                    <li>Motion design (Davinci Fusion)</li>
+                    <li>Writing and publishing</li>
+                    <li>Disinformation counterstrategy</li>
+                    <li>Founder / Project Red__t</li>
+                    <li>Author / followed</li>
+                    <li>Founder / Coach AIndrew</li>
+                    <li>Human-first UX</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Director of Postal Operations</h2>
+                <p><em><strong>USAF (Ramstein AB)</strong></em></p>
+                <p><strong>Jan 2021 – Jan 2023</strong></p>
+                <ul>
+                    <li>Operational leadership</li>
+                    <li>Systems thinking</li>
+                    <li>Cross-functional team management</li>
+                    <li>Process improvement</li>
+                    <li>Compliance infrastructure</li>
+                    <li>Mission-critical logistics</li>
+                    <li>Data-driven decision making</li>
+                    <li>Workflow optimization</li>
+                    <li>Digital transformation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Wealth Architect</h2>
+                <p><em><strong>Wealth Factory</strong></em></p>
+                <p><strong>May 2019 – Jan 2021</strong></p>
+                <ul>
+                    <li>Executive coaching</li>
+                    <li>Purpose-driven consulting</li>
+                    <li>Behavioral insight</li>
+                    <li>Strategic frameworks</li>
+                    <li>Client empowerment</li>
+                    <li>Values-based leadership</li>
+                    <li>Business storytelling</li>
+                    <li>Creative systems design</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Official Mail Manager</h2>
+                <p><em><strong>USAF (Hill AFB)</strong></em></p>
+                <p><strong>Oct 2017 – May 2019</strong></p>
+                <ul>
+                    <li>Workflow redesign</li>
+                    <li>Audit and compliance</li>
+                    <li>Automation integration</li>
+                    <li>Data analysis</li>
+                    <li>Personnel training</li>
+                    <li>Operational efficiency</li>
+                    <li>Process reengineering</li>
+                    <li>Strategic communication</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Civil Engineering Technician</h2>
+                <p><em><strong>US Forest Service</strong></em></p>
+                <p><strong>Jan 2017 – Oct 2017</strong></p>
+                <ul>
+                    <li>Geospatial analysis (ArcGIS)</li>
+                    <li>Technical drawing</li>
+                    <li>Data modeling</li>
+                    <li>Field execution</li>
+                    <li>Problem solving</li>
+                    <li>Stakeholder collaboration</li>
+                    <li>Infrastructure compliance</li>
+                    <li>Systems documentation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Purchasing Agent</h2>
+                <p><em><strong>Dept. of Veterans Affairs</strong></em></p>
+                <p><strong>Oct 2016 – Jan 2017</strong></p>
+                <ul>
+                    <li>Contract negotiation</li>
+                    <li>Strategic sourcing</li>
+                    <li>Budget optimization</li>
+                    <li>Government procurement</li>
+                    <li>Vendor lifecycle management</li>
+                    <li>Process accountability</li>
+                    <li>Stakeholder alignment</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Compliance Specialist</h2>
+                <p><em><strong>Montana Dept of Transportation</strong></em></p>
+                <p><strong>Mar 2015 – Oct 2016</strong></p>
+                <ul>
+                    <li>Regulatory alignment</li>
+                    <li>Policy strategy</li>
+                    <li>Compliance auditing</li>
+                    <li>GIS tools</li>
+                    <li>Cross-agency collaboration</li>
+                    <li>Infrastructure modernization</li>
+                    <li>Strategic review</li>
+                    <li>Public service communication</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Freight Broker</h2>
+                <p><em><strong>DLG Logistics</strong></em></p>
+                <p><strong>Sept 2014 – Mar 2015</strong></p>
+                <ul>
+                    <li>Logistics negotiation</li>
+                    <li>Routing optimization</li>
+                    <li>Network building</li>
+                    <li>Operational scaling</li>
+                    <li>Client trust-building</li>
+                    <li>Multi-vendor systems</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Loss Prevention</h2>
+                <p><em><strong>Walmart</strong></em></p>
+                <p><strong>Sept 2014 – Mar 2015</strong></p>
+                <ul>
+                    <li>Behavioral analysis</li>
+                    <li>Crisis response</li>
+                    <li>Policy enforcement</li>
+                    <li>Observational systems</li>
+                    <li>Retail analytics</li>
+                    <li>Risk mitigation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Vehicle Sales</h2>
+                <p><em><strong>Archie Cochrane Ford</strong></em></p>
+                <p><strong>May 2014 – Sept 2014</strong></p>
+                <ul>
+                    <li>Strategic sales</li>
+                    <li>Relationship development</li>
+                    <li>CRM systems</li>
+                    <li>Brand presentation</li>
+                    <li>Needs discovery</li>
+                    <li>Tech-forward selling</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Network Technician</h2>
+                <p><em><strong>Montana State University</strong></em></p>
+                <p><strong>Jan 2012 – May 2014</strong></p>
+                <ul>
+                    <li>Fiber optic networking</li>
+                    <li>Telecom architecture</li>
+                    <li>Signal diagnostics</li>
+                    <li>Infrastructure reliability</li>
+                    <li>Field troubleshooting</li>
+                    <li>System documentation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Owner / Operator</h2>
+                <p><em><strong>ATC Limited</strong></em></p>
+                <p><strong>Aug 2011 – May 2014</strong></p>
+                <ul>
+                    <li>Entrepreneurship</li>
+                    <li>Construction project management</li>
+                    <li>Team operations</li>
+                    <li>Client negotiation</li>
+                    <li>Site safety leadership</li>
+                    <li>Scope-to-execution agility</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Contract Fulfillment</h2>
+                <p><em><strong>Collegiate Concepts</strong></em></p>
+                <p><strong>Aug 2011 – May 2014</strong></p>
+                <ul>
+                    <li>Vendor alignment</li>
+                    <li>Distribution planning</li>
+                    <li>Order systems</li>
+                    <li>Logistics problem solving</li>
+                    <li>Data tracking</li>
+                    <li>Inventory flow</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>IT Technician</h2>
+                <p><em><strong>Montana State University IT Dept</strong></em></p>
+                <p><strong>Aug 2011 – May 2014</strong></p>
+                <ul>
+                    <li>User support</li>
+                    <li>Hardware diagnostics</li>
+                    <li>Network troubleshooting</li>
+                    <li>Documentation clarity</li>
+                    <li>Ticketing system administration</li>
+                    <li>Cross-department coordination</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Military Postal Clerk / Postmaster</h2>
+                <p><em><strong>USAF</strong></em></p>
+                <p><strong>Nov 2006 – Aug 2011</strong></p>
+                <ul>
+                    <li>Military-grade logistics</li>
+                    <li>Security systems</li>
+                    <li>Mail flow optimization</li>
+                    <li>Team supervision</li>
+                    <li>Mission reliability</li>
+                    <li>Chain-of-command operations</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Voice Network Systems Journeyman</h2>
+                <p><em><strong>USAF</strong></em></p>
+                <p><strong>May 2004 – Nov 2006</strong></p>
+                <ul>
+                    <li>Telecom systems</li>
+                    <li>Infrastructure cabling</li>
+                    <li>Technical troubleshooting</li>
+                    <li>Military-grade installation</li>
+                    <li>Signal routing</li>
+                    <li>Secure systems operation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Golf Cart Attendant</h2>
+                <p><em><strong>Palm Desert Country Club</strong></em></p>
+                <p><strong>May 2003 – Apr 2004</strong></p>
+                <ul>
+                    <li>Guest experience</li>
+                    <li>Task efficiency</li>
+                    <li>Maintenance triage</li>
+                    <li>Scheduling under pressure</li>
+                    <li>Facility readiness</li>
+                    <li>First impressions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Electronics Dept Associate</h2>
+                <p><em><strong>Walmart</strong></em></p>
+                <p><strong>Jan 2003 – Apr 2004</strong></p>
+                <ul>
+                    <li>Consumer electronics</li>
+                    <li>Customer interface</li>
+                    <li>Sales technology</li>
+                    <li>Tech explanation</li>
+                    <li>POS fluency</li>
+                    <li>Upselling with insight</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-dot"></div>
+            <div class="job-card">
+                <h2>Ranch Hand</h2>
+                <p><em><strong>Various Locations</strong></em></p>
+                <p><strong>May 2001 – Jan 2003</strong></p>
+                <ul>
+                    <li>Rapid problem-solving</li>
+                    <li>Resilience in high-pressure conditions</li>
+                    <li>Hands-on repair</li>
+                    <li>Mechanical systems thinking</li>
+                    <li>Adaptive strategy</li>
+                    <li>Tool-based troubleshooting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </main>
+
+        <footer b-74af8gt2kb="" class="footer text-center neon-footer">
+            <div b-74af8gt2kb="" class="container">
+                © 2025 - <span b-74af8gt2kb="" class="text-neon">Carroll Media Group</span> -
+                <a class="text-pink" href="http://localhost:5079/Home/Privacy">Privacy</a>
+            </div>
+        </footer>
+    </div><div class="tooltip" style="position: absolute; z-index: 10; background: rgb(17, 17, 17); color: rgb(0, 255, 229); padding: 10px; border: 1px solid rgb(255, 0, 127); border-radius: 6px; opacity: 0; pointer-events: none; font-family: Segoe UI; box-shadow: rgba(255, 0, 127, 0.5) 0px 2px 8px;"></div>
+
+    <script src="Live%20-%20CareerTimelineApp_files/jquery.min.js"></script>
+    <script src="Live%20-%20CareerTimelineApp_files/bootstrap.bundle.min.js"></script>
+    <script src="Live%20-%20CareerTimelineApp_files/site.js"></script>
+    
+    <script src="Live%20-%20CareerTimelineApp_files/d3.v6.min.js"></script>
+    <script src="Live%20-%20CareerTimelineApp_files/d3.layout.cloud.min_002.js"></script>
+<script src="Live%20-%20CareerTimelineApp_files/aspnetcore-browser-refresh.js"></script>
+
+</body></html>

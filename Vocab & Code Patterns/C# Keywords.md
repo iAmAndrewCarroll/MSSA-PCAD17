@@ -88,6 +88,10 @@
 | Parse | Converts text into a number or other type, but will crash if the input is invalid. |
 | string | Stores text, like names or typed input. |
 | TryParse | Tries to convert text into a number or other type safely, without crashing. |
+| StringBuilder | A class used to build strings efficiently, especially in loops. Avoids repeated memory reallocation. |
+| TrimEnd() | A string method that removes trailing spaces or characters from the end of a string. |
+| Clone() | A method to duplicate an array (shallow copy). Helps avoid modifying the original. |
+|
 |
 | **Arrays & collections** | |
 | Array.Reverse() | Reverses the sequence of elements in the entire one-dimensional array. |
@@ -97,7 +101,7 @@
 | Length | Gets the number of elements in the array. |
 | PrintArray() | A helper method that prints all elements of an array. Keeps the code clean by avoiding repeated loops (applies DRY principle). |
 | PrintArrayReversed() | Similar to `PrintArray()` but prints the array in reverse order. Used to demonstrate reverse traversal logic in a reusable, clean format. |
-
+|
 |
 | **Timing & control** | |
 | Environment.Exit() | Closes the entire program. |

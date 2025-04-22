@@ -99,6 +99,14 @@
 
 ---
 
+### String Building / Output Formatting
+
+| `StringBuilder sb = new StringBuilder();` | Used to build strings efficiently in loops or large concatenations. Better than `+=` for performance. | `sb.Append("value ").Append("next"); string result = sb.ToString();` |
+| `string.TrimEnd()` | Removes whitespace or characters from the end of a string. Useful when avoiding trailing separators. | `builder.ToString().TrimEnd();` |
+| `array.Clone()` | Creates a shallow copy of an array. Useful when modifying without changing the original. | `int[] copy = (int[])original.Clone();` |
+
+---
+
 ### Toolbox Patterns
 
 | `Utilities.ReverseArray<T>(array)` | Generic helper that safely reverses any type of array. | `int[] reversed = Utilities.ReverseArray(original);` |
