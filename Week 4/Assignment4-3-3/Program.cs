@@ -1,7 +1,4 @@
-﻿
-
-
-// set the number of elements in the array
+﻿// set the number of elements in the array
 Console.Write("Input the number of elements in the array: ");
 int size = int.Parse(Console.ReadLine());
 
@@ -19,6 +16,7 @@ for (int i = 0; i < size; i++)
 Console.WriteLine("\nSuccess");
 Console.WriteLine(string.Join(" ", numbers));
 
+// create the dictionary to track frequency / uniqueness
 Dictionary<int, int> frequency = new Dictionary<int, int>();
 
 foreach (int i in numbers)
