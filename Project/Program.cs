@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Security.Cryptography.X509Certificates;
 using Assignment_Tools;  // access Utilities.cs
 using StudyBank.FlashCards; // Namespace where FlashCard types live
@@ -22,6 +23,7 @@ namespace StudyBank
                     "Week 2 - Conditionals",
                     "Week 3 - Arrays & Loops",
                     "Week 4 - Methods & CLasses",
+                    "Generate New Flashcards from C# Method",
                     "Exit"
                 });
 
@@ -40,7 +42,10 @@ namespace StudyBank
                     case "4":
                         LoadAndRunWeek("Week4.json", "Week 4 – Methods & Classes");
                         break;
-                    case "5":
+                    case "G":
+                        GenerateCardFromMethod().Wait();
+                        break;
+                    case "E":
                         Console.WriteLine("Goodbye!");
                         return;
                     default:
@@ -67,5 +72,34 @@ namespace StudyBank
 
             FlashCardRunner.Run(flashcards, title);  // starts session with loaded cards
         }
+
+        // Generates new flashcard from prompt
+        private static async Task GenerateCardFromMethod()
+        {
+            Console.Clear();
+            Console.WriteLine("-- Generate New Flashcard from Method --");
+
+            string method = Utilities.ReadNonEmptyString("Enter a C# method or topic to drill (e.g., Array.Sort): ");
+
+            var card = await GPTTutor.GenerateFillInCardFromMethod(method);
+
+            if (card == null)
+            {
+                Console.WriteLine("\nGPT failed to generate a flashcard. Try a simpler method or reword it.");
+                Utilities.Pause();
+                return;
+            }
+
+            Console.WriteLine("\nFlashcard Generated:");
+            card.Run();
+
+            if (Utilities.Confirm("Would you like to save this new card for future use?"))
+            {
+                SaveCardToWeek("Weeks/")
+            }
+            // Optional: Save to JSON here (Phase 2)
+            // AppendCardToWeek("WeekX.json", card);
+        }
+
     }
 }
