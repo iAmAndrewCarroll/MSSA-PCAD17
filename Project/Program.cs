@@ -1,10 +1,10 @@
 ﻿using System;
-using System.CodeDom.Compiler;
-using System.Security.Cryptography.X509Certificates;
-using Assignment_Tools;  // access Utilities.cs
-using StudyBank.FlashCards; // Namespace where FlashCard types live
-using StudyBank.Helpers;    // FlashCardLoader
-using StudyBank.Runner;     // FlashCardRunner.cs
+using System.IO;
+using Assignment_Tools;                  // Utilities
+using StudyBank.FlashCards;             // FlashCard base + children
+using StudyBank.Helpers;                // TopicLoader, Utilities
+using StudyBank.Runner;                 // FlashCardRunner
+
 
 namespace StudyBank
 {
@@ -12,94 +12,99 @@ namespace StudyBank
     {
         public static void Main(string[] args)
         {
-            while (true) // keeps us running until user exits
+            while (true)
             {
                 Console.Clear();
+                Console.WriteLine("-- StudyBank: GPT Flashcard Tutor --\n");
 
-                // High level menu
-                string choice = Utilities.DisplayMenu("Flashcard Study Bank", new[]
+                string choice = Utilities.DisplayMenu("Main Menu", new[]
                 {
-                    "Week 1 - Basics",
-                    "Week 2 - Conditionals",
-                    "Week 3 - Arrays & Loops",
-                    "Week 4 - Methods & CLasses",
-                    "Generate New Flashcards from C# Method",
+                    "Generate a Flashcard from a Topic",
+                    "Test Roslyn Flashcard",
                     "Exit"
                 });
 
-                // Routing logic based on user input
                 switch (choice)
                 {
                     case "1":
-                        LoadAndRunWeek("Week1.json", "Week 1 – Basics");
+                        GenerateFromCurriculum().Wait();
                         break;
                     case "2":
-                        LoadAndRunWeek("Week2.json", "Week 2 – Conditionals");
+                        TestRoslynFlashcard.Run();
                         break;
                     case "3":
-                        LoadAndRunWeek("Week3.json", "Week 3 – Arrays & Loops");
-                        break;
-                    case "4":
-                        LoadAndRunWeek("Week4.json", "Week 4 – Methods & Classes");
-                        break;
-                    case "G":
-                        GenerateCardFromMethod().Wait();
-                        break;
-                    case "E":
                         Console.WriteLine("Goodbye!");
                         return;
                     default:
-                        Console.WriteLine("Invalid choice. Try again.");
+                        Console.WriteLine("Invalid choice.");
                         Utilities.Pause();
                         break;
                 }
             }
         }
 
-        // Helper method: loads flashcard set from a file and starts the runner
-        private static void LoadAndRunWeek(string filename, string title)
-        {
-            string path = $"Weeks/{filename}"; // assumes relative path within project dir
-
-            var flashcards = FlashCardLoader.LoadFromFile(path);
-
-            if (flashcards.Count == 0)
-            {
-                Console.WriteLine("No flashcards found or failed to load.");
-                Utilities.Pause();
-                return;
-            }
-
-            FlashCardRunner.Run(flashcards, title);  // starts session with loaded cards
-        }
-
-        // Generates new flashcard from prompt
-        private static async Task GenerateCardFromMethod()
+        private static async Task GenerateFromCurriculum()
         {
             Console.Clear();
-            Console.WriteLine("-- Generate New Flashcard from Method --");
+            Console.WriteLine("-- Generate Flashcard from Topic --");
 
-            string method = Utilities.ReadNonEmptyString("Enter a C# method or topic to drill (e.g., Array.Sort): ");
+            // Select Program
+            var programs = TopicLoader.GetAllPrograms();
+            int pIndex = Utilities.GetIndexedChoice("Select a program", programs.Count);
+            if (pIndex > programs.Count) return;
+            string program = programs[pIndex - 1];
 
-            var card = await GPTTutor.GenerateFillInCardFromMethod(method);
+            // Select Module
+            var modules = TopicLoader.GetModules(program);
+            int mIndex = Utilities.GetIndexedChoice("Select a module", modules.Count);
+            if (mIndex > modules.Count) return;
+            string module = modules[mIndex - 1];
+
+            // Select Topic
+            var topics = TopicLoader.GetTopics(program, module);
+            int tIndex = Utilities.GetIndexedChoice("Select a topic", topics.Count);
+            if (tIndex > topics.Count) return;
+            string topic = topics[tIndex - 1];
+
+            // Generate card
+            Console.Clear();
+            Console.WriteLine($"Generating flashcard for:\n{program} → {module} → {topic}\n");
+
+            var card = await GPTTutor.GenerateFromTopic(program, module, topic);
 
             if (card == null)
             {
-                Console.WriteLine("\nGPT failed to generate a flashcard. Try a simpler method or reword it.");
+                Console.WriteLine("⚠️ GPT failed to generate a flashcard.");
                 Utilities.Pause();
                 return;
             }
 
-            Console.WriteLine("\nFlashcard Generated:");
-            card.Run();
+            Console.WriteLine("\n🧠 Flashcard:");
+            await card.Run();
 
-            if (Utilities.Confirm("Would you like to save this new card for future use?"))
+            if (Utilities.Confirm("Save this card to your StudyBank?"))
             {
-                SaveCardToWeek("Weeks/")
+                SaveCardToTopic(card, program, module, topic);
+                Console.WriteLine("✅ Card saved.");
             }
-            // Optional: Save to JSON here (Phase 2)
-            // AppendCardToWeek("WeekX.json", card);
+
+            Utilities.Pause();
         }
 
+        // Save flashcard to a categorized location
+        private static void SaveCardToTopic(FlashCard card, string program, string module, string topic)
+        {
+            string safeProgram = program.Replace(" ", "_");
+            string safeModule = module.Replace(" ", "_").Replace(":", "");
+            string safeTopic = topic.Replace(" ", "_").Replace(":", "");
+
+            string dir = Path.Combine("Truth", "StudyBankCards", safeProgram, safeModule);
+            Directory.CreateDirectory(dir);
+
+            string filePath = Path.Combine(dir, $"{safeTopic}.jsonl");
+
+            string json = System.Text.Json.JsonSerializer.Serialize(card);
+            Utilities.AppendTextFile(filePath, json);
+        }
     }
 }

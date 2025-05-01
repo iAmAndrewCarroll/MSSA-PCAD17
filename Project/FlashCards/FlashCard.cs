@@ -13,10 +13,10 @@ namespace StudyBank.FlashCards
         public string Prompt { get; set; }
 
         // Optional explanation, helpful wtih GPT
-        public string Explanation { get; set; }
+        public string? Explanation { get; set; }
 
         // Label to indicate card category or type
-        public string TypeLabel => this.GetType().Name;
+        public abstract string TypeLabel { get; }
 
         // Constructor
         protected FlashCard(string prompt)
@@ -26,6 +26,6 @@ namespace StudyBank.FlashCards
 
         // Abstract method to be implemented by each card type
         // Handles how the card is displayed and how the user interacts with it
-        public abstract void Run();
+        public abstract Task Run();
     }
 }

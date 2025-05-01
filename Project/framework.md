@@ -1,4 +1,176 @@
-﻿## **Recommended Project Workflow (Top-Down, Accurate, DRY)**
+﻿TARGET:
+USER → Topic Menu → Select Program > Module > Topic
+     → Calls GPTTutor.GenerateFromTopic(...)
+     → Validates JSON structure with CardValidator
+     → Creates DynamicFillInCard
+     → Runs card session
+     → Saves to file for topic
+
+✅ LOW-RESISTANCE NEXT STEPS
+
+    ✅ Replace week menu in Program.cs with topic selector
+
+    ✅ Add GenerateFromTopic(...) to GPTTutor.cs
+
+    ✅ Update CardValidator.cs to support MultipleChoiceCard
+
+    ✅ Write SaveCardToTopic(...) helper
+
+    ✅ Prompt GPT to match latest expected JSON format with "answers" array 
+
+
+
+
+
+
+
+    Perfect. With this clean file snapshot, I now have **100% accurate insight into your project directory** and can confidently guide you forward. Here's your **refined audit, aligned with the actual file system** — no assumptions, no drift.
+
+---
+
+## ✅ WHAT YOU HAVE — VERIFIED FILE SNAPSHOT
+
+### 🔷 Root Files (Entry + Docs)
+```
+Program.cs              # Main menu logic (Week-based for now)
+FlashCardRunner.cs      # Study session loop
+GPTTutor.cs             # GPT-3.5 API logic (needs topic support)
+framework.md            # Dev workflow doc
+Presentation.md         # Class map overview
+ProjectUpdate5-1-25.md  # Current architecture strategy
+PersistentIssues.md     # Bug tracker and history
+prompt.txt              # GPT input prompt template
+snippet_prompt.txt      # Snippet-only prompt (no explanations)
+whiteboard.md           # High-level roadmap
+```
+
+### 🔷 Core Class Logic
+```
+FlashCards/
+├── FlashCard.cs
+├── FillInCard.cs
+├── DynamicFillInCard.cs
+├── CodeTraceCard.cs
+├── ShortAnswerCard.cs
+├── MultipleChoiceCard.cs
+```
+
+### 🔷 Helpers
+```
+Helpers/
+├── FlashCardLoader.cs       # JSON file → card object
+├── CardValidator.cs         # Validates GPT card shape
+├── TopicLoader.cs           # Pulls from curriculum.json
+├── BlankGenerator.cs        # (Unused?)
+├── Utilities.cs             # DRY console utilities
+```
+
+### 🔷 GPT Test Harness (Isolated)
+```
+TestGPT/GPTTester/
+├── Program.cs               # Raw GPT test runner
+├── GPTTestRunner.cs         # Likely test orchestrator
+├── GPTTester.csproj
+```
+
+### 🔷 Canonical Curriculum Source
+```
+Truth/
+└── curriculum.json          # Program > Module > Topic tree
+```
+
+---
+
+## 🔍 WHAT YOU *DON’T* HAVE (YET) — MVP BLOCKERS
+
+| Feature | Missing or Incomplete | Required For |
+|--------|------------------------|--------------|
+| **Topic-driven generation** | ❌ `GenerateFromTopic(...)` not implemented in `GPTTutor.cs` | Curriculum-aligned dynamic flashcards |
+| **CLI topic selection** | ❌ No menu to choose Program → Module → Topic | Replaces hardcoded “Week 1–4” menu |
+| **Card saving** | ❌ `SaveCardToTopic(...)` not yet present | Storing validated cards for reuse |
+| **Proper `DynamicFillInCard` loader support** | ⚠️ Not confirmed in `FlashCardLoader.cs` | Deserializing cards from GPT |
+| **Roslyn-powered blanking** | ❌ Not started | Phase 2 snippet-to-flashcard transformation |
+| **MultipleChoiceCard GPT generation** | ❌ No prompt format, no generator method | Full support of flashcard types |
+
+---
+
+## 🧠 STRATEGIC RECOMMENDATION: PATH TO MVP
+
+You’re **1–2 days** away from locking down MVP if you follow this path:
+
+### ✅ 1. Replace Week Menu in `Program.cs`  
+Add a `SelectTopic()` function that uses:
+```csharp
+var program = TopicLoader.GetAllPrograms();
+var module = TopicLoader.GetModules(program);
+var topic = TopicLoader.GetTopics(program, module);
+```
+
+### ✅ 2. Add to `GPTTutor.cs`:
+```csharp
+public static async Task<DynamicFillInCard?> GenerateFromTopic(string program, string module, string topic)
+```
+Use this instead of `GenerateFillInCardFromMethod`.
+
+### ✅ 3. Add to `Program.cs`:
+```csharp
+private static void SaveCardToTopic(FlashCard card, string program, string module, string topic)
+```
+Save to:
+```
+Truth/StudyBankCards/{Program}/{Module}/{Topic}.json
+```
+
+### ✅ 4. Update `FlashCardLoader.cs`
+- Fix `GetOptinoal` typo
+- Support cards with `"answers"` array → create `DynamicFillInCard`
+- Add support for `MultipleChoiceCard` (if you’ll use it)
+
+---
+
+## ✅ READY TO PROCEED
+
+I can now deliver:
+
+- `SelectTopic()` menu code
+- `GenerateFromTopic(...)` GPT method
+- `SaveCardToTopic(...)` writer
+- `FlashCardLoader` patch for `"answers"` logic
+
+Would you like me to start with the topic-driven menu and GPT integration?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## **Recommended Project Workflow (Top-Down, Accurate, DRY)**
 
 ### 1. **Define the Control Flow and Entry Point**
 - Scaffold `Program.cs` to:

@@ -10,6 +10,8 @@ namespace StudyBank.FlashCards
         // The correct ansewr to match against user input
         public string Answer {  get; set; }
 
+        public override string TypeLabel => "Fill-in-the-Blank";
+
         // Constructor
         public FillInCard(string prompt, string answer) : base(prompt)
         {
@@ -17,7 +19,7 @@ namespace StudyBank.FlashCards
         }
 
         // Implements the Run method from the base class
-        public override void Run()
+        public override async Task Run()
         {
             Console.Clear();
             Console.WriteLine("-- Fill-in-the-Blank --");
@@ -44,6 +46,8 @@ namespace StudyBank.FlashCards
             }
 
             Utilities.Pause();
+
+            await Task.CompletedTask;
         }
     }
 }

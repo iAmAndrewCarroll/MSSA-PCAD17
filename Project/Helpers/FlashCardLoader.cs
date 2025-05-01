@@ -41,31 +41,49 @@ namespace StudyBank.Helpers
                             });
                             break;
 
-                        case "CodeTraceCard":
-                            flashcards.Add(new CodeTraceCard(
-                                element.GetProperty("prompt").GetString() ?? "",
-                                element.GetProperty("expectedOutput").GetString() ?? "",
-                                GetOptional(element, "explanation")
-                            ));
+                        case "DynamicFillInCard":
+                            var prompt = element.GetProperty("prompt").GetString() ?? "";
+                            var answersArray = element.GetProperty("answers").EnumerateArray();
+
+                            var labeledAnswers = new Dictionary<string, string>();
+                            int i = 1;
+                            foreach (var answer in answersArray)
+                            {
+                                labeledAnswers[$"___{i++}"] = answer.GetString() ?? "";
+                            }
+
+                            flashcards.Add(new DynamicFillInCard(prompt, labeledAnswers)
+                            {
+                                Explanation = GetOptional(element, "explanation")
+                            });
                             break;
 
-                        case "ShortAnswerCard":
-                            flashcards.Add(new ShortAnswerCard(
+                        case "MultipleChoiceCard":
+                            var options = new List<string>();
+                            foreach (var opt in element.GetProperty("options").EnumerateArray())
+                            {
+                                options.Add(opt.GetString() ?? "");
+                            }
+
+                            flashcards.Add(new MultipleChoiceCard(
                                 element.GetProperty("prompt").GetString() ?? "",
-                                GetOptional(element, "expected"),
-                                GetOptional(element, "explanation")
-                            ));
+                                element.GetProperty("correctAnswer").GetString() ?? "",
+                                options
+                            )
+                            {
+                                Explanation = GetOptional(element, "explanation")
+                            });
                             break;
 
                         default:
-                            Console.WriteLine($"Unknown card type: {type}");
+                            Console.WriteLine($"⚠️ Unknown card type: {type}");
                             break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading flashcards: {ex.Message}");
+                Console.WriteLine($"❌ Error loading flashcards: {ex.Message}");
             }
 
             return flashcards;
