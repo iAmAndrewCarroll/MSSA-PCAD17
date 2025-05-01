@@ -20,7 +20,7 @@ namespace StudyBank
                 string choice = Utilities.DisplayMenu("Main Menu", new[]
                 {
                     "Generate a Flashcard from a Topic",
-                    "Test Roslyn Flashcard",
+                    "Flashcard Session",
                     "Exit"
                 });
 
@@ -30,7 +30,7 @@ namespace StudyBank
                         GenerateFromCurriculum().Wait();
                         break;
                     case "2":
-                        TestRoslynFlashcard.Run();
+                        RoslynCardSession.Run();
                         break;
                     case "3":
                         Console.WriteLine("Goodbye!");

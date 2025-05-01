@@ -10,20 +10,33 @@ namespace StudyBank.Helpers
     public static class BlankGenerator
     {
         // Entry point: parse code and blank a set number of good tokens
-        public static (string blankedCode, Dictionary<string, string> labeledAnswers) CreateBlanks(string code, int numberOfBlanks = 2)
+        public static (string blankedCode, Dictionary<string, string> labeledAnswers) CreateBlanks(string code, int maxBlanks = 3)
         {
             var tree = CSharpSyntaxTree.ParseText(code);
             var root = tree.GetRoot();
 
+            // Find all good candidates
             var candidates = root.DescendantNodes()
                 .Where(n => n is IdentifierNameSyntax || n is LiteralExpressionSyntax)
                 .Where(IsGoodCandidate)
                 .Distinct()
                 .ToList();
 
+            // Adaptive blanking strategy
+            int maxBasedOnSize = candidates.Count switch
+            {
+                <= 5 => 1,
+                <= 10 => 2,
+                <= 20 => 3,
+                _ => 4
+            };
+
+            int blanksToUse = Math.Min(maxBlanks, maxBasedOnSize);
+
+            // Randomly select which to blank
             var selected = candidates
-                .OrderBy(_ => Guid.NewGuid())
-                .Take(numberOfBlanks)
+                .OrderBy(n => n.GetLocation().SourceSpan.Start) // order by appearance
+                .Take(blanksToUse)
                 .ToList();
 
             var replacements = new Dictionary<SyntaxNode, SyntaxNode>();

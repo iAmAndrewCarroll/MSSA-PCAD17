@@ -16,17 +16,9 @@ namespace StudyBank.Helpers
             var tree = CSharpSyntaxTree.ParseText(wrapped);
             var root = tree.GetRoot();
 
-            var method = root.DescendantNodes().OfType<MethodDeclarationSyntax>().FirstOrDefault();
-            if (method == null)
-                throw new Exception("No method declaration found.");
+            var (blankedCode, answers) = BlankGenerator.CreateBlanks(wrapped, maxBlanks: 3);
 
-            var rewriter = new BlankingRewriter();
-            var rewritten = rewriter.Visit(method);
-
-            string prompt = rewritten.ToFullString();
-            var labeledAnswers = rewriter.LabelToAnswerMap;
-
-            return new DynamicFillInCard(prompt, labeledAnswers);
+            return new DynamicFillInCard(blankedCode, answers);
         }
 
         private class BlankingRewriter : CSharpSyntaxRewriter
