@@ -6,17 +6,17 @@ USER → Topic Menu → Select Program > Module > Topic
      → Runs card session
      → Saves to file for topic
 
-✅ LOW-RESISTANCE NEXT STEPS
+LOW-RESISTANCE NEXT STEPS
 
-    ✅ Replace week menu in Program.cs with topic selector
+    Replace week menu in Program.cs with topic selector
 
-    ✅ Add GenerateFromTopic(...) to GPTTutor.cs
+    Add GenerateFromTopic(...) to GPTTutor.cs
 
-    ✅ Update CardValidator.cs to support MultipleChoiceCard
+    Update CardValidator.cs to support MultipleChoiceCard
 
-    ✅ Write SaveCardToTopic(...) helper
+    Write SaveCardToTopic(...) helper
 
-    ✅ Prompt GPT to match latest expected JSON format with "answers" array 
+    Prompt GPT to match latest expected JSON format with "answers" array 
 
 
 
@@ -28,9 +28,9 @@ USER → Topic Menu → Select Program > Module > Topic
 
 ---
 
-## ✅ WHAT YOU HAVE — VERIFIED FILE SNAPSHOT
+## VERIFIED FILE SNAPSHOT
 
-### 🔷 Root Files (Entry + Docs)
+### Root Files (Entry + Docs)
 ```
 Program.cs              # Main menu logic (Week-based for now)
 FlashCardRunner.cs      # Study session loop
@@ -44,7 +44,7 @@ snippet_prompt.txt      # Snippet-only prompt (no explanations)
 whiteboard.md           # High-level roadmap
 ```
 
-### 🔷 Core Class Logic
+### Core Class Logic
 ```
 FlashCards/
 ├── FlashCard.cs
@@ -55,7 +55,7 @@ FlashCards/
 ├── MultipleChoiceCard.cs
 ```
 
-### 🔷 Helpers
+### Helpers
 ```
 Helpers/
 ├── FlashCardLoader.cs       # JSON file → card object
@@ -65,7 +65,7 @@ Helpers/
 ├── Utilities.cs             # DRY console utilities
 ```
 
-### 🔷 GPT Test Harness (Isolated)
+### GPT Test Harness (Isolated)
 ```
 TestGPT/GPTTester/
 ├── Program.cs               # Raw GPT test runner
@@ -73,7 +73,7 @@ TestGPT/GPTTester/
 ├── GPTTester.csproj
 ```
 
-### 🔷 Canonical Curriculum Source
+### Canonical Curriculum Source
 ```
 Truth/
 └── curriculum.json          # Program > Module > Topic tree
@@ -81,24 +81,22 @@ Truth/
 
 ---
 
-## 🔍 WHAT YOU *DON’T* HAVE (YET) — MVP BLOCKERS
+##  MVP BLOCKERS
 
 | Feature | Missing or Incomplete | Required For |
 |--------|------------------------|--------------|
-| **Topic-driven generation** | ❌ `GenerateFromTopic(...)` not implemented in `GPTTutor.cs` | Curriculum-aligned dynamic flashcards |
-| **CLI topic selection** | ❌ No menu to choose Program → Module → Topic | Replaces hardcoded “Week 1–4” menu |
-| **Card saving** | ❌ `SaveCardToTopic(...)` not yet present | Storing validated cards for reuse |
-| **Proper `DynamicFillInCard` loader support** | ⚠️ Not confirmed in `FlashCardLoader.cs` | Deserializing cards from GPT |
-| **Roslyn-powered blanking** | ❌ Not started | Phase 2 snippet-to-flashcard transformation |
-| **MultipleChoiceCard GPT generation** | ❌ No prompt format, no generator method | Full support of flashcard types |
+| **Topic-driven generation** |  `GenerateFromTopic(...)` not implemented in `GPTTutor.cs` | Curriculum-aligned dynamic flashcards |
+| **CLI topic selection** |  No menu to choose Program → Module → Topic | Replaces hardcoded “Week 1–4” menu |
+| **Card saving** |  `SaveCardToTopic(...)` not yet present | Storing validated cards for reuse |
+| **Proper `DynamicFillInCard` loader support** | ⚠ Not confirmed in `FlashCardLoader.cs` | Deserializing cards from GPT |
+| **Roslyn-powered blanking** |  Not started | Phase 2 snippet-to-flashcard transformation |
+| **MultipleChoiceCard GPT generation** |  No prompt format, no generator method | Full support of flashcard types |
 
 ---
 
-## 🧠 STRATEGIC RECOMMENDATION: PATH TO MVP
+## PATH TO MVP
 
-You’re **1–2 days** away from locking down MVP if you follow this path:
-
-### ✅ 1. Replace Week Menu in `Program.cs`  
+### 1. Replace Week Menu in `Program.cs`  
 Add a `SelectTopic()` function that uses:
 ```csharp
 var program = TopicLoader.GetAllPrograms();
@@ -106,13 +104,13 @@ var module = TopicLoader.GetModules(program);
 var topic = TopicLoader.GetTopics(program, module);
 ```
 
-### ✅ 2. Add to `GPTTutor.cs`:
+### 2. Add to `GPTTutor.cs`:
 ```csharp
 public static async Task<DynamicFillInCard?> GenerateFromTopic(string program, string module, string topic)
 ```
 Use this instead of `GenerateFillInCardFromMethod`.
 
-### ✅ 3. Add to `Program.cs`:
+### 3. Add to `Program.cs`:
 ```csharp
 private static void SaveCardToTopic(FlashCard card, string program, string module, string topic)
 ```
@@ -121,25 +119,10 @@ Save to:
 Truth/StudyBankCards/{Program}/{Module}/{Topic}.json
 ```
 
-### ✅ 4. Update `FlashCardLoader.cs`
+### 4. Update `FlashCardLoader.cs`
 - Fix `GetOptinoal` typo
 - Support cards with `"answers"` array → create `DynamicFillInCard`
 - Add support for `MultipleChoiceCard` (if you’ll use it)
-
----
-
-## ✅ READY TO PROCEED
-
-I can now deliver:
-
-- `SelectTopic()` menu code
-- `GenerateFromTopic(...)` GPT method
-- `SaveCardToTopic(...)` writer
-- `FlashCardLoader` patch for `"answers"` logic
-
-Would you like me to start with the topic-driven menu and GPT integration?
-
-
 
 
 

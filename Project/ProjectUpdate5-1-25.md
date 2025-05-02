@@ -1,12 +1,6 @@
 ﻿PROJECT NAME: StudyBank – GPT-Powered Flashcard Tutor for MSSA
 
-This is a C# console application that has been evolving since its original version, which was built to reinforce key weekly topics from the Microsoft Software & Systems Academy (MSSA). It originally followed a Week1.json / Week2.json format with hardcoded flashcards grouped by week. 
-
-However, the project has since pivoted and expanded. Here is the full evolution and current state:
-
----
-
-## 🔁 Original Architecture:
+## Original Architecture:
 - One JSON file per week (`Weeks/Week1.json`, etc.)
 - FlashCard types: FillInCard, CodeTraceCard, ShortAnswerCard
 - Static flashcards manually created for each week
@@ -20,7 +14,7 @@ However, the project has since pivoted and expanded. Here is the full evolution 
 
 ---
 
-## 🔄 Key Pivot:
+## Key Pivot:
 The project is now migrating toward **dynamic generation of flashcards using OpenAI GPT-3.5 Turbo**, seeded by structured curriculum topics.
 
 The focus is no longer on manually curated `.json` files per week. Instead, we're now:
@@ -31,7 +25,7 @@ The focus is no longer on manually curated `.json` files per week. Instead, we'r
 
 ---
 
-## ✅ Key New Assets and Design Changes:
+## Key New Assets and Design Changes:
 
 ### 1. `curriculum.json`
 A **master dictionary** of all MSSA content areas, created from:
@@ -70,7 +64,7 @@ A lightweight GPT testing console app that:
 
 ---
 
-## 🧠 Key Learnings and Principles Adopted:
+## Key Learnings and Principles Adopted:
 - Prompt examples massively improve GPT format compliance
 - Structural validation is critical: `CardValidator.cs` was introduced to parse and check the shape of JSON
 - Curriculum-first design gives long-term scalability and dynamic topic targeting
@@ -79,7 +73,7 @@ A lightweight GPT testing console app that:
 
 ---
 
-## 🔜 Still in Progress:
+## Still in Progress:
 - Automatic topic-driven generation loop
 - Saving generated cards to topic-tagged JSON
 - Roslyn-powered blanking of snippets (vs GPT doing the blanking)
@@ -88,7 +82,7 @@ A lightweight GPT testing console app that:
 
 ---
 
-## ❗Instruction for ChatGPT:
+## Instruction for ChatGPT:
 Assume all of this history and structural evolution going forward.
 Do not revert to hardcoded week files.
 Keep flashcards JSON-based, GPT-generated, and validated.

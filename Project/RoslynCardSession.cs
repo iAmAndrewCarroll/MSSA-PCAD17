@@ -21,14 +21,14 @@ namespace StudyBank
         public static void Run()
         {
             Console.Clear();
-            Console.WriteLine("🧠 Roslyn Flashcard Session\n");
+            Console.WriteLine("Roslyn Flashcard Session\n");
 
             string projectRoot = Path.Combine(AppContext.BaseDirectory, "..", "..", "..");
             var methods = LoadAllMethods(projectRoot);
 
             if (methods.Count == 0)
             {
-                Console.WriteLine("❌ No usable methods found.");
+                Console.WriteLine("No usable methods found.");
                 Utilities.Pause();
                 return;
             }
@@ -50,19 +50,19 @@ namespace StudyBank
 
             if (cards.Count == 0)
             {
-                Console.WriteLine("❌ No flashcards could be generated.");
+                Console.WriteLine("No flashcards could be generated.");
                 Utilities.Pause();
                 return;
             }
 
-            Console.WriteLine($"✅ {cards.Count} flashcards generated.\n");
+            Console.WriteLine($"{cards.Count} flashcards generated.\n");
 
             int index = 0;
             while (index < cards.Count)
             {
                 cards[index++].Run().Wait();
 
-                if (!Utilities.Confirm("🔁 Try another flashcard?: "))
+                if (!Utilities.Confirm("Try another flashcard?: "))
                     break;
 
                 Console.Clear();

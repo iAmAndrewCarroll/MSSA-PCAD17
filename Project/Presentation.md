@@ -1,7 +1,5 @@
 ﻿# ✅ **C# Class Structure Overview — MVP Scope**
 
-This summary outlines your current and near-future core:
-
 | Area | Description |
 |------|-------------|
 | **Classes** | Primary models and interfaces |

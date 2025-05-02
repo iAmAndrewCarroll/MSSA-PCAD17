@@ -74,18 +74,18 @@ namespace StudyBank
 
             if (card == null)
             {
-                Console.WriteLine("⚠️ GPT failed to generate a flashcard.");
+                Console.WriteLine("GPT failed to generate a flashcard.");
                 Utilities.Pause();
                 return;
             }
 
-            Console.WriteLine("\n🧠 Flashcard:");
+            Console.WriteLine("\nFlashcard:");
             await card.Run();
 
             if (Utilities.Confirm("Save this card to your StudyBank?"))
             {
                 SaveCardToTopic(card, program, module, topic);
-                Console.WriteLine("✅ Card saved.");
+                Console.WriteLine("Card saved.");
             }
 
             Utilities.Pause();
