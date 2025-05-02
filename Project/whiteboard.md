@@ -1,28 +1,28 @@
-﻿# MSSA Final Project: C# Flashcard Tutor (Weeks 1–4)
+﻿# MSSA Final Project: C# Flashcard Tutor
 
 ## Problem Statement
 
-Students in the Microsoft Software & Systems Academy (MSSA) often struggle to retain and 
-    apply fundamental C# concepts taught in the initial weeks of the course. Traditional 
+Students in a new learning environment can struggle to retain and 
+    apply fundamental C# concepts taught in the initial weeks of a course. Traditional 
     study methods may not provide the repetitive practice and immediate feedback necessary 
     for mastery. There is a need for an interactive, scalable tool that reinforces key 
     programming patterns and prepares students for whiteboard interviews.
 
 ## Proposed Solution
 
-Develop a console-based C# flashcard application that covers Weeks 1–4 of the MSSA curriculum. 
+Develop a console-based C# flashcard application that covers topics relevant to the MSSA curriculum. 
 The application will present users with various types of flashcards, including fill-in-the-blank 
-syntax drills, code tracing exercises, and short-answer questions. Flashcard data will be stored 
+syntax drills and multiple choice. Flashcard data will be stored 
 in JSON format for flexibility and scalability. Integration with the GPT-3.5 API will provide 
 dynamic explanations and content generation, enhancing the learning experience.
 
 ## Project Objectives
 
-- Reinforce key C# concepts from Weeks 1–4 through interactive flashcards.
+- Reinforce key C# concepts via interactive flashcards.
 - Utilize JSON for modular and scalable flashcard data management.
 - Integrate GPT-3.5 for dynamic content generation and explanations.
 - Design a clean, maintainable, and extensible codebase adhering to DRY principles.
-- Prepare students for whiteboard interviews by simulating relevant questions.
+- Offer a new tool to help practice whiteboard interviews by simulating relevant questions.
 
 ## Project Structure
 
@@ -36,15 +36,16 @@ dynamic explanations and content generation, enhancing the learning experience.
 ├── /FlashCards
 │   ├── FlashCard.cs         // Base class for flashcards
 │   ├── FillInCard.cs        // Derived class for fill-in-the-blank cards
-│   ├── CodeTraceCard.cs     // Derived class for code tracing cards
-│   └── ShortAnswerCard.cs   // Derived class for short-answer cards
-├── /Weeks
-│   ├── Week1.json           // Flashcards for Week 1
-│   ├── Week2.json           // Flashcards for Week 2
-│   ├── Week3.json           // Flashcards for Week 3
-│   └── Week4.json           // Flashcards for Week 4
+│   ├── DynamicFillInCard.cs // Derived class for dynamic fill in cards
+│   └── MultipleChoiceCard.cs // Derived class for multiple choice cards
 └── /Helpers
+    ├── BlankGenerator.cs    // Generates blanks for fill-in-the-blank cards
+    ├── CardValidator.cs     // Validates fill-in-card
+    ├── CodeSnippetLoader.cs // Loads internal project code snippets to create fill-in-the-blank cards
     ├── FlashCardLoader.cs   // Loads flashcards from JSON
+    ├── RoslynBlanker  .cs   // Leverages Microsoft Code Analysis for C# Syntax
+    ├── FlashCardLoader.cs   // Loads flashcards from JSON
+    ├── TopicLoader.cs       // Creates a dictionary of curriculums
     └── Utilities.cs         // Common utility functions
 ```
 
