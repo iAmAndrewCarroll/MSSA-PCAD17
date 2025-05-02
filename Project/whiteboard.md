@@ -91,7 +91,3 @@ dynamic explanations and content generation, enhancing the learning experience.
 5. **Integrate GPT-3.5**: Set up `GPTTutor` to fetch explanations and generate dynamic content.
 6. **Populate Flashcards**: Create and test flashcards for Weeks 1–4, ensuring coverage of key concepts.
 7. **Testing and Documentation**: Conduct comprehensive testing and prepare user documentation.
-
----
-
-Feel free to use this markdown document as your project's whiteboard plan. If you need assistance with any specific implementation details or have further questions, don't hesitate to ask. 
