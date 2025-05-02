@@ -1,11 +1,6 @@
-﻿# Whiteboard Interview Framework – Assignment Template
+﻿# Whiteboard Interview Framework
 
-> Use this 6-step structure on every coding task to mimic technical interview best practices.
-> This will be applied to all future MSSA walkthroughs unless otherwise stated.
-
---------------------------------------------------------------------------------
-
-## ✅ Step 1: Repeat the Problem
+## Step 1: Repeat the Problem
 
 Restate the task in your own words to show understanding and clarify the objective.
 
@@ -15,7 +10,7 @@ Examples:
 
 --------------------------------------------------------------------------------
 
-## ✅ Step 2: Ask Clarifying Questions
+## Step 2: Ask Clarifying Questions
 
 List any assumptions, input types, edge conditions, and scope constraints.
 
@@ -30,7 +25,7 @@ Sample prompts:
 
 --------------------------------------------------------------------------------
 
-## ✅ Step 3: Work Through Examples by Hand
+## Step 3: Work Through Examples by Hand
 
 Do 1–2 quick test cases manually to ensure logic is sound.
 
@@ -43,7 +38,7 @@ Reverse Array:
 
 --------------------------------------------------------------------------------
 
-## ✅ Step 4: State Your Plan (Pseudocode)
+## Step 4: State Your Plan (Pseudocode)
 
 Describe how you will approach the problem step-by-step.
 
@@ -64,7 +59,7 @@ Print result
 
 --------------------------------------------------------------------------------
 
-## ✅ Step 5: Write the Code
+## Step 5: Write the Code
 
 Use clean, DRY, modular code with inline teaching comments.
 
@@ -76,7 +71,7 @@ Console.WriteLine($"Area of triangle: {area}");
 
 --------------------------------------------------------------------------------
 
-## ✅ Step 6: Test Edge Cases
+## Step 6: Test Edge Cases
 
 Document what edge conditions you tested.
 
@@ -89,7 +84,7 @@ Examples:
 
 --------------------------------------------------------------------------------
 
-## 🔁 Step 7 (Optional): Refactor or Optimize
+## Step 7 (Optional): Refactor or Optimize
 
 Ask:
 - Can you move repeated logic to Utilities.cs?
@@ -97,13 +92,3 @@ Ask:
 - Can the loop or menu be cleaned up?
 - Is there a more efficient data structure?
 
---------------------------------------------------------------------------------
-
-## 📎 Copy & Paste Usage
-
-This format can be pasted at the top of each PartX.cs file as a summary or planning comment.
-
-It will also help you:
-- Communicate your thinking clearly in interviews
-- Practice real-world technical planning
-- Keep your assignments DRY, readable, and reusable
