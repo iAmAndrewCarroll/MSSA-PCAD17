@@ -19,7 +19,7 @@ namespace StudyBank.FlashCards
         public override async Task Run()
         {
             Console.Clear();
-            Console.WriteLine("🧠 Fill in the blanks below:\n");
+            Console.WriteLine(" Fill in the blanks below:\n");
             Console.WriteLine(Prompt + "\n");
 
             var userAnswers = new Dictionary<string, string>();
@@ -38,26 +38,26 @@ namespace StudyBank.FlashCards
                 string input = userAnswers.GetValueOrDefault(label, "");
                 if (string.Equals(input, expected, StringComparison.OrdinalIgnoreCase))
                 {
-                    Console.WriteLine($"✅ {label} correct!");
+                    Console.WriteLine($" {label} correct!");
                     correct++;
                 }
                 else
                 {
-                    Console.WriteLine($"❌ {label} incorrect. Expected: {expected}");
+                    Console.WriteLine($" {label} incorrect. Expected: {expected}");
                 }
             }
 
-            Console.WriteLine($"\n🎯 You got {correct}/{LabeledAnswers.Count} correct.");
+            Console.WriteLine($"\n You got {correct}/{LabeledAnswers.Count} correct.");
 
             if (string.IsNullOrWhiteSpace(Explanation))
             {
                 Explanation = await GPTTutor.ExplainAnswerAsync("DynamicFillInCard", Prompt, string.Join(", ", LabeledAnswers.Values));
             }
 
-            Console.WriteLine("\n📘 Explanation:");
+            Console.WriteLine("\n Explanation:");
             Console.WriteLine(Explanation);
 
-            Utilities.Pause("\n🔁 Press ENTER to return to menu...");
+            Utilities.Pause("\n Press ENTER to return to menu...");
         }
     }
 }

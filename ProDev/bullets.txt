@@ -1,0 +1,92 @@
+ANDREW THOMAS CARROLL  
+Seattle, WA | athomascarroll@gmail.com | 406.559.7078  
+linkedin.com/in/iamandrewcarroll | github.com/iAmAndrewCarroll  
+
+=====================================================================
+PROFESSIONAL SUMMARY
+=====================================================================
+Entry-level cybersecurity engineer with high-impact training and certifications across cloud, network, and application security domains.  
+Graduate of Code Fellows’ Cybersecurity Engineering Bootcamp: hands-on experience with penetration testing, threat modeling, SIEM, and forensics.  
+CompTIA Security+, Network+, and ITF+ certified; strong scripting foundations in Python and PowerShell.  
+Background in technical leadership, operations, and process optimization with DoD compliance experience.  
+Currently completing MSSA Cloud App Development program (Azure, .NET, infrastructure fundamentals; ends August 1, 2025).
+
+=====================================================================
+EDUCATION & TECHNICAL TRAINING
+=====================================================================
+- Cybersecurity Engineering Bootcamp – Code Fellows (Mar 2024)  
+  Focus: SIEM (Splunk), threat modeling (STRIDE, MITRE ATT&CK), pen testing (Kali, Metasploit), cloud security basics, endpoint hardening  
+
+- Advanced Software Development in Python – Code Fellows (Aug 2023)  
+  Built automation tools, APIs, and clean Python codebases with industry-aligned practices  
+
+- Microsoft Software and Systems Academy (MSSA) – Cloud App Development Track (Ends Aug 1, 2025)  
+  Training in C#, Azure, .NET MAUI, backend services, infrastructure fundamentals, basic DevSecOps  
+
+- M.S. Management & Leadership – Western Governors University  
+- B.S. Economics – Montana State University  
+- A.A.S. Information Systems Management – Community College of the Air Force  
+
+=====================================================================
+CERTIFICATIONS
+=====================================================================
+- CompTIA Security+ (SY0-701) – Expires 2028  
+- CompTIA Network+ (N10-009) – Expires 2027  
+- CompTIA IT Fundamentals+ (ITF+)  
+- Definitive GRC Masterclass – TCM Security  
+- LinkedIn Learning:  
+  • Cybersecurity Fundamentals  
+  • Networking & Administration  
+  • Cybersecurity with Cloud Computing (Scored 85%)  
+
+=====================================================================
+TECHNICAL SKILLS
+=====================================================================
+- Security Tools: Wireshark, Splunk, Metasploit, Sysmon, Burp Suite, GuardDuty, CloudWatch  
+- Cloud Platforms: AWS (IAM, CloudTrail, GuardDuty), Azure (via MSSA training)  
+- Languages & Scripting: Python, PowerShell, Bash, C# (in progress)  
+- Frameworks & Concepts: MITRE ATT&CK, STRIDE, cyber kill chain, incident response  
+- Operating Systems: Windows, Linux, macOS  
+- Version Control: Git, GitHub  
+
+=====================================================================
+PROJECTS
+=====================================================================
+- AWS Logging & Monitoring  
+  Configured CloudTrail, GuardDuty, and CloudWatch for threat visibility and compliance alignment.  
+
+- Internal Penetration Test (Lab)  
+  Performed Kali-based simulated pentest. Identified misconfigured services, weak credentials, and escalated privileges.  
+
+- PCAP & Log Analysis  
+  Used Wireshark and Sysmon logs to reconstruct a simulated APT-style attack.  
+
+- CryptoBot (Python)  
+  Developed script for real-time crypto market monitoring with error handling and risk profiling.  
+
+- Military Postal Technology Transformation  
+  Led largest overseas DoD postal automation upgrade. Integrated barcode scanning, accountability workflows, and secure data tracking.
+
+=====================================================================
+PROFESSIONAL EXPERIENCE
+=====================================================================
+
+Director, Postal Operations – U.S. Air Force (2021–2023)  
+- Led transformation of secure military logistics infrastructure, improving mail security and tracking across multiple countries  
+- Enforced DoD/USPS regulatory compliance through operational audits and policy development  
+- Managed 100+ personnel, promoting discipline, accuracy, and operational resilience  
+
+Network Technician – Montana State University (2012–2014)  
+- Installed and maintained telecom infrastructure and endpoint support  
+- Provided secure, reliable campus-wide IT support across diverse technologies  
+
+Creative Director – Carroll Media Group (2014–Present)  
+- Built and maintained multimedia systems and workflows with attention to client data security  
+- Trained team members on version control and secure storage practices across platforms  
+
+=====================================================================
+ADDITIONAL
+=====================================================================
+- U.S. Air Force Veteran (Voice Network Systems, Postmaster, and Network Admin roles)  
+- Excellent communicator with instructional and leadership experience  
+- Strong foundational understanding of operational security, compliance, and cloud development pipelines

@@ -36,15 +36,16 @@ dynamic explanations and content generation, enhancing the learning experience.
 ├── /FlashCards
 │   ├── FlashCard.cs         // Base class for flashcards
 │   ├── FillInCard.cs        // Derived class for fill-in-the-blank cards
-│   ├── CodeTraceCard.cs     // Derived class for code tracing cards
-│   └── ShortAnswerCard.cs   // Derived class for short-answer cards
-├── /Weeks
-│   ├── Week1.json           // Flashcards for Week 1
-│   ├── Week2.json           // Flashcards for Week 2
-│   ├── Week3.json           // Flashcards for Week 3
-│   └── Week4.json           // Flashcards for Week 4
+│   ├── DynamicFillInCard.cs // Derived class for dynamic fill in cards
+│   └── MultipleChoiceCard.cs // Derived class for multiple choice cards
 └── /Helpers
+    ├── BlankGenerator.cs    // Generates blanks for fill-in-the-blank cards
+    ├── CardValidator.cs     // Validates fill-in-card
+    ├── CodeSnippetLoader.cs // Loads internal project code snippets to create fill-in-the-blank cards
     ├── FlashCardLoader.cs   // Loads flashcards from JSON
+    ├── RoslynBlanker  .cs   // Leverages Microsoft Code Analysis for C# Syntax
+    ├── FlashCardLoader.cs   // Loads flashcards from JSON
+    ├── TopicLoader.cs       // Creates a dictionary of curriculums
     └── Utilities.cs         // Common utility functions
 ```
 
@@ -91,7 +92,3 @@ dynamic explanations and content generation, enhancing the learning experience.
 5. **Integrate GPT-3.5**: Set up `GPTTutor` to fetch explanations and generate dynamic content.
 6. **Populate Flashcards**: Create and test flashcards for Weeks 1–4, ensuring coverage of key concepts.
 7. **Testing and Documentation**: Conduct comprehensive testing and prepare user documentation.
-
----
-
-Feel free to use this markdown document as your project's whiteboard plan. If you need assistance with any specific implementation details or have further questions, don't hesitate to ask. 

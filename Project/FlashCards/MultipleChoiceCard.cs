@@ -33,8 +33,8 @@ namespace StudyBank.FlashCards
             string selectedAnswer = Options.ElementAtOrDefault(selected - 1) ?? "";
 
             Console.WriteLine(selectedAnswer == CorrectAnswer
-                ? "✅ Correct!"
-                : $"❌ Incorrect. Answer: {CorrectAnswer}");
+                ? "Correct!"
+                : $"Incorrect. Answer: {CorrectAnswer}");
 
             if (!string.IsNullOrWhiteSpace(Explanation))
                 Console.WriteLine($"\nExplanation: {Explanation}");

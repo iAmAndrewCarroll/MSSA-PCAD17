@@ -12,7 +12,7 @@ namespace StudyBank.Helpers
     {
         public static DynamicFillInCard GenerateDynamicCardFromMethod(string methodCode)
         {
-            string wrapped = $"class Dummy {{ {methodCode} }}";
+            string wrapped = $"class Practice {{ {methodCode} }}";
             var tree = CSharpSyntaxTree.ParseText(wrapped);
             var root = tree.GetRoot();
 
