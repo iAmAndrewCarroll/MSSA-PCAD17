@@ -26,7 +26,7 @@
 
 using System;
 
-static bool IsPalindrome(int x)
+bool IsPalindrome(int x)
 {
     if (x < 0)
         return false;
@@ -139,90 +139,86 @@ Console.WriteLine(Duplicate(array2));
 Console.WriteLine();
 
 /*
- *  5.2.1
+ *  5.3.1
  *  
  *  Clarify the Problem:
- *  1. Given a string s consisting of words and spaces, return the length of 
- *  the last word in the string. A word is a maximal substring consisting of 
- *  non-space characters only.
+ *  1. You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers 
+ *  cannot be planted in adjacent plots. Given an integer array flowerbed containing 0's and 1's, where 0 
+ *  means empty and 1 means not empty, and an integer n, return true if n new flowers can be planted in the 
+ *  flowerbed without violating the no-adjacent-flowers rule and false otherwise.
+ *  
  *  Example 1:
- *  Input: s = "Hello World"
- *  Output: 5
- *  Explanation: The last word is "World" with length 5.
+ *  Input: flowerbed = [1,0,0,0,1], n = 1
+ *  Output: true
  *  
  *  Example 2:
- *  Input: s = " fly me to the moon "
- *  Output: 4
- *  Explanation: The last word is "moon" with length 4.
+ *  Input: flowerbed = [1,0,0,0,1], n = 2
+ *  Output: false
  *  
  *  Step Through
- *  - Begin traversing from the end
- *  - If it begins with a space continue until it hits a character
- *  - Begin adding characters and incrementing the count
- *  - Stop when hit the next space or end
+ *  - I have a 1D array of flower beds. --> bool function array
+ *  - Some are planted and some are not. --> assign value
+ *  - int i array flowerbed containing empty (0) and not empty (1)
+ *  - given an integer, n : new flowers to be planted 
+ *  - rule : no-adjacent-flowers
+ *  - return : true n new flowers can be planted in the flowerbed w/o violating the rule [1, 0, 0, 0, 1] n=1 --> [1, 0, 1, 0, 1]
+ *    - or : false [1, 1, 0, 0, 1] 
  *  
  *  Pseudo Code
- *  func getLastWord(s, index, counter, word):
- *      if index < 0: return reverse(word), counter
+ *  bool FlowerPlant(int[] flowerbed, int n)
+ *  {
+ *      for (int i = 0; i < flowerbed.Length; i++)
+ *      {
+ *          if (flowerbed[i] == 0)
+ *          {
+ *              // check left neighbor
+ *              bool leftEmpty = (i == 0) || (flowerbed[i - 1] == 0);
+ *              
+ *              //check right neighbor
+ *              bool rightEmpty = (i == flowerbed.Length - 1) || (flowerbed[i + 1] == 0);
+ *              
+ *              if (leftEmpty && rightEmpty
+ *              {
+ *                  flowerbed[i] = 1; // Plant the flower
+ *                  n--; // decrement n (flowers to be planted)
+ *                  
+ *                  if (n == 0)
+ *                  {
+ *                      return true; 
+ *                  }
+ *              }
+ *          }
+ *      }
  *      
- *      currentChar = s[index]
- *      
- *      if currentChar == ' ' and counter == 0:
- *          // Trailing space, haven't started a word
- *          return getLastWord(s, index - 1, counter, word)
- *          
- *      else if currentChar != ' ':
-     *      // build the word
-     *      append currentChar to word
-     *      increment counter
-     *      return getLastWord(s, index - 1, counter, word)
- *      
- *      else if currentChar == ' ' and counter > 0:
- *          // finished the word
- *          return reverse(word), counter
- *          
- * func PrintLastWord(s):
- *      word, length = getLastWord(s, s.length - 1, 0, empty string)
- *      print "The last word is", word, "with length", length
+ *      return n <= 0;
+ *  }
  *      
  */
 
-static (string, int) getLastWord(string s, int index, int counter, string word)
-{
-    if (index < 0)
-    {
-        char[] chars = word.ToCharArray();
-        Array.Reverse(chars);
-        return (new string(chars), counter);
-    }
 
-    char currentChar = s[index];
 
-    if (currentChar == ' ' && counter == 0)
-    {
-        return getLastWord(s, index - 1, counter, word);
-    }
-    else if (currentChar != ' ')
-    {
-        word += currentChar;
-        counter++;
-        return getLastWord(s, index - 1, counter, word);
-    }
-    else
-    {
-        char[] chars = word.ToCharArray();
-        Array.Reverse(chars);
-        return (new string(chars), counter);
-    }
-}
-static string PrintLastWord(string s)
+static bool FlowerPlant(int[] flowerbed, int n)
 {
-    var result = getLastWord(s, s.Length - 1, 0, "");
-    Console.WriteLine($"The last word is {result.Item1} and it is {result.Item2} letters long.");
-    return s;
-    //Console.WriteLine();
+    for (int i = 0; i < flowerbed.Length; i++)
+    {
+        bool leftEmpty = (i == 0) || (flowerbed[i - 1] == 0);
+
+        bool rightEmpty = (i == flowerbed.Length - 1) || (flowerbed[i + 1] == 0);
+
+        if (leftEmpty && rightEmpty)
+        {
+            flowerbed[i] = 1;
+            n--;
+
+            if (n == 0)
+            {
+                return true;
+            }
+        }
+    }
+    
+    return n <= 0;
 }
-Console.WriteLine("What is the last word and how long is it?");
-Console.WriteLine(" fly me to the moon ");
-PrintLastWord(" fly me to the moon ");
-Console.ReadKey();
+
+Console.WriteLine("Flowerbed");
+FlowerPlant((1, 0, 0, 0, 1), 1);

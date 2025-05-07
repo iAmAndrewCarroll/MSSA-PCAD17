@@ -343,3 +343,119 @@ String
 
 StringBuilder Class
 - more efficient memory use
+
+
+# Characteristics and Properties of Algorithms
+- Clear and Unambiguous
+- Well-Defined Input
+- Well-Defined Output
+- Finiteness
+- Feasible
+- Language Independent
+
+Abstract data type ADT: abstract idea
+
+Stack: LIFO, push, pop, peek
+
+Implement Stack (ADT): data structure
+
+Algorithms:
+1. Set of instructions
+2. blue print
+3. finite amount
+4. computational procedure
+5. predict performance
+6. Time and space
+
+Analysis:
+1. How much time?
+2. How much memory?
+
+1. Experimental analysis
+   - Timer function is used to actually measure time
+   - Varied input
+   - Easy
+
+2. Theoretical analysis (based on Math)
+   - performed on description
+	- independent of s/w and h/w
+
+Primitive Operations:
+- Declarations : int n
+- Assignment : n=4
+- Arithmetic
+- Comparison
+- Accessing element
+- Calling function
+- Returning function
+
+Example1 :
+int total = 0;
+int i = 1;
+while(i<=n)
+{
+	total = total + i;
+	i++;
+}
+
+Calculate Time Complexity: 
+Declarations (int total & int i): 2 +
+Assignment (=0 & = 1): 2 +
+Arithmetic : n + 1 +
+Comparison: n +
+Accessing Element: n +
+Calling Function: 
+Returning Function: 
+What's the math: 2 + 2 + (n+1) + n + n == 5 + 3n ==> n --> linear change
+
+Example2:
+int total = 0;
+for(int i=0; i<n; i++)
+{
+	for(int j=0; j<m; j++)
+	{
+		total=total+A[i,j];
+	}
+}
+
+Calculate Time Complexity:
+Declarations: 1 + 1 + n
+Assignments: 1 + 1 + n
+Comparison: (n+1) + n*(m+1) --> n+1 + nsq + n
+Accessing: n * m --> nsq
+Incrememnt: (n+1) + n*(m+1) --> n+1 + nsq + n
+Arithmetic: n*m --> nsq
+What's the math: 6 + 6n + 4nsq -->6 + 60 + 4*nsq --> nsq --> Big O Notation: O(n)
+
+Time Complexity:
+
+Space Complexity:
+
+Algorithms --> Design:
+- Brute-force : 
+  - simplest algo ; uses exhaustion method to find solution
+  - keeps using the input until the correct solution is found
+- Recursive
+- Backtracking
+- Searching & Sorting
+- Greedy Method
+- Hashing Method
+- Dynamic Programming Method
+
+Sorting Algo:
+- Rearrange arrays of elements in a particular order
+
+Hashing Algo:
+- Uses a hash function to map arbitrary data to tabular indexes
+- data in hash table is stored using the key-value pairs
+
+Divide & Conquer (DAC) Algorithm:
+- is a strategy for solving a large problem.  It has three steps:
+- Divide: Breaking up a large problem into smaller, solvable subproblems
+- Conquer: Solving, or "conquering" each subproblem
+
+# More Recursion
+
+# LEET CODE Problems
+- 455 : Greedy Algorithm; Assign a cookie
+  - the goal of a Greedy Algo is maximizing "profit", or cookies, or satisfaction
