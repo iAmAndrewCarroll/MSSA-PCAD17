@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-class Program
+internal class Program
 {
     // Big O Notation : Consider the nested loops
 
@@ -82,10 +82,16 @@ class Program
         Console.WriteLine("Fib by Recursion");
 
         Console.WriteLine("\n");
-        Console.WriteLine("Flowerbeds");
+        Console.WriteLine("5.3.1 - Flowerbeds");
         FlowerPlant([1, 0, 0, 0, 1], 1);
         FlowerPlant([0, 1, 0, 1, 0], 1);
-        
+
+        Console.WriteLine("\n");
+        Console.WriteLine("5.3.2 - The Solution to the Stairs");
+        int result1 = ClimbStairs(5);
+        Console.WriteLine($"There are {result1} ways to climb 5 stairs.");
+        int result2 = ClimbStairs(8);
+        Console.WriteLine($"There are {result2} ways to climb 8 stairs.");
         Console.ReadKey();
     }
 
@@ -181,4 +187,89 @@ class Program
             return false;
         }
     }
+
+
+    /*
+     *  5.3.2
+     *  
+     *  Clarify the Problem:
+     *  2. You are climbing a staircase. It takes n steps to reach the top.
+     *  Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+     *  
+     *  
+     *  Example 1:
+     *  Input: n = 2 
+     *  Output: 2
+     *  Explanation: There are two ways to climb to the top.
+     *  1. 1 step + 1 step
+     *  2. 2 steps
+     *  
+     *  Example 2:
+     *  Input: n = 3
+     *  Output: 3
+     *  Explanation: There are three ways to climb to the top.
+     *  1. 1 step + 1 step + 1 step
+     *  2. 1 step + 2 steps
+     *  3. 2 steps + 1 step
+     *  
+     *  Step Through
+     *  - I need to get to step n
+     *  - I can get to n by : taking one step from n - 1 OR taking 2 steps from n - 2
+     *  - Total ways to reach step n : All ways to reach step n - 1 and step n - 2
+     *  - ways(n) = ways(n - 1) + ways(n - 2)
+     *  - ways(4) = ways(3) + ways(2) --> ways(3) = ways(2) + ways(1) --> ways(2) = ways(1) + ways(0)
+     *  - define ways(1) = 1 (one way to take a single step)
+     *  - define ways(0) = 1 (one way to do ntohing / start at the bottom)
+     *  - build upward : 
+     *      - ways(2) = 1 (from step 1) + 1 (from step 0) = 2
+     *      - ways(3) = 2 (from step 2) + 1 (from step 1) = 3
+     *      - ways(4) = 3 (from step 3) + 2 (from step 2) = 5
+     *  - Solved = 5 ways to climb 4 stairs
+     *  
+     *  Pseudo Code
+     *    - a function for ClimbStairs(int n)
+     *  {
+     *      n = 1 check returns 1;
+     *      n = 2 check returns 2;
+     *      
+     *      int first = 1; // this is ways(1)
+     *      int second = 2; // this is ways(2)
+     *      
+     *      // loop through possibilities
+     *      for (int i = 3; i <= n; i++)
+     *      {
+     *          int third = first + second;
+     *          first = second;
+     *          second = third;
+     *      }
+     *      
+     *      return second; // because second is the cumulative ways() variable
+     *  }
+     *  
+     *  Big O Notation: O(n) for iteration
+     *  Constant space: Only tracks 2-3 variables
+     *  
+     */
+
+    static int ClimbStairs(int n)
+    {
+        // define base cases : the "known" answers
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+
+        // initialize variables
+        int first = 1;
+        int second = 2;
+
+        // start with i = 3 because i = 1 & 2 are known
+        for (int i = 3; i <= n; i++)
+        {
+            int third = first + second;
+            first = second;
+            second = third;
+        }
+
+        return second;
+    }
 }
+

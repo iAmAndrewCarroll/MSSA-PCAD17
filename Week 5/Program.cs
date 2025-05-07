@@ -26,40 +26,40 @@
 
 using System;
 
-bool IsPalindrome(int x)
-{
-    if (x < 0)
-        return false;
+//bool IsPalindrome(int x)
+//{
+//    if (x < 0)
+//        return false;
 
-    if (x != 0 && x % 10 == 0)
-        return false; // 10 and 100 are not palindromes
+//    if (x != 0 && x % 10 == 0)
+//        return false; // 10 and 100 are not palindromes
 
-    // calculate divisor
-    int div = 1;
-    while (x / div >= 10)
-    {
-        div *= 10;
-    }
+//    // calculate divisor
+//    int div = 1;
+//    while (x / div >= 10)
+//    {
+//        div *= 10;
+//    }
 
-    while (x != 0)
-    {
-        int left = x / div;
-        int right = x % 10;
+//    while (x != 0)
+//    {
+//        int left = x / div;
+//        int right = x % 10;
 
-        if (left != right)
-            return false;
+//        if (left != right)
+//            return false;
 
-        // Get left & right digits
-        x = (x % div) / 10;
-        div /= 100;
-    }
+//        // Get left & right digits
+//        x = (x % div) / 10;
+//        div /= 100;
+//    }
 
-    return true;
-}
-Console.WriteLine("5.1.1");
-Console.WriteLine(IsPalindrome(12321));
-Console.WriteLine(IsPalindrome(-12321));
-Console.WriteLine();
+//    return true;
+//}
+//Console.WriteLine("5.1.1");
+//Console.WriteLine(IsPalindrome(12321));
+//Console.WriteLine(IsPalindrome(-12321));
+//Console.WriteLine();
 
 /*
  * Clarify the Problem:
@@ -81,22 +81,22 @@ Console.WriteLine();
  * 
  * */
 
-static int SumDigits(int x)
-{
-    int sum = 0;
+//static int SumDigits(int x)
+//{
+//    int sum = 0;
 
-    while (x > 0)
-    {
-        int digit = x % 10; // get last digit
-        sum += digit;       // add to sum
-        x /= 10;            // remove last digit
-    }
+//    while (x > 0)
+//    {
+//        int digit = x % 10; // get last digit
+//        sum += digit;       // add to sum
+//        x /= 10;            // remove last digit
+//    }
 
-    return sum;
-}
-Console.WriteLine("5.1.2");
-Console.WriteLine(SumDigits(12345));
-Console.WriteLine();
+//    return sum;
+//}
+//Console.WriteLine("5.1.2");
+//Console.WriteLine(SumDigits(12345));
+//Console.WriteLine();
 
 /* 
  * 5.1.3
@@ -117,26 +117,26 @@ Console.WriteLine();
  * 
  */
 
-static bool Duplicate(int[] nums)
-{
-    HashSet<int> seen = new HashSet<int>();
+//static bool Duplicate(int[] nums)
+//{
+//    HashSet<int> seen = new HashSet<int>();
 
-    foreach (int num in nums)
-    {
-        if (seen.Contains(num))
-            return true;
+//    foreach (int num in nums)
+//    {
+//        if (seen.Contains(num))
+//            return true;
 
-        seen.Add(num);
-    }
+//        seen.Add(num);
+//    }
 
-    return false;
-}
-int[] array1 = [1, 2, 3, 1, 4, 5, 6];
-int[] array2 = [1, 2, 3, 4, 5];
-Console.WriteLine("5.1.3");
-Console.WriteLine(Duplicate(array1));
-Console.WriteLine(Duplicate(array2));
-Console.WriteLine();
+//    return false;
+//}
+//int[] array1 = [1, 2, 3, 1, 4, 5, 6];
+//int[] array2 = [1, 2, 3, 4, 5];
+//Console.WriteLine("5.1.3");
+//Console.WriteLine(Duplicate(array1));
+//Console.WriteLine(Duplicate(array2));
+//Console.WriteLine();
 
 /*
  *  5.3.1
@@ -205,20 +205,29 @@ static bool FlowerPlant(int[] flowerbed, int n)
 
         bool rightEmpty = (i == flowerbed.Length - 1) || (flowerbed[i + 1] == 0);
 
-        if (leftEmpty && rightEmpty)
+        if (flowerbed[i] == 0 && leftEmpty && rightEmpty)
         {
+            Console.WriteLine(n);
             flowerbed[i] = 1;
             n--;
+            Console.WriteLine(n);
 
             if (n == 0)
             {
+                Console.WriteLine("PLANTED!");
                 return true;
             }
         }
     }
-    
-    return n <= 0;
-}
 
-Console.WriteLine("Flowerbed");
-FlowerPlant((1, 0, 0, 0, 1), 1);
+    if (n <= 0)
+    {
+        Console.WriteLine("PLANTED!");
+        return true;
+    }
+    else
+    {
+        Console.WriteLine("NOT PLANTED!");
+        return false;
+    }
+}
