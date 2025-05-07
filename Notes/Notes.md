@@ -91,3 +91,255 @@ namespace Mod1Demo1
   - terminates a loop or switch statement prematurely
   - does not have a condition evaluated to determine when to terminate the loop or switch statement
 
+
+# Whiteboarding
+
+## Example 5.1.1 - Palindrome Integer:
+
+psuedo code : english like statements + syntax
+
+problem: input 121 ; reverse 121
+
+What we will use:
+temp = 0
+using / %
+
+code outline:
+```
+bool IsIntPalindrome(int target)
+{
+	int reverse = 0  // initialization of reverse
+	int temp = target  // temp will initialize as 121
+
+	while (temp > 0)
+		reverse = reverse*10 + temp % 10 // this gives the last number in the input: 121 % 10 = 12 remainder 1 --> 1
+		temp = temp / 10 // this drops the the last number: 121 --> 12
+	end while
+
+	return reverse == target
+}
+```
+
+In class code example:
+```
+static void Main(string[] args)
+{
+	HashSet<int> set = new HashSet<int>();  // returns when an element is added, false if element is present (duplicate)
+	set.Add(1);
+
+	IsIntPalindrome(122); // evaluates to false (not palindrome)
+}
+
+// 5.1.3
+// { 1, 2, 2, 3, 3, 4 }
+// Dictionary: 1-1, 2-2, 3-2, 4-1 ; this is a Key and Value Pair
+static bool ContainsDuplicates(int[] nums)
+{
+	Dictionary<int,int> numset = new Dictionary<int,int>(); // Not the right data structure b/c would not use the 'value'
+	HashSet<int>set = new HashSet<int>(); // use the HashSet b/c we don't need the (TKey, value) used by a Dictionary
+	foreach(int num in nums)
+	{
+		if(set.Contains(num))return true; // is the number there?
+		else set.Add(num);
+	}
+	return false; // no duplicates found
+}
+
+static bool IsIntPalindrome(int target)
+{
+	int reverse = 0;
+	int tempt = target;
+	while(temp>0)
+	{
+		reverse = reverse*10 + temp % 10;
+		temp /= 10;
+	}
+	return reverse == target;
+
+	// 5.1.2
+	int sum = 0;
+	while(target<0)
+	{
+		sum = sum + target % 10;
+		target /= 10;
+	}
+}
+```
+
+## Example 5.1.2
+Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+Test Data :
+Enter a number: 1234
+Expected Output :
+The sum of the digits of the number 1234 is : 10
+
+## Example 5.1.3
+3. Given an integer array nums, return true if any value appears at least 
+   twice in the array, and return false if every element is distinct.
+Example 1:
+Input: nums = [1,2,3,1]
+Output: true
+Example 2:
+Input: nums = [1,2,3,4]
+Output: false
+Example 3:
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+
+# Begin Assignment 5.2 Notes - Basic Concepts of Data Structures
+
+Stack is value
+Heap is reference
+
+CRUD Operation: 
+Create
+Read
+Update
+Delete
+
+Data: is any information
+
+Data Structure: is a way / method to store the information
+- linear list, stack, Q, tree, graph
+
+Algorithm: process to solve problems
+
+Classification of Data Structures
+| Primitive Data Structures | Non-Primitive Data Structures |
+| Integer | Linear Data: Arrays (static), {Linked List, Stacks, Queues} (dynamic) |
+| Real | Non-Linear Data Structures: Trees & Hash tables (maybe hash tables) |
+
+# Topic - Recursion
+
+Recursion: a technique to solve repetition logic by calling the function itself
+
+Direct Recursion
+
+Indirect Recursion
+- Func A is calling B --> B is calling A : there is some exit criteria to come out of the loop
+
+Iteration:
+- Can terminate when the iterative condition becomes false
+- Works on loop
+- Memory requirement is less
+- Iterative problem may or may not be solved using recursion
+- The code complexity is high (more lines of code)
+
+Recursion
+- Terminates when the base condition is true
+- Works on function
+- Memory requirement is more
+- Every Recursive problem can be solved iteratively
+- The code complexity is less (less lines of code)
+
+Func A()
+{
+	A(); // function calls itself infinitely
+}
+
+memory use of recursion
+| stack |  |
+| Func A() |  | <-- continues to stack until mem is full; Recursion calls the function itself; We must END the loop intentionally
+
+
+
+Thinking about it:
+Main()
+{
+	Add()
+	Product()
+}
+
+memory use of a normal function
+| stack | heap |
+| Main() |  |  <-- Main remains on the stack
+| local variables |  | <-- 
+| Add() |  |  <-- Add() pops out of the stack 
+| Product() |  | <-- Product() pops in
+
+# 5.2 Example - Pseudo Code
+func PrintSquares(n)
+	if(n > 0)  // base condition / exit condition
+		print(n*n)
+		PrintSquares(n-1)
+	end if
+
+PrintSquare(4)
+1. n=4 : fun(4) --> print 16, fun(3) --> on STACK memory `fun(4)`
+2. n=3 : fun(3) --> print 9, fun(2) --> on STACK memory `fun(3)`
+3. n=2 : fun(2) --> print 4, fun(1) --> on STACK memory `fun(2)`
+4. n=1 : fun(1) --> print 1, fun(0) --> on STACK memory `fun(1)`
+1. n=0 : fun(0) --> condition becomes false, func returns
+
+# Note: Practice factorials (common interview question topic)
+
+
+# Array
+Stores uinform data type elements
+Is a linear data structure
+Can be used when storing several values in a single variable
+Stores elements in contiguous memory locations
+Has a fixed size, which means that once an array is created or initilialized
+
+Example: int[] arr = { 1, 22, 3, 4, 52, 6, 7 }
+
+Array Elements begin at 0
+
+Key Operations on an Array:
+Traversal
+Insertion
+Deletion
+Searchin
+Update
+Copying
+Reversing
+Sorting
+
+Applications of Arrays:
+Storing & Accessing Data
+Sorting
+Searching
+Matrices
+Stacks & Queues
+
+
+Types of Arrays:
+One Dimensional
+Two Dimensional
+Multi Dimensional
+Jagged (rows do not have same number of columns; can be called an Array of Arrays)
+
+Array Advantages:
+- 1D array elements can easily be accessed by using the index number, so if you know the index number,
+  the retrieval time of the array is O(1).
+- Searching can be applied to arrays ver easily.
+- 2-D arrays are used ot represent matrices.
+- Arrays allocate memory in contiguous memory locations for all its elements
+
+Array Disadvantages:
+- You need to know the number of elements at the time of the creation of the array
+- An array stores the elements in a contiguous memory location
+
+# List / Linked List
+- uses nodes, not elements
+- Must traverse the entire list: 
+  - Node 1 [data type : some value] --> Node 2 [data type : some value] --> Node 3 [data type : null]
+
+Single Linked List --> Traverse one way
+Double Linked List --> Traverse both directions
+
+Queues --> Simple or Linear, Circular, Priority & Double Ended Queue (or Dequeu)
+
+
+# String and StringBuilder
+
+String
+- a built-in data type that represents a sequence of characters
+- mutable
+- has various string manipulation methods
+  - Substring()
+  - Concat()
+  - missed the last one
+
+StringBuilder Class
+- more efficient memory use
