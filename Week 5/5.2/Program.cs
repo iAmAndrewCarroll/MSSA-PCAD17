@@ -11,6 +11,26 @@
         Console.WriteLine("\n");
         Console.WriteLine("5.2.3 - Print Numbers 1 through n");
         PrintNumbers(10);
+        Console.WriteLine("\n");
+
+        //string input = "RADAR";
+        //int start = 0;
+        //int end = input.Length - 1;
+        //Console.WriteLine("5.2.4 - Palindrome Recursion");
+        //Console.WriteLine($"Input string: {input}");
+        //PalindromeRecursion(input, start, end);
+        string input = "HELLO";
+        int start = 0;
+        int end = input.Length - 1;
+        Console.WriteLine($"Input string: {input}");
+        PalindromeRecursion(input, start, end);
+        Console.WriteLine();
+        string input1 = "LEVEL";
+        int start1 = 0;
+        int end1 = input.Length - 1;
+        Console.WriteLine($"Input string: {input1}");
+        PalindromeRecursion(input1, start1, end1);
+
         Console.ReadKey();
     }
 /*
@@ -206,8 +226,15 @@
     {
         if (start >= end)
         {
+            Console.WriteLine("Palindrome.");
+            return;
+        }
+        if (s[start] != s[end])
+        {
+            Console.WriteLine("Not a Palindrome.");
             return;
         }
 
+        PalindromeRecursion(s, start + 1, end - 1);
     }
 }
