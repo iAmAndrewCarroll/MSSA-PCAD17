@@ -13,10 +13,10 @@
         PrintNumbers(10);
         Console.WriteLine("\n");
 
+        Console.WriteLine("5.2.4 - Palindrome Recursion");
         //string input = "RADAR";
         //int start = 0;
         //int end = input.Length - 1;
-        //Console.WriteLine("5.2.4 - Palindrome Recursion");
         //Console.WriteLine($"Input string: {input}");
         //PalindromeRecursion(input, start, end);
         string input = "HELLO";
