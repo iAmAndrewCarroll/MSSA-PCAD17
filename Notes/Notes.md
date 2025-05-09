@@ -459,3 +459,143 @@ Divide & Conquer (DAC) Algorithm:
 # LEET CODE Problems
 - 455 : Greedy Algorithm; Assign a cookie
   - the goal of a Greedy Algo is maximizing "profit", or cookies, or satisfaction
+
+
+# Searching Algorithms
+- Linear : simple algo designed to search from a list : ->->->->->->
+  - Works with the unsorted data
+  - has time complexity of O(N)
+  - Can be applied to different types of data structures
+
+Identify the element that must be found in the list
+Starting with the first elemen
+
+Pseudo Code
+procedure LinearSearch(array, value)
+foreach item in an array
+if item -- value
+return the item's index
+end if
+end foreach
+	return - 1
+end procedure
+
+Improving Linear Search:
+Transposition : modify entire array ; frequently searched items at the front, less searched towards the back
+Move to Front : move single data point towards front of array since the search looks for that specific data often
+Hash Tables : 
+
+- Binary : 
+	- Fast search algorithm
+	- Uses divide and conquer approach
+	- Works with sorted list
+
+Searching for int 10
+- initialize left = 0, right = length - 1, mid = 0
+	- if left <= right do steps 2 - 5 (for each process as appropriate)
+- mid = (left + right)/2
+- if array[mid] == val, if true : return mid
+- else if val < array[mid] : update right = mid - 1
+- go to step # 2 : left = 10, right = mid - 1, mid = 50
+if searching for 65 (right side)
+- initialize left = 0, right = length -1, mid = 0
+- mid = (left + right)/2
+- if array[mid] == val, if true : return mid
+- else if val > array[mid] : update left = mid + 1 ; update mid = (left + right)/2
+- index : 0 1 2 3 4
+- left = 2 + 1 ; mid = (3 + 4)/2 : left = 3 ; mid = 3 ; right = 4
+- back to step 2
+
+what if left = right = mid ?
+5 8 20 35 90 150
+			 lrm 
+Terminating condition : rule : left <= right
+
+10 25 50 65 70
+^            ^
+left		 right  -- pointers
+
+Find Middle Value : mid = (left + right)/2 --> (0 + 4)/2 = 2 (index 2)
+
+10 25 50 65 70
+	   ^
+	   mid
+
+4 10 15 19 21 50
+l	  m		   r
+search for : 2
+2 < mid ; right = mid - 1 ; update mid = right - 1
+4   10 15 19 21 50
+lm  r
+2 < mid = 4 : right = (mid = 0) - 1 ; right < left is a terminating condition : number not found
+
+# Interpolation Search
+set mid = lo + ((Hi - lo) / (A[Hi] - A[lo])) * (X - A[lo])
+
+# Group
+1: Buy 2 chocolates.
+
+you are given an integer array prices representing the prices of various chocolates in a store.  You are also given
+a single integer money, which represents your initial amount of money.
+
+you must buy exactly two chocolates in such a way that you still have some non-negative leftover money.  You would like to 
+minimize the sum of the prices of the two chocolates you buy.
+
+Return the amount of money you will have leftover after buying the two chocolates.  If there is no way for you to 
+buy two chocolates without ending up in debt, return money.  Note that leftover must be non-negative
+
+input: prices = [1, 2, 2], money = 3
+output: 0
+purchase the chocolates priced at 1 and 2 respectively.  You will have 3-3=0 units of money afterwards
+
+input: prices = [1, 3, 3], money = 3
+output: 3 (money)
+no way to purchase 2 chocolates.  Return money : 3
+
+whiteboard
+Restate the problem:
+You must buy exactly 2 chocolates at the lowest price possible.  You start with an integer money. 
+An array of prices per chocolate.  Return money leftover after buying two chocolates.  Cannot go into debt.
+If you cannot buy 2 chocolates return money.
+
+Step Through:
+start with array[prices] and money
+must buy chocolates == 2
+total cost <= money
+identify cheapest combination of two chocolates
+- by sorting prices in ascending order
+- try the two cheapest first
+calculate sum of two cheapest
+- if sum <= money : money - sum --> return change
+- if sum > money : return money unchanged
+obedience : chocolate == 2 ; sum <= money ; never indebted
+
+Pseudo Code:
+function BuyChocolates([prices], money);
+sort prices in ascending order
+cheapest1 = prices[0]
+cheapest2 = prices[1]
+cheapest1 + cheapest2 = sum
+if sum <= money : money - sum --> return change
+else sum > money : return money
+
+Restate the Problem:
+Given : positive integer string s
+Output: return int wtihout trailing zeros as a string
+
+Step Through
+receive string s that represents a number
+examine s from end toward start [0, <-----]
+If 0 at end of string, trim
+character =/= 0 stop trimming
+return remaining string
+10001 stays 10001
+no trailing zeros --> return unchanged
+can be a pure string operation
+
+Pseudocode
+function RemoveTrailingZeros(string s):
+while s is not empty && last char of s is 0:
+	remove the last character from s
+
+return s
