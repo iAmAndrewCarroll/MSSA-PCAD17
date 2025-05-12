@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace _6._1
 {
 /*
-* Assignment 6.1.2
+* Assignment 6.1.3
 * 
 * Restate the Problem:
 * Given an int arry nums : int[] nums = { 0, 1, 0, 3, 12 };

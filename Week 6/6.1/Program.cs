@@ -35,7 +35,7 @@ internal class Program
 
         Console.WriteLine();
 
-        Console.WriteLine("Move Zeros in an Array : 6.1.2");
+        Console.WriteLine("Move Zeros in an Array : 6.1.3");
         Console.WriteLine();
         int[] nums = { 0, 1, 0, 3, 12 };
         Console.WriteLine("Original Array: ");
