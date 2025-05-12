@@ -73,7 +73,7 @@
      *  if valid input : store value as n"
      *  else: print "invalid size. Exit or re-prompt."
      *  
-     *  create matrix[n, n]
+     *  create matrix[, ]
      *  
      *  for i from 0 to n - 1:
      *      for j from 0 to n - 1:

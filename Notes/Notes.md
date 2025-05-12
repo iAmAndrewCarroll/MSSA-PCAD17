@@ -204,8 +204,10 @@ Data Structure: is a way / method to store the information
 
 Algorithm: process to solve problems
 
-Classification of Data Structures
+**Classification of Data Structures**
+
 | Primitive Data Structures | Non-Primitive Data Structures |
+|------------------|------------------|
 | Integer | Linear Data: Arrays (static), {Linked List, Stacks, Queues} (dynamic) |
 | Real | Non-Linear Data Structures: Trees & Hash tables (maybe hash tables) |
 
@@ -599,3 +601,170 @@ while s is not empty && last char of s is 0:
 	remove the last character from s
 
 return s
+
+# Review - Matrix
+
+With a square matrix you can sum the right diaganol (top left to bottom right)
+with a single [i, i+1] matrix elements
+
+# Week 6 - Linked List
+
+**Array Review**
+Array : simple data store of same data type where memory is allocated continuously
+- access the elements by their index
+- fixed size (allocate size during creation)
+- can be resized : allocates a new resized memory location
+- can directly access specific elements
+
+Array Disadvantage
+- allocating more elements : 100 when need is only 20, for example
+- cannot delete elements : breaks link to neighbor elements
+  - data in element is replaced with a "deleted" placeholder value : for example : -1
+- adding an element can only be appended to the end of newly allocated array
+
+**Linked List**
+Collection of nodes that are allocated randomly (continuous memory)
+- Example : houses are allocated space in a neighborhood : memory area
+  - houses have unique addresses : so do these memory areas
+- Memory area is : Heap & Stack
+  - Nodes are randomly allocated to the **HEAP**
+
+**Concepts**
+- is a linear data structure
+- Stores data randomly in memory
+- Can be : singly, doubly, or circular linked list
+
+**Steps to Use a LinkedList class in C#**
+Step 1 : System.Collections.Generic to using directives
+Step 2 : Create a linked list with LinkedList class : 
+`LinkedList<int> list = new LinkedList<int>();`
+
+Linked List Disadvantage
+- cannot jump to a specific list item
+- must be traversed serially
+
+**LINKS** 
+
+| Node | Data | Link |
+|--------|-----|----------------|----------|
+| Node 1 | xyz | Node 2 Pointer | **Head** |
+| Node 2 | abc | Node 3 Pointer |  |
+| Node 3 | def | Null  |          **Tail** |
+
+In a single node linked list
+
+| Node | Link | Notes |
+|------|------|-------|
+| Node 1 | null | Head |
+| Null ref | null | Tail |
+
+**Adding a second node**
+
+The logic within the ELSE block
+newNode next = this.head
+this.head = newNode
+
+| Node | Link | Pointer |
+|------|------|-------|
+| Node 1 | Node 2 | Head / Next  |  
+| Node 2 | null | Tail / Null |
+
+Adding a third
+
+| Node | Link | Pointer |
+|------|------|-------|
+| Node 1 | Node 2 | Head / Next  |
+| Node 2 | Node 3 | Next |
+| Node 3 | null | Tail / Null |
+
+Empty list calling AddLast
+
+| Node | Link | Pointer |
+|------|------|-------|
+| Node 1 | null | Head / Tail  |
+
+Now AddLast
+
+| Node | Link | Pointer |
+|------|------|-------|
+| Node 1 | **New Node** | Head / Next  |
+| **New Node** | **null** | Tail  |
+
+
+**Moving around the list**
+
+We can ONLY traverse the list linearly, node to node, because it is randomly allocated memory
+
+A node only knows about adjacent nodes (particularyly .next in a single linked list)
+
+Traverse a node with a : 
+
+temp = temp.next 
+
+terminate with : temp = null
+
+**How to remove head / first node**
+
+Node 1 = head ---> head = head.next = Node 2 
+- memory space of Node 1 will be garbage collected later
+- list now starts with Node 2
+
+**Single Node Remove First**
+
+head = tail
+tail = null
+head = head.next
+tail = head
+
+
+**Add Anywhere**
+
+| Node | data, ref | pointer | position |
+|-|-|-|-|
+| Node 1 | 1, 150 | head | 1 |
+| Node 2 | 2, 200 | next / tail | 2 |
+| Node 3 | 4, null | tail | 3 |
+
+add a Node 3
+| Node 3 | 3, 200 | next | 3 |  // address 400
+
+i = 1
+temp = head
+while(i < position-1)
+{
+	temp = temp.next  // currently temp.next = 200
+	i++;
+}
+
+newnode.next = temp.next  // linking to the next node : 200
+temp.next = newnode // link is now established : 
+size++
+
+
+**Remove Anywhere**
+
+| Node | data, ref | pointer | position |
+|-|-|-|-|
+| Node 1 | 1, 150 | head | 1, 100 |
+| Node 2 | 2, 10 | next | 2, 150 |
+| Node 3 | 3, 200 | next | 3, 200 |
+| Node 4 | 4, null | tail | 4, null |
+
+delete 3
+
+temp --> head
+temp.next.data (2nd Node) --> 3rd node data : 3
+temp.next.next (3rd Node) ref address : 200
+
+**Another Example**
+
+| Node | address | pointer | position | ref |
+|-|-|-|-|
+| Node 1 | 100 | head | 1 | 50 |
+| Node 2 | 50 | next | 2 | 60 | <--  delete this node
+| Node 3 | 60 | next | 3 | 90 |
+| Node 4 | 90 | tail | 4 | null |
+
+temp = Node 1 = 100
+temp.next = temp.next.next : 60 (Node 2 ref)
+- this skips Node 2 and replaces its ref in Node 1 with the ref for Node 3
