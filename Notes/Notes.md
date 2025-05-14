@@ -1,4 +1,4 @@
-# Types of Class Design
+﻿# Types of Class Design
 
 - Abstraction: create a template for something; abstract an idea / real life
 - Encapsulation: private / public; group the attributes + behavior 
@@ -643,6 +643,11 @@ Linked List Disadvantage
 - cannot jump to a specific list item
 - must be traversed serially
 
+**NODE STRUCTURE**
+[data, link]
+data : actual value
+link : next node address
+
 **LINKS** 
 
 | Node | Data | Link |
@@ -768,3 +773,196 @@ temp.next.next (3rd Node) ref address : 200
 temp = Node 1 = 100
 temp.next = temp.next.next : 60 (Node 2 ref)
 - this skips Node 2 and replaces its ref in Node 1 with the ref for Node 3
+
+**Applications of a LinkedList: memory utilization is better**
+
+1. image viewer (forward / backward)
+2. Music Player
+3. Image Processing
+4. Task Scheduler
+5. Prev and next pages in a browser (back button)
+
+# DATA STRUCTURE : STACK
+
+**Basic Concepts**
+
+ordered list
+
+is a linear collection in which elements are added adn removed from the top down
+
+is a linear data structure and follows the LIFO (Last In First Out)
+
+Operations: Push, Pop, Peak
+
+Implementation:
+- memory stack : function calls get pushed, when function returns it is popped from the stack
+- Undo operationsin any kind of editor will be undon by stack operation
+- Compiler : parenthesis matching {} () etc
+- Complex math equations
+
+Examples : piles of coins, stack of plates, cases of tennis balls, books, pringles
+
+The visualization is vertical
+
+**PUSH OPERATION - Adding an element**
+
+Specifies adding an item on top of stack
+
+Add the element on top of the topmost element
+- top is set with the value of -1 that is verified by comparing the value to top == -1
+- Topmost value changes iwth the insertion of new values, makes the top as a top + 1
+
+Causes a stack overflow condition when you attempt to insert an element in a full stack
+
+**POP OPERATION - Remove an element**
+
+Specifies removing the topmost item from the stack
+
+The stack underflows condition if you try to perform the pop operation on an empty stack. 
+
+You can use the is Empty() function to check if the stack is empty.  
+
+**Tracking Top**
+
+push 40 top = 3 // fourth index of array  <-- Step 5
+
+push 30 top = 2 // third index of array  <-- Step 4
+
+push 20 top = 1 // second index of array  <-- Step 3
+
+push 10 top = 0 // first index of array  <-- Step 2
+
+top initialized to -1  <-- Step 1
+
+
+# Queue Data Structure
+<body>
+
+## 📞 Queue Simulation — Assignment 6.3: Call Queue (MSSA)
+
+Simulating a FIFO (First-In, First-Out) queue with `enqueue` and `dequeue` operations.  
+We'll track both the `front` and `rear` pointers as elements enter and leave the queue.
+
+---
+
+### Step 0: Initial State
+
+```
+Queue: [ ]
+front = -1
+rear  = -1
+```
+
+---
+
+### Step 1: Enqueue 8
+
+```
+Queue: [8]
+front = 0
+rear  = 0
+```
+
+---
+
+### Step 2: Enqueue 10
+
+```
+Queue: [8, 10]
+front = 0
+rear  = 1
+```
+
+---
+
+### Step 3: Enqueue 12
+
+```
+Queue: [8, 10, 12]
+front = 0
+rear  = 2
+```
+
+---
+
+### Step 4: Dequeue → removes 8
+
+```
+Queue: [_, 10, 12]
+front = 1
+rear  = 2
+```
+
+---
+
+### Step 5: Dequeue → removes 10
+
+```
+Queue: [_, _, 12]
+front = 2
+rear  = 2
+```
+
+---
+
+### Step 6: Enqueue 13
+
+```
+Queue: [_, _, 12, 13]
+front = 2
+rear  = 3
+```
+
+---
+
+### Step 7: Dequeue → removes 12
+
+```
+Queue: [_, _, _, 13]
+front = 3
+rear  = 3
+```
+
+---
+
+### Step 8: Dequeue → removes 13 (queue becomes empty)
+
+```
+Queue: [_, _, _, _]
+front = -1
+rear  = -1
+```
+
+---
+
+### Notes
+
+- When `front == -1 && rear == -1`, the queue is **empty**
+- After enqueueing the first element, both `front` and `rear` are set to `0`
+- After each `dequeue`, increment `front`
+- If `front > rear`, reset both to `-1` to mark the queue as empty
+
+
+# Differences of Stack vs Queue
+
+![Stack VS Queue](Assets/StackQueue.png)
+
+
+# Interface
+
+Interface : a type in .net which can have methods / properties / events
+
+Cannot provide implementation except in special cases like default interface methods in 
+modern C#
+
+It is like a contract where the class implementing it must provide the implementation
+for the members of the interface
+- can have multiple interface implementation
+- flexibility to provide their own logic
+- Patterns : Model View Controller MVC or Model View ViewModel MVVM :
+  - dependency injection
+  - testability via Mocking
+  - Plug-in or loosely-couple systems
+
+
+

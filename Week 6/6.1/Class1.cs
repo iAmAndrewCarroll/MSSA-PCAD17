@@ -52,7 +52,7 @@ namespace _6._1
         }
     }
 
-    class House
+    class House:IComparable<House>
     {
         public int HouseNumber {  get; set; }
         public string Address { get; set; }
@@ -77,7 +77,7 @@ namespace _6._1
         // they could then be modified and access to list is gone
         private HouseNode head;
         private HouseNode tail;
-        private int size;
+        private int size;  // size of the linked list
 
         public int Size // read only variable for client code
         {
