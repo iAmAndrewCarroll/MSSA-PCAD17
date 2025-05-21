@@ -17,7 +17,7 @@ namespace BinarySearchTreeDemo
             tree.InsertNode(tree.root, 9);
             tree.Inorder(tree.root);
 
-            Console.WriteLine("Binary Search Tree (rotated 90 degrees):\n");
+            Console.WriteLine("Binary Search Tree:\n");
             tree.PrintDetailedTable();
             Console.WriteLine();
 
