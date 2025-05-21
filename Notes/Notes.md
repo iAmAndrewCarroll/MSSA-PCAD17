@@ -391,6 +391,7 @@ Primitive Operations:
 - Calling function
 - Returning function
 
+```
 Example1 :
 int total = 0;
 int i = 1;
@@ -601,6 +602,7 @@ while s is not empty && last char of s is 0:
 	remove the last character from s
 
 return s
+```
 
 # Review - Matrix
 
@@ -823,6 +825,7 @@ The stack underflows condition if you try to perform the pop operation on an emp
 You can use the is Empty() function to check if the stack is empty.  
 
 **Tracking Top**
+```
 
 push 40 top = 3 // fourth index of array  <-- Step 5
 
@@ -833,12 +836,13 @@ push 20 top = 1 // second index of array  <-- Step 3
 push 10 top = 0 // first index of array  <-- Step 2
 
 top initialized to -1  <-- Step 1
+```
 
 
 # Queue Data Structure
 <body>
 
-## 📞 Queue Simulation — Assignment 6.3: Call Queue (MSSA)
+## Queue Simulation — Assignment 6.3: Call Queue (MSSA)
 
 Simulating a FIFO (First-In, First-Out) queue with `enqueue` and `dequeue` operations.  
 We'll track both the `front` and `rear` pointers as elements enter and leave the queue.
@@ -851,83 +855,67 @@ We'll track both the `front` and `rear` pointers as elements enter and leave the
 Queue: [ ]
 front = -1
 rear  = -1
-```
 
 ---
 
 ### Step 1: Enqueue 8
 
-```
 Queue: [8]
 front = 0
 rear  = 0
-```
 
 ---
 
 ### Step 2: Enqueue 10
 
-```
 Queue: [8, 10]
 front = 0
 rear  = 1
-```
 
 ---
 
 ### Step 3: Enqueue 12
 
-```
 Queue: [8, 10, 12]
 front = 0
 rear  = 2
-```
 
 ---
 
 ### Step 4: Dequeue → removes 8
 
-```
 Queue: [_, 10, 12]
 front = 1
 rear  = 2
-```
 
 ---
 
 ### Step 5: Dequeue → removes 10
 
-```
 Queue: [_, _, 12]
 front = 2
 rear  = 2
-```
 
 ---
 
 ### Step 6: Enqueue 13
 
-```
 Queue: [_, _, 12, 13]
 front = 2
 rear  = 3
-```
 
 ---
 
 ### Step 7: Dequeue → removes 12
 
-```
 Queue: [_, _, _, 13]
 front = 3
 rear  = 3
-```
 
 ---
 
 ### Step 8: Dequeue → removes 13 (queue becomes empty)
 
-```
 Queue: [_, _, _, _]
 front = -1
 rear  = -1
@@ -965,4 +953,691 @@ for the members of the interface
   - Plug-in or loosely-couple systems
 
 
+# Sorting - Module 7
 
+# Bubble Sort Algorithm
+
+works on a number array / list of numbers
+
+Stable Sorting : When two elements have equal keys, 
+their relative order is preserved in the output.
+
+Example : if A = B and A appears before B in the input -- >
+Then A will also appear before B in the sorted output
+
+[ <span style="color:green">2</span> 14 1 <span style="color:red">2</span> 23 ]
+
+
+Bubble : values bubble all the way to the right (per pass)
+
+- Compare the consecutive elements ( left / right ) : 
+- if left side element is greater than right : swap them
+- continue this process till the end of the array and perform several rounds / passes
+
+```
+[ 3 5 8 9 6 2 ]
+  ^ ^
+   < : move on
+    ^ ^  < : move on
+	  ^ ^  < : move on
+	    ^ ^ > : swap
+		  9 2 ] after swap
+		  ^ ^  > : swap
+				result : [ 3 5 8 6 2 9 ] first pass complete : 
+				9 has bubbled all the way to the right side
+```
+
+# C# Question Bank Review
+
+namespace --> class --> method
+
+method : access returntype name(parameters){logic}
+
+Can I pass parameters to functions?  How many ways can be used?
+
+Values, ref, out, optional
+
+What is the difference between value type data types and reference type data types?
+
+1. stack / heap
+2. hold value / address
+3. Example : int / class
+
+What is the difference between parse & tryparse?
+- parse : value if it valid
+- tryparse : check if it can be passed (bool, out : result)
+
+What is the syntax of if, for, switch case?
+
+```
+if (condition)
+{
+    // code if condition is true
+}
+else if (anotherCondition)
+{
+    // code if another condition is true
+}
+else
+{
+    // code if none of the above are true
+}
+
+switch / case / default : always include break unless you're intentionally falling through.
+
+switch (variable)
+{
+    case value1:
+        // code block
+        break;
+
+    case value2:
+        // code block
+        break;
+
+    default:
+        // default block
+        break;
+}
+```
+**Key Syntax Knowledge**
+
+```
+for loop : `i++` is the increment — can also use `i--`, `i += 2`, etc.
+
+for (int i = 0; i < end; i++)
+{
+    // loop body
+}
+
+while loop : runs while the condition is true
+
+while (condition)
+{
+    // loop body
+}
+
+do...while loop : always runs at least once, then checks the condition
+
+do
+{
+    // loop body
+}
+while (condition);
+```
+
+| Control Flow | Entry Check | Exit Check | Guaranteed Run? |
+| ------------ | ----------- | ---------- | --------------- |
+| `if`         | Yes         | N/A        | No              |
+| `switch`     | Yes         | N/A        | No              |
+| `for`        | Yes         | Yes        | Maybe           |
+| `while`      | Yes         | Yes        | Maybe           |
+| `do while`   | No          | Yes        | **Yes**         |
+
+
+Scope of variable:
+```
+static void Main(string[] args)
+{
+	int result; // a global variable within Main
+	bool canconvert = int.TryParse("")
+}
+```
+
+# Week 7 - Data Structures and Algorithms : Sorting
+
+Recap of Week 6 Day 4 intro to Bubble Sort:
+
+# Bubble Sort Algorithm
+
+works on a number array / list of numbers
+
+Stable Sorting : When two elements have equal keys, 
+their relative order is preserved in the output.
+
+Example : if A = B and A appears before B in the input -- >
+Then A will also appear before B in the sorted output
+
+[ <span style="color:green">2</span> 14 1 <span style="color:red">2</span> 23 ]
+
+
+Bubble : values bubble all the way to the right (per pass)
+
+- Compare the consecutive elements ( left / right ) : 
+- if left side element is greater than right : swap them
+- continue this process till the end of the array and perform several rounds / passes
+
+```
+[ 3 5 8 9 6 2 ]
+  ^ ^
+   < : move on
+    ^ ^  < : move on
+	  ^ ^  < : move on
+	    ^ ^ > : swap
+		  9 2 ] after swap
+		  ^ ^  > : swap
+				result : [ 3 5 8 6 2 9 ] first pass complete : 
+				9 has bubbled all the way to the right side
+```
+
+
+### Week 7 Day 1 :
+
+### Selection Sort & Insertion Sort
+
+Selection Sort (Unstable : )
+- find the minimum element from the collection
+- place that minimum element in the appropriate position
+- repeat for all remaining elements
+
+Of Note:
+- will use a SWAP to place the minimum in ascending order
+- tracking position by using a counter or temp variable
+
+Example : 
+
+Position variable = 0 ; pointing at 3
+
+3, 5, 8, 9, 6, 2 <- we need to find the minimum number and place it in the appropriate position
+
+Position++ = 1 ; pointing at 5
+
+min = 2 : 2, 5, 8, 9, 6, 3 ; now check next minimimum ; min = 3 ; Swap with 5
+
+min = 3 : 2,3,8,9,6,5 ; again -> min = 5 ; swap with 8
+
+min = 5 : 2,3,5,9,6,8 ; again -> min = 6 ; swap with 9
+
+min = 6 : 2,3,5,6,9,8 ; again -> min = 8 ; swap with 9
+
+last number is 9 and it is by itself ; no comparison needed
+
+The pseudocode of the Selection Sort algorithm can be written as 
+follows:
+```
+procedure selection sort(list : array of items)
+
+length: list size
+for i = 1 to length - 1
+	//setting current elements to a minimum
+	minindex = i
+
+	for j = i + 1 to length
+		if list[j] <
+
+
+```
+
+### Insertion Sort
+
+1. Select 1 element at a time from left to right
+2. Insert the element in its proper position  such that all the elements on the left are lesser than this element
+
+Anything on the left side of the check must be < 
+
+Restated : all the left side elements must be smaller
+
+```
+3 5 8 9 6 2
+ < < < >
+ ```
+
+ 6 gets inserted before 8 -> next check on 2 : 2 gets inserted before 3; elements shift right to make space?
+
+ ```
+ 11 20 2 9 10 5		  11 20 2 9 10 5		 11 20 2 9 10 5
+ | is 11 < 20? yes ->     | is 20 < 2? no ->		 | 2 will be moved to first position
+
+ 2 11 20 9 10 5									   2 9 11 20 10 5
+	   | is 20 < 9? no : 11 < 9? no: 2 < 9? yes ->		   | 20 < 10? no: 11 < 10? no: 9 < 10? yes	
+
+Etc
+ ```
+
+
+# Shell Sort:
+
+Select an element and compare it with the element after a gap [ n/2, n/3...]
+
+after comparison, do a swap if needed and also compare with left side elelement after the gap
+
+During each pass, we reduce the gap, repeats step 1 and 2
+
+Perform steps 1, 2, 3 till gap becomes 0
+
+```
+n = 6 ; total items in list or whatever is being sorted
+
+gap = n/2 = 3 ; beginning loop check value
+
+gap = gap/2 = 3/2 = 1 ; loop check value decrements
+
+3 5 8 9 6 2
+^
+
+Gap is 3 : 3 _ _ 9 
+            ^ ^ ^ : three gaps between 3 & 9
+
+So 3 < 9  -->  5 < 6  -->  8 > 2
+
+3 5 2 9 6 8 and there is nothing to compare to the left of 2 :
+
+```
+
+### Algorithm
+
+The shell sort algorithm consists of three steps:
+
+Step 1 : Define and initialize the interval
+
+Step 2 : Start with N/2, where N is the length of the array
+
+Step 3 : Keep dividing the iteration until it is 1. Swap the elements in ascending order 
+with the next element
+
+Step 4 : Use insertion sort for sorting the array
+
+### Pseudocode
+
+```
+h = interval
+N = Size of array
+for h from N/2 to 1, do
+	swap the elements using the selected interval
+	Reduce the interval until it becomes 1
+	Sort using insertion sort
+return sorted array
+```
+
+## Tree Data Structures (Week 7 Overview)
+
+### What is an Abstract Data Type (ADT)?
+
+An **Abstract Data Type (ADT)** is a **logical description of a data structure** and the operations you can perform on it, **without concern for implementation details**.
+
+* Think of it as a *contract*: what it can do, not how it does it.
+* Common ADTs: `List`, `Stack`, `Queue`, `Tree`, `Graph`
+
+---
+
+### Tree as a Non-Linear ADT
+
+* A **Tree** is a **non-linear hierarchical data structure** consisting of **nodes**.
+* Unlike linear structures (Array, List, Stack, Queue), trees do **not store data sequentially**.
+* Each node can have **0 or more child nodes**, making it ideal for representing hierarchies (like file systems, DOM trees, etc.).
+
+### Deepali : 
+* Tree: Non linear data structure, ADT which stores nodes maintaining a hierarchy 
+* parent child relatinoship by using edges
+* organization relationships
+* above / below
+* Remember that TREE is NON-LINEAR; linear types [stack, queue, linked list, array]
+
+---
+
+### Common Tree Terminology
+
+| Term        | Meaning                                                                  |
+| ----------- | ------------------------------------------------------------------------ |
+| **Root**    | The topmost node in a tree (has no parent)                               |
+| **Child**   | A node directly connected to another node when moving away from the root |
+| **Parent**  | The converse notion of a child                                           |
+| **Leaf**    | A node that has no children                                              |
+| **Subtree** | A tree consisting of a node and its descendants                          |
+| **Height**  | The length of the longest path from a node down to a leaf; # of edges    |
+| **Depth**   | The number of edges from the root to the node                            |
+| **Level**   | The number of nodes to the root; Level ALWAYS = Height + 1				 |
+
+---
+
+### Tree Use Cases
+
+* Directory structures
+* Abstract Syntax Trees (compilers)
+* Decision Trees (AI/ML)
+* HTML DOM
+* Binary Search Trees, Heaps, Tries
+
+### Deepali :
+* Hierarchy
+* Searching : Binary search tree (BST)
+* Sorting : Self balancing BST
+* Dynamic (add, remove, grow nodes as needed; not a fixed data structure)
+* Syntax tree [compiler design]
+* Decision tree
+* Game : chess
+* Machine Learning
+
+* root : node having no parent, starting point
+* siglings : child nodes of the same parent node
+* leaf node / external node : nodes with no children
+* non leaf nodes / internal nodes : having 1 or more children
+
+* edge : is a pair of nodes (u, v) such that u is the parent of v; cannot be siblings
+* path : a sequence of nodes such that 2 consecutive nodes form an edge
+
+### Tree with Labeled Edges and Paths
+
+```markdown
+                 [A]
+                /   \
+         (A,B) /     \ (A,C)
+            [B]     [C]
+           /   \       \
+  (B,D)  /     \ (B,E)  \ (C,F)
+       [D]   [E]       [F]
+```
+
+---
+
+### Edge Definitions (u → v)
+
+Each arrow shows a **valid parent → child relationship** (edge):
+
+* **(A, B)** → A is parent of B
+* **(A, C)** → A is parent of C
+* **(B, D)** → B is parent of D
+* **(B, E)** → B is parent of E
+* **(C, F)** → C is parent of F
+
+→ **Note**: There are no edges like (B, C) or (D, E); those are siblings.
+
+---
+
+### Path Examples (Sequence of Edges)
+
+#### Example 1: `A → B → D`
+
+```markdown
+   A
+   ↓ (A,B)
+   B
+   ↓ (B,D)
+   D
+```
+
+* Path: `A → B → D`
+* Edges: `(A, B)`, `(B, D)`
+* Path length: 2
+
+---
+
+#### Example 2: `A → C → F`
+
+```markdown
+   A
+   ↓ (A,C)
+   C
+   ↓ (C,F)
+   F
+```
+
+* Path: `A → C → F`
+* Edges: `(A, C)`, `(C, F)`
+* Path length: 2
+
+---
+
+### if number of nodes, n, : number of edges = n-1
+
+---
+
+## Tree Visual (Markdown Text Tree)
+
+### 📌 Cascading Tree Relationships (Top-Down and Bottom-Up)
+
+```markdown
+Tree Diagram (Top-Down View):
+
+                [A]
+               /   \
+             [B]   [C]
+            /  \     \
+          [D]  [E]   [F]
+```
+
+---
+
+### Top-Down (Parent → Children)
+
+* `A` is the **root** and the **parent of B and C**
+* `B` is the **parent of D and E**
+* `C` is the \*\*parent of F\`
+* `D`, `E`, and `F` are **leaf nodes** (no children)
+
+---
+
+### Bottom-Up (Child → Parent)
+
+* `D` and `E` are **children of B**
+* `F` is a **child of C**
+* `B` and `C` are **children of A**
+* `A` has **no parent** (it's the root)
+
+---
+
+### Types of Trees You’ll Learn
+
+| Tree Type                | Characteristics                               |
+| ------------------------ | --------------------------------------------- |
+| **Binary Tree**          | Each node has at most 2 children              |
+| **Binary Search Tree**   | Left < Root < Right (sorted)                  |
+| **AVL / Red-Black Tree** | Self-balancing BSTs                           |
+| **Heap (Min/Max)**       | Complete tree + Heap property                 |
+| **Trie**                 | Used for prefix matching (e.g., autocomplete) |
+
+# binary tree
+
+* every node has at most 2 children (0, 1, 2)
+* degree of binary tree : 2
+
+#  Binary Tree — Data Structure Notes
+
+## Definition
+
+A **Binary Tree** is a hierarchical data structure in which:
+
+* **Each node has at most 2 children**
+* These children are typically referred to as:
+
+  * **Left child**
+  * **Right child**
+
+> Formally, a binary tree is a **non-linear ADT** where each node has a **maximum degree of 2**.
+
+---
+
+## Key Properties
+
+| Concept                   | Description                                                        |
+| ------------------------- | ------------------------------------------------------------------ |
+| **Degree of a Node**      | Number of direct children a node has (0, 1, or 2 in a binary tree) |
+| **Degree of Binary Tree** | Maximum number of children any node can have — **2**               |
+| **Height**                | Max number of edges from root to a leaf                            |
+| **Depth of Node**         | Number of edges from root to the node                              |
+| **Leaf Node**             | A node with 0 children                                             |
+| **Internal Node**         | A node with at least 1 child                                       |
+
+---
+
+## Structure Example
+
+```markdown
+        [10]
+       /    \
+     [5]    [15]
+     / \      \
+   [3] [7]    [18]
+```
+
+* Root = `10`
+* `10` has two children → `[5]` (left), `[15]` (right)
+* `5` has children `[3]` and `[7]`
+* `15` has only a right child `[18]`
+* `[3]`, `[7]`, and `[18]` are leaf nodes (no children)
+
+---
+
+## Binary Tree Types
+
+| Type                     | Description                                                      |
+| ------------------------ | ---------------------------------------------------------------- |
+| **Proper**               | Every node has 0 or 2 children (no node has only 1 child)        |
+| **Perfect / Full Binary Tree**  | Full + all leaf nodes at the same level                   |
+| **Complete Binary Tree** | All levels filled except possibly the last, filled left to right |
+| **Skewed Tree**          | All nodes lean to one side (like a linked list)                  |
+
+
+![Binary Tree Types](Assets/BinaryTreeTypes.png)
+
+---
+
+## Real-World Applications
+
+* Expression trees (used in compilers)
+* Hierarchical data representation
+* Binary Search Trees (BST)
+* Huffman coding trees (compression)
+* Priority queues (heap is a binary tree)
+
+## Traversals : always starts at the root node
+
+* Breadth first : level order, difficult, no connection between the nodes directly
+* deapth first : InOrder, PreOrder, PostOrder
+
+* PreOrder : visit root, visit left subtree recusively in preorder, visit right subtree recursively in preorder.
+
+
+
+# Binary Search Trees (Ordered Binary Tree)
+
+# Binary Search Tree (BST) — Data Structure Notes
+
+## Definition
+
+A **Binary Search Tree** is a specialized form of a **binary tree** where:
+
+* The **left subtree** of a node contains **only nodes with values less than the node’s value**
+* The **right subtree** contains **only nodes with values greater than the node’s value**
+* **No duplicate nodes** are typically allowed
+
+> left / right rules must be followed recursively
+
+> This ordering property enables **efficient searching, insertion, and deletion** operations.
+
+---
+
+## Key Properties
+
+| Concept           | Description                                                   |
+| ----------------- | ------------------------------------------------------------- |
+| **Search Time**   | O(log n) average; O(n) worst-case (e.g. skewed tree)          |
+| **Insert/Delete** | Follows the same left/right rules and may require rebalancing |
+| **Traversal**     | In-order traversal of a BST yields a **sorted list**          |
+| **No Duplicates** | Most BST implementations disallow duplicate values            |
+
+---
+
+## BST Structure Example
+
+We'll use this BST for reference:
+
+```markdown
+          [50]
+         /    \
+      [30]    [70]
+      /  \     /  \
+    [20] [40] [60] [80]
+```
+
+* Node values follow the rule:
+
+  * Left subtree values < parent
+  * Right subtree values > parent
+
+---
+
+## Search Example
+
+Search for `60`:
+
+* `60 > 50` → go right
+* `60 < 70` → go left
+* Found at node `60`
+
+---
+
+## Traversal Orders
+
+### 1. **In-order Traversal (Left → Root → Right)**
+
+> Produces values in sorted order
+
+```markdown
+20 → 30 → 40 → 50 → 60 → 70 → 80
+```
+
+---
+
+### 2. **Pre-order Traversal (Root → Left → Right)**
+
+> Good for copying a tree or saving its structure
+
+```markdown
+50 → 30 → 20 → 40 → 70 → 60 → 80
+```
+
+---
+
+### 3. **Post-order Traversal (Left → Right → Root)**
+
+> Used for deleting nodes or evaluating expressions
+
+```markdown
+20 → 40 → 30 → 60 → 80 → 70 → 50
+```
+
+---
+
+## Use Cases of BST
+
+| Use Case                  | Why BST Works Well                             |
+| ------------------------- | ---------------------------------------------- |
+| **Search engines**        | Fast lookup for sorted terms or indexes        |
+| **Auto-complete systems** | BSTs or their variants help in prefix matching |
+| **In-memory databases**   | Store keys in sorted order for range queries   |
+| **Symbol tables**         | Store variables and scope info in compilers    |
+
+---
+
+## BST vs Binary Tree
+
+| Feature           | Binary Tree          | Binary Search Tree (BST)           |
+| ----------------- | -------------------- | ---------------------------------- |
+| Node Value Rules  | No ordering enforced | Left < Node < Right                |
+| Search Efficiency | Unstructured (O(n))  | Structured (O(log n) average case) |
+| Duplicate Support | Allowed              | Usually disallowed                 |
+
+## Perform Lookup Operation in Binary Search Tree
+
+* starts with the root node
+* performs the lookup on the left or right side depending on the value lower or higher than the root node
+
+
+## Array relationship to nodes in a binary tree
+```
+height = 2
+n = 2 ^ h+1 - 1
+= 2^3 - 1 = 7
+
+arr[ x a b c d e f g ]
+     0 1 2 3 4 5 6 7
+
+```
+
+| element | index | left child | right child |
+| -- | -- | -- | -- |
+| a | 1 | 2 | 3 |
+| b | 2 | 4 | 5 |
+| c | 3 | 6 | 7 |
+| d | 4 | x | x |

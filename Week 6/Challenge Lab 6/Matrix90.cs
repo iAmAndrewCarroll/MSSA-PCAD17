@@ -88,6 +88,8 @@ namespace Challenge_Lab_6
     * continue until you reach the middle row
     * 
     * 
+    * remember that [][] is a jagged array and [],[] is a 2D array
+    * 
     */
     internal class Matrix90
     {
