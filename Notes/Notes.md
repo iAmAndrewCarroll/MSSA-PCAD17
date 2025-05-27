@@ -1641,3 +1641,13 @@ arr[ x a b c d e f g ]
 | b | 2 | 4 | 5 |
 | c | 3 | 6 | 7 |
 | d | 4 | x | x |
+
+
+# 7.4 
+
+static void divide()
+
+static void Main(string[] args)
+{
+
+}
