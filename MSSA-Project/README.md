@@ -18,31 +18,18 @@ This application was developed as a final capstone for the Microsoft Software & 
 
 ### 1. System Architecture
 
-Image: `Assets/projectOverview.png`  
-Provides a high-level view of the application’s card-based learning system, showing how user input flows through UI elements, validation, and review queues.
-
 ![System Architecture](Assets/projectOverview.png)
 
 ### 2. Learning Objective Justification
 
-Image: `Assets/projectMatters.png`
-Outlines why active recall through structured cards matters, especially for learners transitioning into technical fields.
-
 ![Why This Matters](Assets/projectMatters.png)
-
 
 ### 3. UI Wireframe
 
-Image: `Assets/wireframe.png`
-Depicts the layout used on the MainPage. Cards are displayed with split regions for prompts and answer input. Switches allow toggling between Method/Syntax views and review tracking.
-
-
 ![UI Wireframe](Assets/wireframe.png)
-
 
 ### 4. Live Execution Flow
 
-Image: `Assets/projectRun.png`
 Demonstrates the runtime behavior of the app. When users submit answers, the system validates them, updates the review queue, and displays accuracy feedback in real-time.
 
 
