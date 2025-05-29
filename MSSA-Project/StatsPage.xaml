@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MSSA_Project.StatsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Performance Summary"
+    BackgroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Card Performance Summary"
+                   FontSize="24"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+
+            <CollectionView x:Name="statsView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="SlateBlue"
+                               BackgroundColor="#222"
+                               CornerRadius="10"
+                               Padding="10"
+                               Margin="5">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding CardId}" 
+                                       FontSize="18" 
+                                       TextColor="White"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding Mode, StringFormat='Mode: {0}'}"
+                                       TextColor="MediumPurple"
+                                       FontSize="14"/>
+                                <Label Text="{Binding CardType, StringFormat='Type: {0}'}"
+                                       TextColor="SlateBlue"
+                                       FontSize="14"/>
+                                <Label Text="{Binding CorrectRate}" 
+                                       TextColor="LimeGreen"/>
+                                <Label Text="{Binding Attempts, StringFormat='Attempts: {0}'}" 
+                                       TextColor="LightGray"/>
+                                <Label Text="{Binding FirstTryLabel, StringFormat='First Try: {0}'}"
+                                       TextColor="LightSkyBlue"/>
+                                <Label Text="{Binding LastAttempted, StringFormat='Last Attempt: {0}'}"
+                                       TextColor="Gray" 
+                                       FontSize="12"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            <Button Text="Back"
+            Clicked="OnBackClicked"
+            BackgroundColor="SlateGray"
+            TextColor="White"
+            Margin="0,5,0,0"
+            HorizontalOptions="Center"
+            WidthRequest="150"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

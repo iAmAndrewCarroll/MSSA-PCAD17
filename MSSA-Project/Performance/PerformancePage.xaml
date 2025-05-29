@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MSSA_Project.Performance.PerformancePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Performance Summary"
+    BackgroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Card Performance Summary"
+                   FontSize="24"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+
+            <CollectionView x:Name="performanceView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="SlateBlue"
+                               BackgroundColor="#222"
+                               CornerRadius="10"
+                               Padding="10"
+                               Margin="5">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding CardId}" 
+                                       FontSize="18" 
+                                       TextColor="White"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding CorrectRate}" 
+                                       TextColor="LimeGreen"/>
+                                <Label Text="Attempts: {Binding Attempts}" 
+                                       TextColor="LightGray"/>
+                                <Label Text="First Try: {Binding FirstTryLabel}" 
+                                       TextColor="LightSkyBlue"/>
+                                <Label Text="Last Attempt: {Binding LastAttempted}" 
+                                       TextColor="Gray" 
+                                       FontSize="12"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,81 @@
+[
+    {
+        "id": "namespace-class-method-structure",
+        "language": "csharp",
+        "prompt": [
+            "// Complete the basic program structure",
+            "___1___ MyProgram {",
+            "    ___2___ MyClass {",
+            "        ___3___ void Main(string[] args) {",
+            "            Console.WriteLine(\"Hello World\");",
+            "        }",
+            "    }",
+            "}"
+        ]
+    },
+    {
+        "id": "parameter-passing-modes",
+        "language": "csharp",
+        "prompt": [
+            "// Identify how different parameters are passed",
+            "static void Main(string[] args) {",
+            "    int x = 5;",
+            "    ___1___(x);",
+            "    ___2___(ref x);",
+            "    ___3___(out x);",
+            "}",
+            "",
+            "static void ValuePass(___4___ int a) { a += 10; }",
+            "static void RefPass(___5___ int b) { b += 10; }",
+            "static void OutPass(___6___ int c) { c = 42; }"
+        ]
+    },
+    {
+        "id": "value-vs-reference-types",
+        "language": "csharp",
+        "prompt": [
+            "// Determine type classification and memory behavior",
+            "// ___1___ types are stored on the stack and hold actual values",
+            "// ___2___ types are stored on the heap and hold a reference (address)",
+            "// Example of value type: ___3___",
+            "// Example of reference type: ___4___"
+        ]
+    },
+    {
+        "id": "if-else-structure",
+        "language": "csharp",
+        "prompt": [
+            "// Fill in the control structure",
+            "int score = 85;",
+            "if (___1___ > 90) {",
+            "    Console.WriteLine(\"A\");",
+            "} else if (___2___ > 80) {",
+            "    Console.WriteLine(\"B\");",
+            "} else {",
+            "    Console.WriteLine(\"C or lower\");",
+            "}"
+        ]
+    },
+    {
+        "id": "switch-case-syntax",
+        "language": "csharp",
+        "prompt": [
+            "// Fill in the correct structure and keywords",
+            "int day = 3;",
+            "___1___ (day) {",
+            "    ___2___ 1:",
+            "        Console.WriteLine(\"Monday\");",
+            "        ___3___;",
+            "    ___2___ 2:",
+            "        Console.WriteLine(\"Tuesday\");",
+            "        ___3___;",
+            "    ___2___ 3:",
+            "        Console.WriteLine(\"Wednesday\");",
+            "        ___3___;",
+            "    ___4___:",
+            "        Console.WriteLine(\"Other Day\");",
+            "        ___3___;",
+            "}"
+        ]
+    }
+]

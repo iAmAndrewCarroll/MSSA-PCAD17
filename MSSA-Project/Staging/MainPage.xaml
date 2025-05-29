@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MSSA_Project.MainPage"
+             Title="C# Method Trainer"
+             BackgroundColor="Black">
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+
+            <!-- Dropdown to select card type -->
+            <Picker x:Name="cardTypePicker"
+                    Title="Select Card Type"
+                    SelectedIndexChanged="OnCardTypeChanged"
+                    TextColor="White"/>
+
+            <!-- Top Navigation Row -->
+            <Grid ColumnDefinitions="Auto,*,Auto" Padding="10">
+                <Button Text="Previous"
+                        Clicked="OnPreviousClicked"
+                        HorizontalOptions="Start"
+                        BackgroundColor="#B28DFF"
+                        TextColor="Black" />
+
+                <Label x:Name="feedbackLabel"
+                       FontSize="14"
+                       TextColor="Gray"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Grid.Column="1" />
+
+                <Button Text="Next"
+                        Clicked="OnNextClicked"
+                        HorizontalOptions="End"
+                        BackgroundColor="#B28DFF"
+                        TextColor="Black" />
+            </Grid>
+
+            <!-- Problem Statement and Input Example -->
+            <Frame BackgroundColor="#1E1E1E" CornerRadius="10" Padding="10" Margin="5">
+                <VerticalStackLayout>
+                    <Label x:Name="problemDescriptionLabel"
+                           Text="Problem Description"
+                           TextColor="White"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="problemMetaLabel"
+                           Text="Variables: nums[] | Output[]"
+                           TextColor="LightGray"
+                           FontSize="12"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="problemExampleLabel"
+                           Text="Example: input [1,2,3,4] --> output [24,12,8,6]"
+                           TextColor="LightGreen"
+                           FontSize="12"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Grid Layout for Prompt/Input Answer Canvas -->
+            <Grid RowDefinitions="*,Auto,200" ColumnDefinitions="2*,3*">
+                <!-- Prompt View (left) -->
+                <ScrollView Grid.Row="0" Grid.Column="0" Padding="10">
+                    <VerticalStackLayout>
+                        <Label x:Name="promptLabel"
+                               Text="Prompt goes here"
+                               FontSize="14"
+                               FontFamily="Courier New"
+                               LineBreakMode="WordWrap"
+                               TextColor="White" />
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- User Answer Inputs (right) -->
+                <ScrollView Grid.Row="0" Grid.Column="1" Padding="10">
+                    <VerticalStackLayout>
+                        <Label Text="Your Answers:" FontAttributes="Bold" TextColor="White" />
+                        <StackLayout x:Name="inputStack" />
+                        <Button x:Name="submitButton"
+                                Text="Submit"
+                                Clicked="OnSubmitClicked"
+                                BackgroundColor="#B28DFF"
+                                TextColor="Black" />
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- Optional Video Panel (bottom full width) -->
+                <WebView x:Name="videoPlayer"
+                         Grid.Row="2"
+                         Grid.ColumnSpan="2"
+                         HeightRequest="200"
+                         IsVisible="False"
+                         BackgroundColor="Black"
+                         Source="https://www.youtube.com/" />
+            </Grid>
+
+            <!-- Bottom Nav Again (optional) -->
+            <Grid ColumnDefinitions="*,*" Padding="10">
+                <Button Text="Previous"
+                        Clicked="OnPreviousClicked"
+                        HorizontalOptions="Start"
+                        BackgroundColor="#B28DFF"
+                        TextColor="Black" />
+
+                <Button Text="Next"
+                        Clicked="OnNextClicked"
+                        HorizontalOptions="End"
+                        BackgroundColor="#B28DFF"
+                        TextColor="Black" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

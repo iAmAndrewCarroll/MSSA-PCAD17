@@ -1,0 +1,3149 @@
+[
+    {
+        "id": "assignment-1.1.1-personal-details",
+        "title": "Store and Print Personal Details",
+        "assignment": "Assignment 1.1.1",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Variables and Console I/O",
+        "tags": [ "variables", "input-output", "console", "declaration", "syntax" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a console application in C# to store and print personal details of a person like name, age, and address. Use appropriate variables and output formatting.",
+            "prompt": [
+                "// Declare and print user details",
+                "string ___1___ = \"John Doe\";",
+                "int ___2___ = 30;",
+                "string ___3___ = \"123 Main St\";",
+                "",
+                "Console.WriteLine(\"Name: \" + ___1___);",
+                "Console.WriteLine(\"Age: \" + ___2___);",
+                "Console.WriteLine(\"Address: \" + ___3___);"
+            ],
+            "answers": [ "name", "age", "address" ],
+            "variables": "name, age, address",
+            "example": "Name: John Doe\nAge: 30\nAddress: 123 Main St",
+            "hint": "Use meaningful variable names and match them in the print statements."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the correct data types and identifiers to declare variables for a person's name, age, and address.",
+            "prompt": [
+                "___1___ name = \"Alice\";",
+                "___2___ age = 28;",
+                "___3___ address = \"456 Center St\";"
+            ],
+            "answers": [ "string", "int", "string" ],
+            "example": "string name = \"Alice\";\nint age = 28;\nstring address = \"456 Center St\";",
+            "hint": "Remember C# is case-sensitive. Use 'string' for text and 'int' for whole numbers."
+        }
+    },
+    {
+        "id": "assignment-1.1.2-sum-two-numbers",
+        "title": "Sum of Two Numbers",
+        "assignment": "Assignment 1.1.2",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Arithmetic, User Input",
+        "tags": [ "addition", "variables", "console", "input" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program to read two integers from the user, calculate their sum, and display the result.",
+            "prompt": [
+                "Console.Write(\"Enter the first number: \");",
+                "int ___1___ = int.Parse(Console.ReadLine());",
+                "Console.Write(\"Enter the second number: \");",
+                "int ___2___ = int.Parse(Console.ReadLine());",
+                "int ___3___ = ___1___ + ___2___;",
+                "Console.WriteLine(\"Sum = \" + ___3___);"
+            ],
+            "answers": [ "num1", "num2", "sum" ],
+            "variables": "num1, num2, sum",
+            "example": "Input: 5, 7 → Output: Sum = 12",
+            "hint": "Use `int.Parse(Console.ReadLine())` to convert user input to integers."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the syntax to declare two integers, add them, and output the result.",
+            "prompt": [
+                "___1___ a = 10;",
+                "___2___ b = 15;",
+                "int result = a + b;",
+                "Console.WriteLine(\"Result = \" + result);"
+            ],
+            "answers": [ "int", "int" ],
+            "example": "int a = 10;\nint b = 15;\nResult = 25",
+            "hint": "Use `int` for whole numbers and remember semicolons at the end of declarations."
+        }
+    },
+    {
+        "id": "assignment-1.1.3-divide-two-numbers",
+        "title": "Quotient and Remainder",
+        "assignment": "Assignment 1.1.3",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Division, Modulus, Console Output",
+        "tags": [ "division", "modulus", "console", "variables" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program that takes two integers from the user and prints the quotient and remainder when the first is divided by the second.",
+            "prompt": [
+                "Console.Write(\"Enter dividend: \");",
+                "int ___1___ = int.Parse(Console.ReadLine());",
+                "Console.Write(\"Enter divisor: \");",
+                "int ___2___ = int.Parse(Console.ReadLine());",
+                "int ___3___ = ___1___ / ___2___;",
+                "int ___4___ = ___1___ % ___2___;",
+                "Console.WriteLine(\"Quotient: \" + ___3___);",
+                "Console.WriteLine(\"Remainder: \" + ___4___);"
+            ],
+            "answers": [ "dividend", "divisor", "quotient", "remainder" ],
+            "variables": "dividend, divisor, quotient, remainder",
+            "example": "Input: 10 and 3 → Quotient: 3, Remainder: 1",
+            "hint": "Use `/` for quotient and `%` for remainder. Watch for division by zero."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Insert correct operators to calculate the quotient and remainder of two integers.",
+            "prompt": [
+                "int x = 10;",
+                "int y = 3;",
+                "int q = x ___1___ y;",
+                "int r = x ___2___ y;",
+                "Console.WriteLine(\"Q = \" + q + \", R = \" + r);"
+            ],
+            "answers": [ "/", "%" ],
+            "example": "Q = 3, R = 1",
+            "hint": "Use `/` for division and `%` for remainder. Both operands must be integers."
+        }
+    },
+    {
+        "id": "assignment-1.2.1-check-equality",
+        "title": "Check Equality of Two Integers",
+        "assignment": "Assignment 1.2.1",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Conditional Logic, Comparison Operators",
+        "tags": [ "if", "comparison", "input", "variables" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program that accepts two integers from the user and checks whether they are equal.",
+            "prompt": [
+                "Console.Write(\"Enter first number: \");",
+                "int ___1___ = int.Parse(Console.ReadLine());",
+                "Console.Write(\"Enter second number: \");",
+                "int ___2___ = int.Parse(Console.ReadLine());",
+                "if (___1___ == ___2___) {",
+                "    Console.WriteLine(\"The numbers are equal.\");",
+                "} else {",
+                "    Console.WriteLine(\"The numbers are not equal.\");",
+                "}"
+            ],
+            "answers": [ "a", "b" ],
+            "variables": "a, b",
+            "example": "Input: 5, 5 → Output: The numbers are equal.",
+            "hint": "Use `==` for equality comparison and `!=` for inequality."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the missing comparison operator and structure to check for equality.",
+            "prompt": [
+                "int x = 10;",
+                "int y = 20;",
+                "if (x ___1___ y) {",
+                "    Console.WriteLine(\"Equal\");",
+                "} else {",
+                "    Console.WriteLine(\"Not equal\");",
+                "}"
+            ],
+            "answers": [ "==" ],
+            "example": "if (x == y)",
+            "hint": "Use `==` to compare values, not `=` which is assignment."
+        }
+    },
+    {
+        "id": "assignment-1.2.2-sum-natural-numbers",
+        "title": "Sum of First 10 Natural Numbers",
+        "assignment": "Assignment 1.2.2",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Looping, Accumulation",
+        "tags": [ "for-loop", "sum", "iteration" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program to calculate the sum of the first 10 natural numbers using a loop.",
+            "prompt": [
+                "int sum = 0;",
+                "for (int ___1___ = 1; ___1___ <= ___2___; ___1___++) {",
+                "    sum += ___1___;",
+                "}",
+                "Console.WriteLine(\"Sum = \" + sum);"
+            ],
+            "answers": [ "i", "10" ],
+            "variables": "i, sum",
+            "example": "Output: Sum = 55",
+            "hint": "Use a `for` loop from 1 to 10 and accumulate with `sum += i`."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the missing loop components to iterate from 1 to 10.",
+            "prompt": [
+                "for (int ___1___ = 1; ___1___ <= 10; ___1___++) {",
+                "    Console.WriteLine(___1___);",
+                "}"
+            ],
+            "answers": [ "i" ],
+            "example": "for (int i = 1; i <= 10; i++)",
+            "hint": "Declare the loop variable and use it in all three loop expressions."
+        }
+    },
+    {
+        "id": "assignment-1.2.3-menu-calculator",
+        "title": "Menu-Driven Calculator",
+        "assignment": "Assignment 1.2.3",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "Switch Statements, Input Handling, Loops",
+        "tags": [ "menu", "arithmetic", "switch", "loop", "user input" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a menu-driven calculator program in C#. Let the user choose an operation: addition, subtraction, multiplication, or division. Loop until they choose to exit.",
+            "prompt": [
+                "bool running = true;",
+                "while (___1___) {",
+                "    Console.WriteLine(\"Choose an option: 1-Add, 2-Subtract, 3-Multiply, 4-Divide, 5-Exit\");",
+                "    int choice = int.Parse(Console.ReadLine());",
+                "    if (choice == 5) break;",
+                "    Console.Write(\"Enter first number: \"); int a = int.Parse(Console.ReadLine());",
+                "    Console.Write(\"Enter second number: \"); int b = int.Parse(Console.ReadLine());",
+                "    switch (choice) {",
+                "        case 1: Console.WriteLine(\"Result = \" + (a + b)); break;",
+                "        case 2: Console.WriteLine(\"Result = \" + (a - b)); break;",
+                "        case 3: Console.WriteLine(\"Result = \" + (a * b)); break;",
+                "        case 4: Console.WriteLine(\"Result = \" + (a / b)); break;",
+                "        default: Console.WriteLine(\"Invalid choice\"); break;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "running" ],
+            "variables": "choice, a, b, running",
+            "example": "Option: 1, Inputs: 5 and 3 → Output: Result = 8",
+            "hint": "Use a `while` loop and `switch` to repeatedly prompt the user and handle operations."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the missing switch statement structure for handling menu options.",
+            "prompt": [
+                "switch (___1___) {",
+                "    case 1:",
+                "        Console.WriteLine(\"Add\");",
+                "        break;",
+                "    case 2:",
+                "        Console.WriteLine(\"Subtract\");",
+                "        break;",
+                "    default:",
+                "        Console.WriteLine(\"Invalid\");",
+                "        break;",
+                "}"
+            ],
+            "answers": [ "choice" ],
+            "example": "switch (choice)",
+            "hint": "Match the variable used for the `switch` expression to the user input."
+        }
+    },
+    {
+        "id": "assignment-1.3.1-area-calculator",
+        "title": "Calculate Area of Triangle, Square, and Rectangle",
+        "assignment": "Assignment 1.3.1",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "Functions, Control Flow, Geometry",
+        "tags": [ "functions", "geometry", "menu", "if", "switch", "return" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write separate functions to calculate the area of a triangle, square, and rectangle. Prompt the user to choose the shape, input dimensions, and return the computed area.",
+            "prompt": [
+                "Console.WriteLine(\"Choose a shape: 1 - Triangle, 2 - Square, 3 - Rectangle\");",
+                "int choice = int.Parse(Console.ReadLine());",
+                "switch (choice) {",
+                "    case 1: Console.WriteLine(\"Area = \" + AreaTriangle(___1___, ___2___)); break;",
+                "    case 2: Console.WriteLine(\"Area = \" + AreaSquare(___3___)); break;",
+                "    case 3: Console.WriteLine(\"Area = \" + AreaRectangle(___4___, ___5___)); break;",
+                "}",
+                "",
+                "static double AreaTriangle(double b, double h) => 0.5 * b * h;",
+                "static double AreaSquare(double s) => s * s;",
+                "static double AreaRectangle(double w, double l) => w * l;"
+            ],
+            "answers": [ "b", "h", "s", "w", "l" ],
+            "variables": "b, h, s, w, l",
+            "example": "Triangle base=4, height=5 → Output: Area = 10",
+            "hint": "Prompt for shape, call appropriate function, and use correct area formulas."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in missing function declarations for shape area calculations.",
+            "prompt": [
+                "static ___1___ AreaTriangle(double b, double h) => 0.5 * b * h;",
+                "static ___2___ AreaSquare(double s) => s * s;",
+                "static ___3___ AreaRectangle(double w, double l) => w * l;"
+            ],
+            "answers": [ "double", "double", "double" ],
+            "example": "All area functions return type `double`.",
+            "hint": "Use `double` for decimal calculations. All return area values."
+        }
+    },
+    {
+        "id": "assignment-1.3.2-array-declaration",
+        "title": "Explore Array Declaration and Properties",
+        "assignment": "Assignment 1.3.2",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Arrays, Properties, Indexing",
+        "tags": [ "array", "length", "index", "declaration" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Declare and initialize an array, print its contents, and display its properties.",
+            "prompt": [
+                "int[] ___1___ = new int[] { 10, 20, 30 };",
+                "Console.WriteLine(\"Length = \" + ___1___.Length);",
+                "Console.WriteLine(\"First = \" + ___1___[0]);",
+                "Console.WriteLine(\"Last = \" + ___1___[___1___.Length - 1]);"
+            ],
+            "answers": [ "arr" ],
+            "variables": "arr",
+            "example": "Length = 3, First = 10, Last = 30",
+            "hint": "Use `.Length` and bracket indexing to inspect array contents."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in syntax to declare and print values from an array.",
+            "prompt": [
+                "___1___[] numbers = {1, 2, 3};",
+                "Console.WriteLine(numbers[0]);",
+                "Console.WriteLine(numbers[1]);",
+                "Console.WriteLine(numbers[2]);"
+            ],
+            "answers": [ "int" ],
+            "example": "int[] numbers = {1, 2, 3}",
+            "hint": "Use `int[]` to declare integer arrays."
+        }
+    },
+    {
+        "id": "assignment-1.3.3-reverse-array",
+        "title": "Reverse and Print an Array",
+        "assignment": "Assignment 1.3.3",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Arrays, Reversal, Indexing",
+        "tags": [ "array", "reverse", "for-loop", "index" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Read n elements into an array and print them in reverse order.",
+            "prompt": [
+                "int[] ___1___ = new int[] { 2, 5, 7 };",
+                "Console.WriteLine(\"Reversed Array:\");",
+                "for (int ___2___ = ___1___.Length - 1; ___2___ >= 0; ___2___--) {",
+                "    Console.WriteLine(___1___[___2___]);",
+                "}"
+            ],
+            "answers": [ "arr", "i" ],
+            "variables": "arr, i",
+            "example": "Input: [2,5,7] → Output: 7 5 2",
+            "hint": "Start from the end index and decrement down to zero."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the loop structure to print an array in reverse order.",
+            "prompt": [
+                "for (int i = ___1___; i >= 0; i--) {",
+                "    Console.WriteLine(arr[i]);",
+                "}"
+            ],
+            "answers": [ "arr.Length - 1" ],
+            "example": "Prints from highest to lowest index",
+            "hint": "To reverse, start at `Length - 1` and count down."
+        }
+    },
+    {
+        "id": "assignment-1.4.1-point-comparison",
+        "title": "Compare Two Points Using Struct",
+        "assignment": "Assignment 1.4.1",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "Structs, Conditionals, Object Instantiation",
+        "tags": [ "struct", "object comparison", "x/y coordinates", "console" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a structure named Point with X and Y coordinates. Instantiate two points and determine if the second is left, right, or aligned with the first by comparing X values.",
+            "prompt": [
+                "struct Point {",
+                "    public int X, Y;",
+                "}",
+                "Point p1 = new Point { X = ___1___, Y = ___2___ };",
+                "Point p2 = new Point { X = ___3___, Y = ___4___ };",
+                "if (p2.X > p1.X)",
+                "    Console.WriteLine(\"P2 is to the right of P1\");",
+                "else if (p2.X < p1.X)",
+                "    Console.WriteLine(\"P2 is to the left of P1\");",
+                "else",
+                "    Console.WriteLine(\"P2 is on the same vertical axis as P1\");"
+            ],
+            "answers": [ "5", "10", "8", "10" ],
+            "variables": "X, Y for p1 and p2",
+            "example": "P1: (5,10), P2: (8,10) → Output: P2 is to the right of P1",
+            "hint": "Compare X values of both points to determine horizontal position."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the syntax to define and use a structure named Point with X and Y coordinates.",
+            "prompt": [
+                "struct ___1___ {",
+                "    public int ___2___;",
+                "    public int ___3___;",
+                "}"
+            ],
+            "answers": [ "Point", "X", "Y" ],
+            "example": "struct Point { public int X, Y; }",
+            "hint": "Use `struct` to define the type, and `public` for field access."
+        }
+    },
+    {
+        "id": "assignment-1.4.2-student-class-properties",
+        "title": "Define Student Class with Properties",
+        "assignment": "Assignment 1.4.2",
+        "source": "Week 1 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "OOP, Class Definition, Encapsulation",
+        "tags": [ "class", "properties", "accessors", "object instantiation" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a class Student with private data members: ID, First Name, Last Name, and Grade. Use public properties for access, instantiate an object, and display the values.",
+            "prompt": [
+                "class Student {",
+                "    private int ___1___;",
+                "    private string ___2___;",
+                "    private string ___3___;",
+                "    private char ___4___;",
+                "",
+                "    public int StudentId { get; set; }",
+                "    public string FirstName { get; set; }",
+                "    public string LastName { get; set; }",
+                "    public char Grade { get; set; }",
+                "}",
+                "Student s = new Student { StudentId = 1, FirstName = \"Sam\", LastName = \"Lee\", Grade = 'A' };",
+                "Console.WriteLine($\"ID: {s.StudentId}, Name: {s.FirstName} {s.LastName}, Grade: {s.Grade}\");"
+            ],
+            "answers": [ "_studentId", "_studentFname", "_studentLname", "_studentGrade" ],
+            "variables": "StudentId, FirstName, LastName, Grade",
+            "example": "Output: ID: 1, Name: Sam Lee, Grade: A",
+            "hint": "Define private fields and expose them via public `{ get; set; }` properties."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the keywords to define properties for a class in C#.",
+            "prompt": [
+                "public ___1___ FirstName { get; set; }",
+                "public ___2___ Grade { get; set; }"
+            ],
+            "answers": [ "string", "char" ],
+            "example": "public string FirstName { get; set; }",
+            "hint": "Use the correct data type for each field: string for names, char for letter grade."
+        }
+    },
+    {
+        "id": "assignment-2.2.1-class-hierarchy",
+        "title": "Design a Class Hierarchy",
+        "assignment": "Assignment 2.2.1",
+        "source": "Week 2 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "Inheritance, Abstraction",
+        "tags": [ "inheritance", "hierarchy", "oop", "design" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Design a basic class hierarchy with a base class and at least two derived classes. Each class should define distinct properties or behaviors.",
+            "prompt": [
+                "class ___1___ {",
+                "    public string Name { get; set; }",
+                "}",
+                "",
+                "class ___2___ : Animal {",
+                "    public void Bark() => Console.WriteLine(\"Woof\");",
+                "}",
+                "",
+                "class ___3___ : Animal {",
+                "    public void Meow() => Console.WriteLine(\"Meow\");",
+                "}"
+            ],
+            "answers": [ "Animal", "Dog", "Cat" ],
+            "variables": "Animal, Dog, Cat",
+            "example": "Animal base class → Dog and Cat subclasses with custom methods",
+            "hint": "Use the `:` operator to define inheritance and differentiate derived class behavior."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the inheritance structure between a base and derived class.",
+            "prompt": [
+                "class Vehicle { public string Brand = \"Ford\"; }",
+                "class ___1___ : Vehicle {",
+                "    public void Honk() => Console.WriteLine(\"Beep!\");",
+                "}"
+            ],
+            "answers": [ "Car" ],
+            "example": "class Car : Vehicle",
+            "hint": "Use the colon `:` followed by the base class name to inherit in C#."
+        }
+    },
+    {
+        "id": "assignment-2.2.2-maths-overloading",
+        "title": "Create an Overloaded Maths Class",
+        "assignment": "Assignment 2.2.2",
+        "source": "Week 2 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "Method Overloading, Static Methods",
+        "tags": [ "overloading", "math", "static", "params" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a class with overloaded Add and Multiply methods using various parameter types. All methods should be public and static.",
+            "prompt": [
+                "public static class Maths {",
+                "    public static int Add(int a, int b) => ___1___;",
+                "    public static decimal Add(decimal x, decimal y, decimal z) => ___2___;",
+                "    public static float Multiply(float a, float b) => ___3___;",
+                "    public static float Multiply(float a, float b, float c) => ___4___;",
+                "}"
+            ],
+            "answers": [ "a + b", "x + y + z", "a * b", "a * b * c" ],
+            "variables": "a, b, x, y, z, c",
+            "example": "Add(2,3) → 5; Multiply(2,3,4) → 24",
+            "hint": "Match parameters to the correct data types and return expressions accordingly."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Insert the correct return types and keywords for overloaded methods.",
+            "prompt": [
+                "public ___1___ Add(int a, int b) => a + b;",
+                "public ___2___ Multiply(float x, float y) => x * y;"
+            ],
+            "answers": [ "static int", "static float" ],
+            "example": "public static int Add(...)",
+            "hint": "Use `static` for utility methods; return types must match result value types."
+        }
+    },
+    {
+        "id": "assignment-2.2.3-abstract-shape",
+        "title": "Abstract Shape and Area Calculation",
+        "assignment": "Assignment 2.2.3",
+        "source": "Week 2 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "Abstract Classes, Inheritance, Method Overriding",
+        "tags": [ "abstract class", "override", "area calculation", "inheritance" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create an abstract base class `Shape` with properties like ID, Name, and Color, and a method `CalculateArea`. Inherit `Circle` and `Square` from it, override the area logic for each.",
+            "prompt": [
+                "abstract class Shape {",
+                "    public int Id;",
+                "    public string Name;",
+                "    public string Color;",
+                "    public abstract double ___1___();",
+                "}",
+                "",
+                "class Circle : Shape {",
+                "    public double Radius;",
+                "    public override double ___1___() => Math.PI * Radius * Radius;",
+                "}",
+                "",
+                "class Square : Shape {",
+                "    public double Side;",
+                "    public override double ___1___() => Side * Side;",
+                "}"
+            ],
+            "answers": [ "CalculateArea" ],
+            "variables": "Shape, Circle, Square, Radius, Side",
+            "example": "Circle of radius 2 → Area ≈ 12.56",
+            "hint": "Declare abstract methods with no body and override them in derived classes."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the syntax for abstract method and override structure.",
+            "prompt": [
+                "public ___1___ double CalculateArea();",
+                "public ___2___ double CalculateArea() => Side * Side;"
+            ],
+            "answers": [ "abstract", "override" ],
+            "example": "`abstract` in base class, `override` in derived",
+            "hint": "Use `abstract` for declaration-only, and `override` to implement."
+        }
+    },
+    {
+        "id": "assignment-2.3.1-file-write-read",
+        "title": "Write and Read Personal Details to/from a File",
+        "assignment": "Assignment 2.3.1",
+        "source": "Week 2 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "File I/O, StreamWriter, StreamReader",
+        "tags": [ "file", "streamwriter", "streamreader", "console" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program that saves personal details (name, age, address) into a text file and then reads them back to display on the console.",
+            "prompt": [
+                "using (StreamWriter writer = new StreamWriter(\"details.txt\")) {",
+                "    writer.WriteLine(\"___1___\");",
+                "    writer.WriteLine(\"___2___\");",
+                "    writer.WriteLine(\"___3___\");",
+                "}",
+                "",
+                "using (StreamReader reader = new StreamReader(\"details.txt\")) {",
+                "    Console.WriteLine(reader.ReadToEnd());",
+                "}"
+            ],
+            "answers": [ "John Doe", "30", "123 Main St" ],
+            "variables": "name, age, address (written as string literals)",
+            "example": "File content:\nJohn Doe\n30\n123 Main St",
+            "hint": "Use `StreamWriter` to write and `StreamReader` to read. Always close or use `using`."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the correct types and method calls to write to and read from a file.",
+            "prompt": [
+                "using (___1___ writer = new StreamWriter(\"data.txt\")) {",
+                "    writer.WriteLine(\"Hello File\");",
+                "}",
+                "using (___2___ reader = new StreamReader(\"data.txt\")) {",
+                "    Console.WriteLine(reader.___3___());",
+                "}"
+            ],
+            "answers": [ "StreamWriter", "StreamReader", "ReadToEnd" ],
+            "example": "ReadToEnd reads entire file content as a single string",
+            "hint": "Both file classes are in `System.IO`; remember `.ReadToEnd()` reads all at once."
+        }
+    },
+    {
+        "id": "assignment-2.3.2-tip-calculator",
+        "title": "Tip Calculator with Format Specifiers",
+        "assignment": "Assignment 2.3.2",
+        "source": "Week 2 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Arithmetic, String Formatting",
+        "tags": [ "tip calculator", "decimal", "formatting", "currency" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a tip calculator. Accept bill amount and tip %, compute total, and display all values using proper formatting.",
+            "prompt": [
+                "Console.Write(\"Enter bill amount: \");",
+                "decimal ___1___ = decimal.Parse(Console.ReadLine());",
+                "Console.Write(\"Enter tip percentage: \");",
+                "decimal ___2___ = decimal.Parse(Console.ReadLine());",
+                "decimal tip = ___1___ * ___2___ / 100;",
+                "decimal total = ___1___ + tip;",
+                "Console.WriteLine($\"Tip: {tip:C}\");",
+                "Console.WriteLine($\"Total: {total:C}\");"
+            ],
+            "answers": [ "bill", "percent" ],
+            "variables": "bill, percent, tip, total",
+            "example": "Input: 100, 15 → Tip: $15.00, Total: $115.00",
+            "hint": "Use `{value:C}` to format as currency. Tip = (bill × percent / 100)."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in format specifiers to display a number as currency and percentage.",
+            "prompt": [
+                "decimal bill = 100.00M;",
+                "decimal tipPercent = 15.00M;",
+                "decimal tip = bill * tipPercent / 100;",
+                "Console.WriteLine($\"Bill: {___1___:C}\");",
+                "Console.WriteLine($\"Tip Rate: {___2___}%\");",
+                "Console.WriteLine($\"Tip Amount: {tip:C}\");"
+            ],
+            "answers": [ "bill", "tipPercent" ],
+            "example": "$100.00 and 15%",
+            "hint": "Use `:C` inside interpolated strings to show currency. No space between `{` and variable."
+        }
+    },
+    {
+        "id": "assignment-2.4.1-array-sum",
+        "title": "Sum of All Elements in Array",
+        "assignment": "Assignment 2.4.1",
+        "source": "Week 2 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Arrays, For Loops, Accumulation",
+        "tags": [ "array", "sum", "for-loop", "indexing" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program that accepts n integers into an array and calculates the sum of all elements.",
+            "prompt": [
+                "int[] ___1___ = new int[] { 2, 5, 8 };",
+                "int sum = 0;",
+                "for (int ___2___ = 0; ___2___ < ___1___.Length; ___2___++) {",
+                "    sum += ___1___[___2___];",
+                "}",
+                "Console.WriteLine(\"Sum = \" + sum);"
+            ],
+            "answers": [ "arr", "i" ],
+            "variables": "arr, i, sum",
+            "example": "Input: [2,5,8] → Output: Sum = 15",
+            "hint": "Use a `for` loop to accumulate the value of each element."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in missing keywords to declare and sum an array.",
+            "prompt": [
+                "___1___[] nums = {1, 2, 3};",
+                "int sum = 0;",
+                "foreach (int num in nums) {",
+                "    sum += ___2___;",
+                "}",
+                "Console.WriteLine(\"Total = \" + sum);"
+            ],
+            "answers": [ "int", "num" ],
+            "example": "Total = 6",
+            "hint": "Declare the array type and use the loop variable to access each element."
+        }
+    },
+    {
+        "id": "assignment-2.4.2-largest-of-three",
+        "title": "Find Largest of Three Numbers",
+        "assignment": "Assignment 2.4.2",
+        "source": "Week 2 - Introduction to Programming",
+        "difficulty": "Easy",
+        "focus": "Conditionals, Comparisons",
+        "tags": [ "if-else", "max", "logic", "comparison" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Accept three numbers from the user and determine which is the largest.",
+            "prompt": [
+                "int a = 25, b = 63, c = 10;",
+                "if (a > b && a > c) {",
+                "    Console.WriteLine(\"First is largest\");",
+                "} else if (b > a && b > c) {",
+                "    Console.WriteLine(\"Second is largest\");",
+                "} else {",
+                "    Console.WriteLine(\"Third is largest\");",
+                "}"
+            ],
+            "answers": [],
+            "variables": "a, b, c",
+            "example": "Input: 25, 63, 10 → Output: Second is largest",
+            "hint": "Use chained `if-else` comparisons with logical `&&` operators."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the logic to compare three numbers and return the largest.",
+            "prompt": [
+                "int a = 10, b = 20, c = 30;",
+                "if (c > a && c > b) {",
+                "    Console.WriteLine(\"___1___ is largest\");",
+                "}"
+            ],
+            "answers": [ "c" ],
+            "example": "Output: c is largest",
+            "hint": "Use relational (`>`) operators and logical `&&` correctly."
+        }
+    },
+    {
+        "id": "assignment-2.4.3-coordinate-quadrant",
+        "title": "Determine Quadrant of Coordinate",
+        "assignment": "Assignment 2.4.3",
+        "source": "Week 2 - Introduction to Programming",
+        "difficulty": "Medium",
+        "focus": "Conditionals, Coordinates, Logical Branching",
+        "tags": [ "coordinates", "quadrant", "if-else", "geometry" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Accept X and Y coordinates from the user and print the quadrant in which the point lies.",
+            "prompt": [
+                "int x = 7, y = 9;",
+                "if (x > 0 && y > 0)",
+                "    Console.WriteLine(\"First quadrant\");",
+                "else if (x < 0 && y > 0)",
+                "    Console.WriteLine(\"Second quadrant\");",
+                "else if (x < 0 && y < 0)",
+                "    Console.WriteLine(\"Third quadrant\");",
+                "else if (x > 0 && y < 0)",
+                "    Console.WriteLine(\"Fourth quadrant\");",
+                "else",
+                "    Console.WriteLine(\"Point is on an axis\");"
+            ],
+            "answers": [],
+            "variables": "x, y",
+            "example": "Input: (7,9) → Output: First quadrant",
+            "hint": "Use compound logical conditions to evaluate x and y."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the values and keywords to determine a point’s quadrant.",
+            "prompt": [
+                "int x = ___1___, y = ___2___;",
+                "if (x > 0 && y > 0) {",
+                "    Console.WriteLine(\"First quadrant\");",
+                "}"
+            ],
+            "answers": [ "7", "9" ],
+            "example": "First quadrant if x > 0 and y > 0",
+            "hint": "Use integer assignment and compound conditional checks."
+        }
+    },
+    {
+        "id": "week2lab-1-temperature-state",
+        "title": "Determine Weather State by Temperature",
+        "assignment": "Week 2 Challenge Lab 1",
+        "source": "Week 2 - Challenge Labs",
+        "difficulty": "Easy",
+        "focus": "Conditionals, Ranges, Output",
+        "tags": [ "if-else", "temperature", "range", "condition" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program that reads temperature in Fahrenheit and prints a weather status based on the value range.",
+            "prompt": [
+                "int temp = ___1___;",
+                "if (temp < 10)",
+                "    Console.WriteLine(\"Freezing weather\");",
+                "else if (temp <= 20)",
+                "    Console.WriteLine(\"Very Cold weather\");",
+                "else if (temp <= 35)",
+                "    Console.WriteLine(\"Cold weather\");",
+                "else if (temp <= 50)",
+                "    Console.WriteLine(\"Normal in weather\");",
+                "else if (temp <= 65)",
+                "    Console.WriteLine(\"It's Hot\");",
+                "else if (temp <= 80)",
+                "    Console.WriteLine(\"It's Very Hot\");"
+            ],
+            "answers": [ "67" ],
+            "variables": "temp",
+            "example": "Input: 67 → Output: It's Very Hot",
+            "hint": "Use chained `else if` blocks and check temperature thresholds."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the structure to evaluate temperature state.",
+            "prompt": [
+                "int temp = ___1___;",
+                "if (temp <= 20) {",
+                "    Console.WriteLine(\"Cold\");",
+                "} else {",
+                "    Console.WriteLine(\"Warm\");",
+                "}"
+            ],
+            "answers": [ "15" ],
+            "example": "Output: Cold",
+            "hint": "Use numeric comparisons to evaluate ranges."
+        }
+    },
+    {
+        "id": "week2lab-2-login-attempts",
+        "title": "Validate Login Attempts",
+        "assignment": "Week 2 Challenge Lab 2",
+        "source": "Week 2 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Loops, Conditionals, Counters",
+        "tags": [ "login", "loop", "authentication", "validation" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Prompt the user for a username and password. Allow only 3 attempts before locking them out.",
+            "prompt": [
+                "int attempts = 0;",
+                "while (attempts < 3) {",
+                "    Console.Write(\"Enter username: \");",
+                "    string user = Console.ReadLine();",
+                "    Console.Write(\"Enter password: \");",
+                "    string pass = Console.ReadLine();",
+                "    if (user == \"admin\" && pass == \"1234\") {",
+                "        Console.WriteLine(\"Access Granted\"); break;",
+                "    } else {",
+                "        Console.WriteLine(\"Invalid login\");",
+                "        attempts++;",
+                "    }",
+                "}",
+                "if (attempts == 3)",
+                "    Console.WriteLine(\"Too many attempts — locked out.\");"
+            ],
+            "answers": [],
+            "variables": "attempts, user, pass",
+            "example": "3 wrong attempts → Output: Too many attempts",
+            "hint": "Use a loop and counter to track how many failed attempts occur."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the loop to allow 3 login attempts.",
+            "prompt": [
+                "int attempts = 0;",
+                "while (___1___) {",
+                "    attempts++;",
+                "}",
+                "if (___2___)",
+                "    Console.WriteLine(\"Locked out\");"
+            ],
+            "answers": [ "attempts < 3", "attempts == 3" ],
+            "example": "Loop continues while attempts < 3, then locks out.",
+            "hint": "Compare the counter variable against limit using `<` and `==`."
+        }
+    },
+    {
+        "id": "week2lab-3-number-triangle",
+        "title": "Print Number Triangle with Decreasing Width",
+        "assignment": "Week 2 Challenge Lab 3",
+        "source": "Week 2 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Loops, Pattern Printing",
+        "tags": [ "nested loop", "pattern", "triangle", "console output" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given a number and a width, print a reverse triangle pattern of that number.",
+            "prompt": [
+                "int num = 6;",
+                "int width = 6;",
+                "for (int i = width; i >= 1; i--) {",
+                "    for (int j = 0; j < i; j++) {",
+                "        Console.Write(num);",
+                "    }",
+                "    Console.WriteLine();",
+                "}"
+            ],
+            "answers": [],
+            "variables": "num, width, i, j",
+            "example": "Input: 6,6 → Output: 6 lines decreasing by 1",
+            "hint": "Use a nested loop: outer controls lines, inner controls digits per line."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the loop structure to build a reverse triangle.",
+            "prompt": [
+                "for (int i = ___1___; i >= 1; i--) {",
+                "    for (int j = 0; j < i; j++) {",
+                "        Console.Write(\"*\");",
+                "    }",
+                "    Console.WriteLine();",
+                "}"
+            ],
+            "answers": [ "5" ],
+            "example": "*****\n****\n***\n**\n*",
+            "hint": "Outer loop counts down; inner loop prints stars up to current i."
+        }
+    },
+    {
+        "id": "week2lab-4-student-grade-summary",
+        "title": "Read Student Info and Compute Summary",
+        "assignment": "Week 2 Challenge Lab 4",
+        "source": "Week 2 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Input Parsing, Total/Average Calculation",
+        "tags": [ "student", "struct/class", "average", "input" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a structure or class to hold a student’s ID, name, and marks. Read input, compute total and average, and assign a division.",
+            "prompt": [
+                "int roll = 784;",
+                "string name = \"James\";",
+                "int physics = 70, chemistry = 80, cs = 90;",
+                "int total = physics + chemistry + cs;",
+                "float percent = total / 3.0f;",
+                "string division = (percent >= 60) ? \"First\" : (percent >= 50) ? \"Second\" : \"Third\";",
+                "Console.WriteLine($\"Roll No: {roll}\\nName: {name}\\nTotal: {total}\\nPercentage: {percent}\\nDivision: {division}\");"
+            ],
+            "answers": [],
+            "variables": "roll, name, subject scores, total, percent",
+            "example": "Input: 70, 80, 90 → Output: 240, 80.00%, First",
+            "hint": "Use float division and a ternary operator for classification."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the expression to determine division based on percentage.",
+            "prompt": [
+                "string division = (percent >= 60) ? \"___1___\" : (percent >= 50) ? \"___2___\" : \"Third\";"
+            ],
+            "answers": [ "First", "Second" ],
+            "example": "percent = 80 → Output: First",
+            "hint": "Use ternary operators to branch based on value ranges."
+        }
+    },
+    {
+        "id": "assignment-3.1.1-return-even-numbers",
+        "title": "Return Even Numbers as String",
+        "assignment": "Assignment 3.1.1",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Loops, StringBuilder",
+        "tags": [ "loop", "even numbers", "stringbuilder", "range" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a method that returns a string of even numbers from 2 to 98 using a loop and StringBuilder.",
+            "prompt": [
+                "public static string ReturnEvenNumbers() {",
+                "    StringBuilder sb = new StringBuilder();",
+                "    for (int i = 2; i < 100; i += 2) {",
+                "        sb.Append(i + \" \");",
+                "    }",
+                "    return sb.ToString().Trim();",
+                "}"
+            ],
+            "answers": [],
+            "variables": "i, sb",
+            "example": "Output: \"2 4 6 ... 98\"",
+            "hint": "Use `StringBuilder` for performance and `i += 2` to iterate by even steps."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the loop and method call structure to generate even numbers.",
+            "prompt": [
+                "for (int i = ___1___; i < ___2___; i += 2) {",
+                "    sb.Append(i + \" \");",
+                "}"
+            ],
+            "answers": [ "2", "100" ],
+            "example": "Prints even numbers from 2 to 98",
+            "hint": "Start from 2, and increment by 2 until under 100."
+        }
+    },
+    {
+        "id": "assignment-3.1.2-leap-year-check",
+        "title": "Check if Year is a Leap Year",
+        "assignment": "Assignment 3.1.2",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Easy",
+        "focus": "Conditionals, Modulus",
+        "tags": [ "leap year", "divisible", "modulus", "conditions" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a method that returns true if the input year is a leap year.",
+            "prompt": [
+                "public static bool IsLeapYear(int year) {",
+                "    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);",
+                "}"
+            ],
+            "answers": [],
+            "variables": "year",
+            "example": "2016 → true, 2018 → false",
+            "hint": "A year is a leap year if divisible by 4 and not by 100 unless also divisible by 400."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the leap year condition logic.",
+            "prompt": [
+                "return (year % ___1___ == 0 && year % ___2___ != 0) || (year % ___3___ == 0);"
+            ],
+            "answers": [ "4", "100", "400" ],
+            "example": "Year = 2016 → Output: true",
+            "hint": "Use modulus to check divisibility rules for leap year logic."
+        }
+    },
+    {
+        "id": "assignment-3.1.3-count-spaces",
+        "title": "Count Number of Spaces in a String",
+        "assignment": "Assignment 3.1.3",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Easy",
+        "focus": "String Traversal, Character Comparison",
+        "tags": [ "char loop", "spaces", "count", "string input" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a function that accepts a string and returns the number of space characters in it.",
+            "prompt": [
+                "public static int CountSpaces(string s) {",
+                "    int count = 0;",
+                "    foreach (char c in s) {",
+                "        if (c == ' ') count++;",
+                "    }",
+                "    return count;",
+                "}"
+            ],
+            "answers": [],
+            "variables": "s, c, count",
+            "example": "Input: \"This is a test\" → Output: 3",
+            "hint": "Use `foreach` and compare each character to `' '`."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the loop to count spaces in a string.",
+            "prompt": [
+                "foreach (char ___1___ in ___2___) {",
+                "    if (___1___ == ' ') count++;",
+                "}"
+            ],
+            "answers": [ "c", "s" ],
+            "example": "Counts number of spaces in string",
+            "hint": "Use `char` loop variable and compare to `' '`."
+        }
+    },
+    {
+        "id": "assignment-3.1.4-replace-consecutive-ones",
+        "title": "Replace First Occurrence of Two Consecutive 1s with 0s",
+        "assignment": "Assignment 3.1.4",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Array Traversal, Conditional Replacement",
+        "tags": [ "array", "consecutive", "replacement", "logic" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a function that replaces the first two consecutive 1s in an array with 0s.",
+            "prompt": [
+                "int[] arr = {0, 2, 1, 1, 9, 1, 1};",
+                "for (int i = 0; i < arr.Length - 1; i++) {",
+                "    if (arr[i] == 1 && arr[i + 1] == 1) {",
+                "        arr[i] = 0;",
+                "        arr[i + 1] = 0;",
+                "        break;",
+                "    }",
+                "}",
+                "Console.WriteLine(string.Join(\",\", arr));"
+            ],
+            "answers": [],
+            "variables": "arr, i",
+            "example": "Input: [0,2,1,1,9] → Output: [0,2,0,0,9]",
+            "hint": "Check for pair of 1s and replace them with 0s. Use `break` to exit after first match."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the array and loop to detect two 1s in a row.",
+            "prompt": [
+                "if (arr[i] == ___1___ && arr[i + 1] == ___2___) {",
+                "    arr[i] = 0; arr[i + 1] = 0;",
+                "    break;",
+                "}"
+            ],
+            "answers": [ "1", "1" ],
+            "example": "Input: [1,1] → Replaced with [0,0]",
+            "hint": "Use `== 1` to detect ones, and modify only the first pair."
+        }
+    },
+    {
+        "id": "assignment-3.2.1-print-2d-array",
+        "title": "Print a 2D Array in Matrix Format",
+        "assignment": "Assignment 3.2.1",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Easy",
+        "focus": "2D Arrays, Loops, Output Formatting",
+        "tags": [ "matrix", "2d array", "loop", "formatting" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a 2D integer array and print it in matrix format using nested loops.",
+            "prompt": [
+                "int[,] matrix = { {2, 3, 4}, {1, 4, 6} };",
+                "for (int i = 0; i < matrix.GetLength(0); i++) {",
+                "    for (int j = 0; j < matrix.GetLength(1); j++) {",
+                "        Console.Write(\"| \" + matrix[i, j] + \" \");",
+                "    }",
+                "    Console.WriteLine(\"|\");",
+                "}"
+            ],
+            "answers": [],
+            "variables": "matrix, i, j",
+            "example": "| 2 | 3 | 4 |\n| 1 | 4 | 6 |",
+            "hint": "Use `matrix.GetLength(dim)` to iterate rows and columns."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the declaration and print format for a matrix.",
+            "prompt": [
+                "int[,] arr = new int[___1___, ___2___];",
+                "for (int i = 0; i < ___3___; i++) {",
+                "    for (int j = 0; j < ___4___; j++) {",
+                "        Console.Write(arr[i, j] + \" \");",
+                "    }",
+                "}"
+            ],
+            "answers": [ "2", "3", "2", "3" ],
+            "example": "2 rows × 3 columns",
+            "hint": "Declare 2D arrays with two dimensions; loop through both indices."
+        }
+    },
+    {
+        "id": "assignment-3.2.2-add-matrices",
+        "title": "Add Two Matrices of Same Size",
+        "assignment": "Assignment 3.2.2",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "2D Arrays, Loop Logic, Elementwise Sum",
+        "tags": [ "matrix", "addition", "2d array", "nested loop" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program to add two 2x2 matrices and display the resulting matrix.",
+            "prompt": [
+                "int[,] a = {{1,2}, {3,4}};",
+                "int[,] b = {{5,6}, {7,8}};",
+                "int[,] sum = new int[2,2];",
+                "for (int i = 0; i < 2; i++) {",
+                "    for (int j = 0; j < 2; j++) {",
+                "        sum[i, j] = a[i, j] + b[i, j];",
+                "    }",
+                "}",
+                "Console.WriteLine(\"Resulting Matrix:\");",
+                "for (int i = 0; i < 2; i++) {",
+                "    for (int j = 0; j < 2; j++) {",
+                "        Console.Write(sum[i, j] + \" \");",
+                "    }",
+                "    Console.WriteLine();",
+                "}"
+            ],
+            "answers": [],
+            "variables": "a, b, sum, i, j",
+            "example": "[[1,2],[3,4]] + [[5,6],[7,8]] → [[6,8],[10,12]]",
+            "hint": "Use double `for` loop to iterate through matrix cells and add corresponding values."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in values to sum elements from two matrices.",
+            "prompt": [
+                "sum[i, j] = ___1___[i, j] + ___2___[i, j];"
+            ],
+            "answers": [ "a", "b" ],
+            "example": "sum[i, j] = a[i, j] + b[i, j]",
+            "hint": "Index into both matrices using `i, j` and sum the results."
+        }
+    },
+    {
+        "id": "assignment-3.2.3-overload-operator-circle",
+        "title": "Overload + and - to Add/Diff Circle Areas",
+        "assignment": "Assignment 3.2.3",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Operator Overloading, Area Computation",
+        "tags": [ "operator overloading", "circle", "area", "class" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Overload `+` and `-` operators in a `Circle` class to compute total and difference of area between two circle objects.",
+            "prompt": [
+                "class Circle {",
+                "    public double Radius;",
+                "    public static double operator +(Circle c1, Circle c2) => Math.PI * (c1.Radius * c1.Radius + c2.Radius * c2.Radius);",
+                "    public static double operator -(Circle c1, Circle c2) => Math.Abs(Math.PI * (c1.Radius * c1.Radius - c2.Radius * c2.Radius));",
+                "}",
+                "Circle a = new Circle { Radius = 3 };",
+                "Circle b = new Circle { Radius = 2 };",
+                "Console.WriteLine(\"Sum = \" + (a + b));",
+                "Console.WriteLine(\"Diff = \" + (a - b));"
+            ],
+            "answers": [],
+            "variables": "Circle, Radius, operator overloading",
+            "example": "Sum = π(9 + 4) = π × 13",
+            "hint": "Overload operators with `public static` and return correct area logic."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the syntax to overload `+` for two circle areas.",
+            "prompt": [
+                "public static ___1___ operator +(Circle c1, Circle c2) => Math.PI * (c1.Radius * c1.Radius + c2.Radius * c2.Radius);"
+            ],
+            "answers": [ "double" ],
+            "example": "Area of circle = πr²",
+            "hint": "Use `public static` and return `double` since area is numeric."
+        }
+    },
+    {
+        "id": "assignment-3.2.4-params-average-out",
+        "title": "Use `params` and `out` to Compute Total and Average",
+        "assignment": "Assignment 3.2.4",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Params Array, Out Parameters, Aggregation",
+        "tags": [ "params", "out", "average", "total", "method" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a method that accepts any number of integers using `params`, and returns both total and average using `out`.",
+            "prompt": [
+                "public static void ComputeStats(out int total, out double average, params int[] nums) {",
+                "    total = nums.Sum();",
+                "    average = total / (double)nums.Length;",
+                "}",
+                "",
+                "ComputeStats(out int total, out double avg, 10, 15, 20, 30);",
+                "Console.WriteLine($\"Total: {total}, Avg: {avg}\");"
+            ],
+            "answers": [],
+            "variables": "total, average, nums",
+            "example": "Input: 10,15,20,30 → Total = 75, Avg = 18.75",
+            "hint": "Use `params` to accept variable arguments and `out` to return multiple values."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in keywords for return-by-reference parameters.",
+            "prompt": [
+                "public static void Method(___1___ int result, ___2___ double average, params int[] numbers)"
+            ],
+            "answers": [ "out", "out" ],
+            "example": "Allows values to be returned through the method parameters.",
+            "hint": "Use `out` to return values by reference."
+        }
+    },
+    {
+        "id": "assignment-3.3.1-student-list-management",
+        "title": "Manage a List of Students",
+        "assignment": "Assignment 3.3.1",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "OOP, List Operations, Object Management",
+        "tags": [ "class", "list", "object", "add", "delete", "display" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a `Student` class with fields like ID, FirstName, LastName, Address, MonthOfAdmission (as enum), and Grade. Add students to a list, remove a student by ID, and display all students.",
+            "prompt": [
+                "enum MonthOfAdmission { Jan, Feb, Mar, Apr }",
+                "",
+                "class Student {",
+                "    public int Id;",
+                "    public string FirstName, LastName, Address;",
+                "    public MonthOfAdmission Month;",
+                "    public char Grade;",
+                "}",
+                "",
+                "List<Student> students = new List<Student>();",
+                "students.Add(new Student { Id = 1, FirstName = \"John\", LastName = \"Smith\", Address = \"Seattle\", Month = MonthOfAdmission.Jan, Grade = 'A' });",
+                "",
+                "students.RemoveAll(s => s.Id == ___1___);",
+                "",
+                "foreach (var s in students) {",
+                "    Console.WriteLine($\"{s.Id} - {s.FirstName} {s.LastName} - {s.Grade}\");",
+                "}"
+            ],
+            "answers": [ "1" ],
+            "variables": "students, Student class, MonthOfAdmission",
+            "example": "1 student added, then removed",
+            "hint": "Use `List<T>` and lambda with `RemoveAll` to filter by condition."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the syntax for using a class and list to store student objects.",
+            "prompt": [
+                "List<___1___> students = new List<___1___>();",
+                "students.Add(new ___1___ { Id = 2, FirstName = \"Jane\" });"
+            ],
+            "answers": [ "Student" ],
+            "example": "List<Student>",
+            "hint": "You must use the class name as the type for the generic list."
+        }
+    },
+    {
+        "id": "assignment-3.3.2-student-enum-usage",
+        "title": "Use Enum to Represent Month in a Class",
+        "assignment": "Assignment 3.3.2",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Easy",
+        "focus": "Enum, Class Fields, Initialization",
+        "tags": [ "enum", "class", "object", "value assignment" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Use an `enum` inside a class to define the month of admission for a student, and instantiate an object using that enum value.",
+            "prompt": [
+                "enum Month { Jan, Feb, Mar, Apr }",
+                "",
+                "class Student {",
+                "    public string Name;",
+                "    public Month AdmissionMonth;",
+                "}",
+                "",
+                "Student s = new Student {",
+                "    Name = \"Alice\",",
+                "    AdmissionMonth = ___1___",
+                "};",
+                "Console.WriteLine($\"{s.Name} - {s.AdmissionMonth}\");"
+            ],
+            "answers": [ "Month.Mar" ],
+            "variables": "Student class, AdmissionMonth enum",
+            "example": "Alice - Mar",
+            "hint": "Access enum values using `EnumName.Value` syntax."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the syntax for declaring and using an enum in a class.",
+            "prompt": [
+                "enum ___1___ { Spring, Summer, Fall }",
+                "public ___2___ Semester { get; set; }"
+            ],
+            "answers": [ "Term", "Term" ],
+            "example": "Enum used as class property",
+            "hint": "Use the same enum type name in both declaration and usage."
+        }
+    },
+    {
+        "id": "assignment-3.4.1-beverage-coffee-inheritance",
+        "_comment": "NOTE: formatting consistent from here",
+        "title": "Create Beverage Abstract Class and Inherit Coffee",
+        "assignment": "Assignment 3.4.1",
+        "source": "Week 3 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Abstract Classes, Inheritance, List Usage",
+        "tags": [ "abstract", "inheritance", "oop", "override", "list", "display" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create an abstract base class `Beverage` with properties like `Id`, `Name`, and `Type`. Inherit `Coffee` from it and override a method that returns a description.",
+            "prompt": [
+                "___1___ class Beverage {",
+                "    public int Id { get; set; }",
+                "    public string Name { get; set; }",
+                "    public string Type { get; set; }",
+                "    public ___2___ string GetDescription();",
+                "}",
+                "",
+                "class ___3___ : Beverage {",
+                "    public string RoastLevel { get; set; }",
+                "    public override string GetDescription() => $\"{Name} - {RoastLevel} Roast\";",
+                "}",
+                "",
+                "List<Coffee> coffees = new List<Coffee> {",
+                "    new Coffee { Id = 1, Name = \"Ethiopian\", Type = \"Arabica\", RoastLevel = \"Medium\" },",
+                "    new Coffee { Id = 2, Name = \"Sumatra\", Type = \"Robusta\", RoastLevel = \"Dark\" }",
+                "};",
+                "",
+                "foreach (var ___4___ in coffees) {",
+                "    Console.WriteLine(___4___.GetDescription());",
+                "}"
+            ],
+            "answers": [ "abstract", "abstract", "Coffee", "c" ],
+            "variables": "an abstract base class, a derived class with an overridden method, a coffee list, and a loop variable",
+            "example": "Output: Ethiopian - Medium Roast",
+            "hint": "Use `abstract` for class and method, and override in the derived class."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the syntax to define and inherit an abstract base class.",
+            "prompt": [
+                "___1___ class Beverage {",
+                "    public ___2___ string GetDescription();",
+                "}",
+                "",
+                "class Coffee : ___3___ {",
+                "    public override string GetDescription() => \"Description here\";",
+                "}"
+            ],
+            "answers": [ "abstract", "abstract", "Beverage" ],
+            "variables": "keywords for class/method declarations, abstract and override usage",
+            "example": "abstract method must be overridden in derived class",
+            "hint": "Use the `abstract` keyword in both the class and method signatures."
+        }
+    },
+    {
+        "id": "week3lab-1-palindrome-check",
+        "title": "Check If String Is a Palindrome",
+        "assignment": "Week 3 Challenge Lab 1",
+        "source": "Week 3 - Challenge Labs",
+        "difficulty": "Easy",
+        "focus": "String Reversal, Conditional Return",
+        "tags": [ "palindrome", "string", "reverse", "condition" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Check if a lowercase string reads the same forward and backward.",
+            "prompt": [
+                "public static bool IsPalindrome(string ___1___) {",
+                "    char[] chars = ___1___.ToCharArray();",
+                "    Array.Reverse(___2___);",
+                "    return ___1___ == new string(___2___);",
+                "}"
+            ],
+            "answers": [ "s", "chars" ],
+            "variables": "a string input and a character array for reversal",
+            "example": "Input: \"eye\" → Output: true",
+            "hint": "Reverse the char array and compare to the original string."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic to compare a string with its reversed version.",
+            "prompt": [
+                "return ___1___ == new string(___1___.ToCharArray().___2___());"
+            ],
+            "answers": [ "s", "Reverse" ],
+            "variables": "a string and its reversed equivalent using array conversion",
+            "example": "Input: \"madam\" → Output: true",
+            "hint": "Use `ToCharArray()` and `Array.Reverse()` to reverse a string."
+        }
+    },
+    {
+        "id": "week3lab-2-sum-digits-in-string",
+        "title": "Sum of Digits in a String",
+        "assignment": "Week 3 Challenge Lab 2",
+        "source": "Week 3 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "String Parsing, Char Evaluation",
+        "tags": [ "digits", "sum", "char loop", "parse" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Return the sum of all numeric digits found in a string.",
+            "prompt": [
+                "public static int SumDigits(string ___1___) {",
+                "    int ___2___ = 0;",
+                "    foreach (char ___3___ in ___1___) {",
+                "        if (char.IsDigit(___3___))",
+                "            ___2___ += int.Parse(___3___.ToString());",
+                "    }",
+                "    return ___2___;",
+                "}"
+            ],
+            "answers": [ "s", "sum", "c" ],
+            "variables": "a string input, loop character, and integer counter for the digit sum",
+            "example": "Input: \"1q2w3e\" → Output: 6",
+            "hint": "Use `char.IsDigit()` and `int.Parse()` for numeric characters."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the loop to check digits and sum them.",
+            "prompt": [
+                "if (___1___(___2___)) ___3___ += ___4___.Parse(___2___.ToString());"
+            ],
+            "answers": [ "char.IsDigit", "c", "sum", "int" ],
+            "variables": "the digit checker function, loop character, integer accumulator",
+            "example": "Input: \"L0r3m1p5um\" → Output: 9",
+            "hint": "Use `IsDigit` to validate characters before parsing."
+        }
+    },
+    {
+        "id": "week3lab-3-two-sum-indices",
+        "title": "Find Indices of Two Numbers That Add Up to Target",
+        "assignment": "Week 3 Challenge Lab 3",
+        "source": "Week 3 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Arrays, Loop, Index Matching",
+        "tags": [ "array", "sum", "indices", "nested loop" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Return indices of the two numbers that add up to the target value.",
+            "prompt": [
+                "public static int[] TwoSum(int[] ___1___, int ___2___) {",
+                "    for (int ___3___ = 0; ___3___ < ___1___.Length; ___3___++) {",
+                "        for (int ___4___ = ___3___ + 1; ___4___ < ___1___.Length; ___4___++) {",
+                "            if (___1___[___3___] + ___1___[___4___] == ___2___) {",
+                "                return new int[] { ___3___, ___4___ };",
+                "            }",
+                "        }",
+                "    }",
+                "    return new int[] { -1, -1 };",
+                "}"
+            ],
+            "answers": [ "nums", "target", "i", "j" ],
+            "variables": "an array of integers, two loop counters, and a target value",
+            "example": "Input: [2,7,11,15], target=9 → Output: [0,1]",
+            "hint": "Use nested loops to compare each pair of indices."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in logic to test if array elements equal target.",
+            "prompt": [
+                "if (___1___[___2___] + ___1___[___3___] == ___4___)"
+            ],
+            "answers": [ "nums", "i", "j", "target" ],
+            "variables": "array elements at two indices and the target sum",
+            "example": "Returns index pair if sum matches target",
+            "hint": "Compare two elements and return when match is found."
+        }
+    },
+    {
+        "id": "week3lab-4-remove-substrings",
+        "title": "Minimize String by Repeatedly Removing Substrings",
+        "assignment": "Week 3 Challenge Lab 4",
+        "source": "Week 3 - Challenge Labs",
+        "difficulty": "Hard",
+        "focus": "String Replacement, While Loop",
+        "tags": [ "string replace", "substring", "loop", "minimize" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Remove all occurrences of \"AB\" and \"CD\" from a string until none remain. Return the length of the minimized string.",
+            "prompt": [
+                "public static int MinimizeString(string ___1___) {",
+                "    while (___1___.Contains(\"___2___\") || ___1___.Contains(\"___3___\")) {",
+                "        ___1___ = ___1___.Replace(\"AB\", \"\").Replace(\"CD\", \"\");",
+                "    }",
+                "    return ___1___.Length;",
+                "}"
+            ],
+            "answers": [ "s", "AB", "CD" ],
+            "variables": "a string to process and two substrings ('AB', 'CD') to remove",
+            "example": "Input: \"ABFCACDB\" → Output: 2",
+            "hint": "Use a `while` loop to repeat removal until string is stable."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in substrings to be removed repeatedly.",
+            "prompt": [
+                "while (s.Contains(\"___1___\") || s.Contains(\"___2___\")) {",
+                "    s = s.Replace(\"AB\", \"\").Replace(\"CD\", \"\");",
+                "}"
+            ],
+            "answers": [ "AB", "CD" ],
+            "variables": "string input, repeated calls to Contains and Replace methods",
+            "example": "Loop continues while AB or CD exist in string.",
+            "hint": "Use both `Contains` and `Replace` with exact substrings."
+        }
+    },
+    {
+        "id": "assignment-4.1.1-address-book-dictionary",
+        "title": "Create Address Book with Dictionary",
+        "assignment": "Assignment 4.1.1",
+        "source": "Week 4 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Dictionary, Class Design, Search",
+        "tags": [ "dictionary", "class", "search", "address book", "collection" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Use a Dictionary to store and search contacts. Each contact is a Person object stored using the full name as a key.",
+            "prompt": [
+                "class Person {",
+                "    public string FirstName, LastName, MobilePhone, WorkPhone, Address;",
+                "}",
+                "",
+                "Dictionary<string, Person> addressBook = new Dictionary<string, Person>();",
+                "Person p = new Person { FirstName = \"John\", LastName = \"Doe\", MobilePhone = \"123\", Address = \"Seattle\" };",
+                "addressBook.Add(___1___, p);",
+                "",
+                "string searchName = \"John Doe\";",
+                "if (addressBook.ContainsKey(searchName)) {",
+                "    var contact = addressBook[searchName];",
+                "    Console.WriteLine(contact.Address);",
+                "}"
+            ],
+            "answers": [ "\"John Doe\"" ],
+            "variables": "a custom class with person info, a string key, a dictionary, and a lookup method",
+            "example": "Output: Seattle",
+            "hint": "The dictionary key should match the contact's full name."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the generic types and access logic for a contact dictionary.",
+            "prompt": [
+                "Dictionary<string, ___1___> book = new Dictionary<string, ___1___>();",
+                "book.Add(\"Jane Smith\", new ___1___());",
+                "if (book.ContainsKey(\"Jane Smith\")) {",
+                "    ___2___ contact = book[\"Jane Smith\"];",
+                "}"
+            ],
+            "answers": [ "Person", "var" ],
+            "variables": "custom class as value type, inferred variable type for access",
+            "example": "List<Person> and var contact = book[\"Jane Smith\"]",
+            "hint": "Use `var` to access dictionary values without explicit typing."
+        }
+    },
+    {
+        "id": "assignment-4.1.2-icalculator-interface",
+        "title": "Create and Implement Calculator Interface",
+        "assignment": "Assignment 4.1.2",
+        "source": "Week 4 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Interfaces, Arithmetic Methods",
+        "tags": [ "interface", "calculator", "implementation", "method call" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Define an interface ICalculator with arithmetic operations. Implement the interface in a class and invoke its methods.",
+            "prompt": [
+                "interface ICalculator {",
+                "    int Add(int a, int b);",
+                "    int Subtract(int a, int b);",
+                "    int Multiply(int a, int b);",
+                "    int Divide(int a, int b);",
+                "}",
+                "",
+                "class ___1___ : ICalculator {",
+                "    public int Add(int a, int b) => a + b;",
+                "    public int Subtract(int a, int b) => a - b;",
+                "    public int Multiply(int a, int b) => a * b;",
+                "    public int Divide(int a, int b) => a / b;",
+                "}",
+                "",
+                "ICalculator calc = new ___1___();",
+                "Console.WriteLine(calc.Add(10, 5));"
+            ],
+            "answers": [ "Math" ],
+            "variables": "a named interface, a class that implements it, and arithmetic methods for demonstration",
+            "example": "Input: 10 + 5 → Output: 15",
+            "hint": "Implement each method defined in the interface."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the syntax for implementing and using an interface.",
+            "prompt": [
+                "interface ___1___ {",
+                "    int Add(int a, int b);",
+                "}",
+                "",
+                "class Calculator : ___1___ {",
+                "    public int Add(int a, int b) => a + b;",
+                "}"
+            ],
+            "answers": [ "ICalculator" ],
+            "variables": "interface name used in both declaration and implementation",
+            "example": "Calculator implements ICalculator",
+            "hint": "Use the interface name consistently across declaration and class header."
+        }
+    },
+    {
+        "id": "assignment-4.2.1-lms-login-roles",
+        "title": "Create LMS with Role-Based Login",
+        "assignment": "Assignment 4.2.1",
+        "source": "Week 4 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Class Design, Role Logic, Object Instantiation",
+        "tags": [ "oop", "login", "role check", "student", "teacher" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Model an LMS system where users log in as either a teacher or a student. Based on role, perform a custom action.",
+            "prompt": [
+                "class User {",
+                "    public string Name;",
+                "    public string Role;",
+                "}",
+                "",
+                "User u = new User { Name = ___1___, Role = ___2___ };",
+                "if (u.Role == \"Teacher\")",
+                "    Console.WriteLine(\"Welcome, professor!\");",
+                "else if (u.Role == \"Student\")",
+                "    Console.WriteLine(\"Welcome to class.\");",
+                "else",
+                "    Console.WriteLine(\"Unknown role\");"
+            ],
+            "answers": [ "\"Dr. Smith\"", "\"Teacher\"" ],
+            "variables": "a user class with name and role, a role check with conditional output",
+            "example": "Input: Dr. Smith, Teacher → Output: Welcome, professor!",
+            "hint": "Use string comparisons and `if`/`else if` blocks for control."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the object initialization and conditional logic for role selection.",
+            "prompt": [
+                "User u = new User { Name = \"Alex\", Role = ___1___ };",
+                "if (u.Role == ___2___)",
+                "    Console.WriteLine(\"Welcome, student\");"
+            ],
+            "answers": [ "\"Student\"", "\"Student\"" ],
+            "variables": "role assignment and comparison in an object instance",
+            "example": "Role = Student → Output: Welcome, student",
+            "hint": "Match the string used in `Role` with the conditional check."
+        }
+    },
+    {
+        "id": "assignment-4.2.2-export-gpa",
+        "title": "Export Student GPA to CSV",
+        "assignment": "Assignment 4.2.2",
+        "source": "Week 4 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "File I/O, Class Properties, Collection Export",
+        "tags": [ "export", "streamwriter", "gpa", "csv", "class" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a class with properties for a student’s name and GPA. Create a list of students and export their information as CSV.",
+            "prompt": [
+                "class Student {",
+                "    public ___1___ Name;",
+                "    public ___2___ GPA;",
+                "}",
+                "",
+                "List<Student> ___3___ = new List<Student> {",
+                "    new Student { Name = \"Jane\", GPA = 3.9 },",
+                "    new Student { Name = \"Mike\", GPA = 3.5 }",
+                "};",
+                "",
+                "using (StreamWriter sw = new StreamWriter(\"gpa_export.csv\")) {",
+                "    foreach (var s in ___3___) {",
+                "        sw.WriteLine($\"{s.Name},{s.GPA}\");",
+                "    }",
+                "}"
+            ],
+            "answers": [ "string", "double", "students" ],
+            "variables": "a class with student properties, a named list of students, and a foreach export loop",
+            "example": "Output file: Jane,3.9\\nMike,3.5",
+            "hint": "Define properties and initialize the list using `new List<Student>` syntax."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the writer type and loop variable to export a list of students.",
+            "prompt": [
+                "using (___1___ sw = new StreamWriter(\"data.csv\")) {",
+                "    foreach (Student ___2___ in students) {",
+                "        sw.WriteLine($\"{___2___.Name},{___2___.GPA}\");",
+                "    }",
+                "}"
+            ],
+            "answers": [ "StreamWriter", "s" ],
+            "variables": "stream writer declaration and loop variable for a list of student objects",
+            "example": "Loop outputs each student’s GPA to file",
+            "hint": "Use `StreamWriter` to write text and `foreach` to iterate."
+        }
+    },
+    {
+        "id": "assignment-4.3.1-electricity-bill",
+        "title": "Calculate Electricity Bill Based on Unit Tiers",
+        "assignment": "Assignment 4.3.1",
+        "source": "Week 4 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Conditionals, Tiered Pricing, Surcharge Logic",
+        "tags": [ "bill", "tiered pricing", "conditional logic", "surcharge" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Calculate a customer's electricity bill using tiered pricing based on the number of units consumed. Use a surcharge of 15% if the amount exceeds $400.\nTiered rates:\n- up to 199 units: $1.20/unit\n- 200 to 400 units: $1.50/unit\n- 401 to 600 units: $1.80/unit\n- above 600 units: $2.00/unit",
+            "prompt": [
+                "int ___1___ = 1001;",
+                "string ___2___ = \"James\";",
+                "int ___3___ = 800;",
+                "double chargePerUnit = 0;",
+                "if (___3___ <= 199) chargePerUnit = 1.20;",
+                "else if (___3___ <= 400) chargePerUnit = 1.50;",
+                "else if (___3___ <= 600) chargePerUnit = 1.80;",
+                "else chargePerUnit = ___4___;",
+                "",
+                "double amount = ___3___ * chargePerUnit;",
+                "double surcharge = (amount > 400) ? amount * 0.15 : 0;",
+                "double netAmount = amount + surcharge;",
+                "",
+                "Console.WriteLine($\"Customer IDNO : {___1___}\");",
+                "Console.WriteLine($\"Customer Name : {___2___}\");",
+                "Console.WriteLine($\"unit Consumed : {___3___}\");",
+                "Console.WriteLine($\"Amount Charges @$ {chargePerUnit} per unit : {amount:F2}\");",
+                "Console.WriteLine($\"Surcharge Amount : {surcharge:F2}\");",
+                "Console.WriteLine($\"Net Amount Paid By the Customer : {netAmount:F2}\");"
+            ],
+            "answers": [ "customerId", "customerName", "units", "2.00" ],
+            "variables": "a customer's ID and name, number of units, tier rate assignment, and surcharge logic",
+            "example": "Input: 800 units → Output: Net Amount Paid = $1840.00",
+            "hint": "Assign rate based on usage tier, then apply surcharge if over $400."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the missing unit breakpoints and charge rates to assign the correct price per unit.\nTiered rates:\n- ≤ 199 units → $1.20\n- ≤ 400 units → $1.50\n- ≤ 600 units → $1.80\n- > 600 units → $2.00",
+            "prompt": [
+                "if (units <= ___1___) chargePerUnit = ___2___;",
+                "else if (units <= ___3___) chargePerUnit = ___4___;",
+                "else if (units <= ___5___) chargePerUnit = ___6___;",
+                "else chargePerUnit = ___7___;"
+            ],
+            "answers": [ "199", "1.20", "400", "1.50", "600", "1.80", "2.00" ],
+            "variables": "unit thresholds and associated per-unit rates for electricity billing",
+            "example": "800 units → 2.00 per unit → surcharge → total = $1840.00",
+            "hint": "Use if-else if tiers to apply correct per-unit pricing structure."
+        }
+    },
+    {
+        "id": "assignment-4.3.2-frequency-of-elements",
+        "title": "Count Frequency of Elements in an Array",
+        "assignment": "Assignment 4.3.2",
+        "source": "Week 4 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Array Traversal, Counting, Dictionary",
+        "tags": [ "array", "dictionary", "frequency", "count", "loop" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program that reads n integers into an array and counts how many times each value appears. Display the frequency of each unique element.",
+            "prompt": [
+                "int[] ___1___ = new int[] { 25, 12, 43 };",
+                "Dictionary<int, int> ___2___ = new Dictionary<int, int>();",
+                "foreach (int ___3___ in ___1___) {",
+                "    if (___2___.ContainsKey(___3___))",
+                "        ___2___[___3___]++;",
+                "    else",
+                "        ___2___[___3___] = 1;",
+                "}",
+                "",
+                "foreach (var kvp in ___2___) {",
+                "    Console.WriteLine($\"{kvp.Key} occurs {kvp.Value} times\");",
+                "}"
+            ],
+            "answers": [ "arr", "freq", "num" ],
+            "variables": "an array of integers, a dictionary to count frequencies, and loop variables for traversal",
+            "example": "Input: [25,12,43] → Output: 25 occurs 1 times, etc.",
+            "hint": "Use a Dictionary to count each number’s appearances."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the logic to count the number of occurrences for each array value using a Dictionary.",
+            "prompt": [
+                "if (freq.ContainsKey(num)) ___1___;",
+                "else ___2___;"
+            ],
+            "answers": [ "freq[num]++", "freq[num] = 1" ],
+            "variables": "dictionary for frequency mapping, element being checked",
+            "example": "Element 12 appears twice → Output: 12 occurs 2 times",
+            "hint": "Increment the value if the key exists, otherwise start the count at 1."
+        }
+    },
+    {
+        "id": "assignment-4.3.3-unique-elements",
+        "title": "Print Unique Elements from an Array",
+        "assignment": "Assignment 4.3.3",
+        "source": "Week 4 - Programming in C#",
+        "difficulty": "Medium",
+        "focus": "Array Traversal, Frequency Counting, Set Logic",
+        "tags": [ "array", "dictionary", "unique elements", "frequency", "filtering" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program to display only the unique elements (those that occur exactly once) from an array of integers.",
+            "prompt": [
+                "int[] ___1___ = new int[] { 1, 5, 1 };",
+                "Dictionary<int, int> ___2___ = new Dictionary<int, int>();",
+                "foreach (int num in ___1___) {",
+                "    if (___2___.ContainsKey(num))",
+                "        ___2___[num]++;",
+                "    else",
+                "        ___2___[num] = 1;",
+                "}",
+                "",
+                "Console.WriteLine(\"Unique elements:\");",
+                "foreach (var kvp in ___2___) {",
+                "    if (kvp.Value == 1)",
+                "        Console.WriteLine(kvp.Key);",
+                "}"
+            ],
+            "answers": [ "arr", "counts" ],
+            "variables": "an array of integers with possible duplicates, a dictionary to store element counts",
+            "example": "Input: [1,5,1] → Output: 5",
+            "hint": "Count each element first, then filter by value == 1 in a second loop."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the logic to check and print only those elements that occur once.",
+            "prompt": [
+                "foreach (var kvp in counts) {",
+                "    if (___1___)",
+                "        Console.WriteLine(___2___);",
+                "}"
+            ],
+            "answers": [ "kvp.Value == 1", "kvp.Key" ],
+            "variables": "dictionary pair with key as number and value as frequency",
+            "example": "Output: prints only those keys whose count is exactly one",
+            "hint": "Use dictionary’s `Value == 1` condition to find unique entries."
+        }
+    },
+    {
+        "id": "week4lab-1-number-contains-3",
+        "title": "Check if Number Contains the Digit 3",
+        "assignment": "Week 4 Challenge Lab 1",
+        "source": "Week 4 - Challenge Labs",
+        "difficulty": "Easy",
+        "focus": "Digit Extraction, Loop, Arithmetic",
+        "tags": [ "digit check", "modulus", "loop", "number parsing" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a method that checks if a given positive integer contains the digit 3. Do not convert the number to another type and do not use built-in methods like `Contains()` or `ToString()`.",
+            "prompt": [
+                "public static bool ContainsThree(int ___1___) {",
+                "    while (___1___ > 0) {",
+                "        int digit = ___1___ % 10;",
+                "        if (digit == ___2___) return true;",
+                "        ___1___ /= 10;",
+                "    }",
+                "    return false;",
+                "}"
+            ],
+            "answers": [ "n", "3" ],
+            "variables": "an integer input, a digit extraction using modulo and division, a comparison against digit 3",
+            "example": "Input: 7201432 → Output: true; Input: 87501 → Output: false",
+            "hint": "Use `% 10` to isolate the last digit, and `/= 10` to remove it."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the digit comparison logic to check for a 3 in an integer’s digits using modulo and division.",
+            "prompt": [
+                "int digit = n % ___1___;",
+                "if (digit == ___2___) return true;",
+                "n /= ___3___;"
+            ],
+            "answers": [ "10", "3", "10" ],
+            "variables": "modulo base, comparison value, and divisor used for stripping digits from an integer",
+            "example": "Digits of 143: 3 → true",
+            "hint": "Use `% 10` and `/ 10` to walk through digits from least to most significant."
+        }
+    },
+    {
+        "id": "week4lab-2-divisible-by-2-or-3",
+        "title": "Multiply or Sum Based on Divisibility",
+        "assignment": "Week 4 Challenge Lab 2",
+        "source": "Week 4 - Challenge Labs",
+        "difficulty": "Easy",
+        "focus": "Conditionals, Modulo, Arithmetic Operators",
+        "tags": [ "divisibility", "modulo", "if", "arithmetic", "condition" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given two integers (a, b), return their multiplication if both are divisible by 2 or 3. Otherwise, return their sum.",
+            "prompt": [
+                "public static int Compute(int ___1___, int ___2___) {",
+                "    if ((___1___ % 2 == 0 || ___1___ % 3 == 0) &&",
+                "        (___2___ % 2 == 0 || ___2___ % 3 == 0))",
+                "        return ___1___ * ___2___;",
+                "    else",
+                "        return ___1___ + ___2___;",
+                "}"
+            ],
+            "answers": [ "a", "b" ],
+            "variables": "two integers, a conditional that checks for divisibility by 2 or 3 using modulo, with arithmetic operations based on result",
+            "example": "Input: (15, 30) → 450; (7, 12) → 19",
+            "hint": "Use modulo `%` to check divisibility and combine logic with `&&` and `||`."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic to check divisibility by 2 or 3 and return multiplication or sum.",
+            "prompt": [
+                "if ((a % ___1___ == 0 || a % ___2___ == 0) &&",
+                "    (b % ___1___ == 0 || b % ___2___ == 0))",
+                "    return a * b;",
+                "else",
+                "    return a + b;"
+            ],
+            "answers": [ "2", "3" ],
+            "variables": "integers being tested, modulo divisors used in a compound condition",
+            "example": "Input: (2, 90) → Output: 180",
+            "hint": "Combine `% 2` and `% 3` checks with logical operators to test both values."
+        }
+    },
+    {
+        "id": "week4lab-3-reverse-char-array",
+        "title": "Reverse Character Array In-Place (Leetcode #344)",
+        "assignment": "Week 4 Challenge Lab 3",
+        "source": "Week 4 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Two-Pointer Technique, Array Swapping, In-Place Mutation",
+        "tags": [ "array", "two-pointer", "swap", "reverse", "in-place", "leetcode", "leetcode #344" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a method that reverses a character array in place without allocating additional memory. You must use a two-pointer technique to swap values from front to back.",
+            "prompt": [
+                "public static void Reverse(char[] ___1___) {",
+                "    int ___2___ = 0, ___3___ = ___1___.Length - 1;",
+                "    while (___2___ < ___3___) {",
+                "        char temp = ___1___[___2___];",
+                "        ___1___[___2___] = ___1___[___3___];",
+                "        ___1___[___3___] = temp;",
+                "        ___2___++; ___3___--;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "s", "left", "right" ],
+            "variables": "a character array, two pointers to track beginning and end indices, in-place swap logic",
+            "example": "Input: ['h','e','l','l','o'] → Output: ['o','l','l','e','h']",
+            "hint": "Use a `while` loop with two pointers that move inward, swapping characters."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic to reverse a character array in place using two-pointer technique.",
+            "prompt": [
+                "while (left < right) {",
+                "    char temp = s[___1___];",
+                "    s[___1___] = s[___2___];",
+                "    s[___2___] = temp;",
+                "    ___1___++; ___2___--;",
+                "}"
+            ],
+            "answers": [ "left", "right" ],
+            "variables": "character array indices used for in-place swaps",
+            "example": "Input: ['a','b','c'] → Output: ['c','b','a']",
+            "hint": "Use `left` and `right` to reference positions to be swapped on each loop iteration."
+        }
+    },
+    {
+        "id": "assignment-5.1.1-palindrome-integer",
+        "title": "Check if Integer is a Palindrome",
+        "assignment": "Assignment 5.1.1",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Easy",
+        "focus": "Digit Reversal, Integer Comparison, Conditional Logic",
+        "tags": [ "palindrome", "integer", "reverse", "conditional", "modulo" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Return true if an integer, x, reads the same forward and backward (palindrome). Do not convert the integer to a string.",
+            "prompt": [
+                "public static bool IsPalindrome(int ___1___) {",
+                "    if (___1___ < 0) return false;",
+                "    int original = ___1___;",
+                "    int reversed = 0;",
+                "    while (___1___ > 0) {",
+                "        int digit = ___1___ % 10;",
+                "        reversed = reversed * 10 + digit;",
+                "        ___1___ /= 10;",
+                "    }",
+                "    return reversed == original;",
+                "}"
+            ],
+            "answers": [ "x" ],
+            "variables": "an input integer, reversed value builder, and digit extraction loop",
+            "example": "Input: 121 → true; Input: -121 → false",
+            "hint": "Use math operations to reverse the number and compare with original."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Fill in the logic to reverse the digits of a number and compare to the original.",
+            "prompt": [
+                "int original = x;",
+                "int reversed = 0;",
+                "while (x > 0) {",
+                "    int digit = x % ___1___;",
+                "    reversed = reversed * 10 + digit;",
+                "    x /= ___2___;",
+                "}",
+                "return reversed == ___3___;"
+            ],
+            "answers": [ "10", "10", "original" ],
+            "variables": "original number, digit extractor, reversed number builder",
+            "example": "Input: 121 → Output: true",
+            "hint": "Use modulo and division by 10 to walk digits from right to left."
+        }
+    },
+    {
+        "id": "assignment-5.1.2-sum-of-digits",
+        "title": "Sum the Digits of a Number",
+        "assignment": "Assignment 5.1.2",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Easy",
+        "focus": "Modulo, Looping, Digit Parsing",
+        "tags": [ "digit sum", "loop", "modulo", "math", "integer" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a function that calculates the sum of all digits in a given positive integer, n.",
+            "prompt": [
+                "public static int DigitSum(int ___1___) {",
+                "    int sum = 0;",
+                "    while (___1___ > 0) {",
+                "        int digit = ___1___ % 10;",
+                "        sum += digit;",
+                "        ___1___ /= 10;",
+                "    }",
+                "    return sum;",
+                "}"
+            ],
+            "answers": [ "n" ],
+            "variables": "an input integer, a sum accumulator, and a loop to extract digits using modulo",
+            "example": "Input: 1234 → Output: 10",
+            "hint": "Use `% 10` to isolate digits, and `/= 10` to move to the next."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic to calculate the sum of an integer’s digits using a loop and math.",
+            "prompt": [
+                "int sum = 0;",
+                "while (n > 0) {",
+                "    int digit = n % ___1___;",
+                "    sum += digit;",
+                "    n /= ___2___;",
+                "}",
+                "return ___3___;"
+            ],
+            "answers": [ "10", "10", "sum" ],
+            "variables": "digit extraction base, integer division base, and sum accumulator",
+            "example": "Input: 4321 → Output: 10",
+            "hint": "Use modulo and division by 10 to access each digit from right to left."
+        }
+    },
+    {
+        "id": "assignment-5.1.3-check-duplicates",
+        "title": "Check if Array Contains Duplicates",
+        "assignment": "Assignment 5.1.3",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "HashSet, Membership Check, Array Traversal",
+        "tags": [ "array", "duplicates", "hashset", "loop", "return early" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given an integer array `nums`, return true if any value appears at least twice, and false if every element is distinct.",
+            "prompt": [
+                "public static bool ContainsDuplicate(int[] ___1___) {",
+                "    HashSet<int> seen = new HashSet<int>();",
+                "    foreach (int num in ___1___) {",
+                "        if (seen.Contains(num)) return true;",
+                "        seen.Add(num);",
+                "    }",
+                "    return false;",
+                "}"
+            ],
+            "answers": [ "nums" ],
+            "variables": "input array of integers, a hash set to track seen elements, loop check for duplicates",
+            "example": "Input: [1,2,3,1] → Output: true; [1,2,3,4] → Output: false",
+            "hint": "Use a HashSet to track seen values and return early on repeat."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic for checking duplicates in an integer array using a HashSet. If a set already contains that number, return true immediately. If not, add the number to the set and continue.",
+            "prompt": [
+                "foreach (int num in nums) {",
+                "    if (___1___) return true;",
+                "    ___2___;",
+                "}",
+                "return false;"
+            ],
+            "answers": [ "seen.Contains(num)", "seen.Add(num)" ],
+            "variables": "HashSet 'seen', array 'nums', loop element 'num'",
+            "example": "Input: [1,1,1,3] → Output: true",
+            "hint": "Use `Contains` to check for a repeat and `Add` to store unseen values."
+        }
+    },
+    {
+        "id": "assignment-5.2.1-last-word-length",
+        "title": "Find Length of the Last Word in a String",
+        "assignment": "Assignment 5.2.1",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Easy",
+        "focus": "String Traversal, Trim, Word Parsing",
+        "tags": [ "string", "length", "trim", "split", "last word" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given a string `s` consisting of words and spaces, return the length of the last word. A word is defined as a maximal substring of non-space characters.",
+            "prompt": [
+                "public static int LengthOfLastWord(string ___1___) {",
+                "    string[] words = ___1___.Split(' ', StringSplitOptions.RemoveEmptyEntries);",
+                "    return words[words.Length - 1].Length;",
+                "}"
+            ],
+            "answers": [ "s" ],
+            "variables": "input string `s`, an array of words after splitting on spaces, access to the last word in the array",
+            "example": "Input: \" fly me to the moon \" → Output: 4",
+            "hint": "Split by space and return the length of the last non-empty entry."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic to split a sentence and return the length of the last word.",
+            "prompt": [
+                "string[] words = s.Split(___1___, StringSplitOptions.RemoveEmptyEntries);",
+                "return words[words.Length - ___2___].___3___;"
+            ],
+            "answers": [ "' '", "1", "Length" ],
+            "variables": "string 's', array of split words, and property to get word length",
+            "example": "Input: \"Hello World\" → Output: 5",
+            "hint": "Access the final item in the array after splitting by space."
+        }
+    },
+    {
+        "id": "assignment-5.2.2-natural-numbers-recursion",
+        "title": "Print First n Natural Numbers Using Recursion",
+        "assignment": "Assignment 5.2.2",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Easy",
+        "focus": "Recursion, Base Case, Incrementing",
+        "tags": [ "recursion", "natural numbers", "base case", "print" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a recursive method that prints the first `n` natural numbers starting from 1. Use a base case to stop when the current number exceeds `n`.",
+            "prompt": [
+                "public static void PrintNatural(int ___1___, int ___2___) {",
+                "    if (___1___ > ___2___) return;",
+                "    Console.Write(___1___ + \" \");",
+                "    PrintNatural(___1___ + 1, ___2___);",
+                "}"
+            ],
+            "answers": [ "current", "n" ],
+            "variables": "current number being printed, total limit `n`, recursive call with increment",
+            "example": "Input: n = 5 → Output: 1 2 3 4 5",
+            "hint": "Start from 1 and stop when current > n."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the recursive logic to print natural numbers from 1 to `n`; PrintNatural(current + 1, n)",
+            "prompt": [
+                "if (current > n) return;",
+                "Console.Write(___1___ + \" \");",
+                "___2___(___1___ + 1, n);"
+            ],
+            "answers": [ "current", "PrintNatural" ],
+            "variables": "recursive input value `current`, method name, upper bound `n`",
+            "example": "Input: 3 → Output: 1 2 3",
+            "hint": "Call recursively with `current + 1` to move forward."
+        }
+    },
+    {
+        "id": "assignment-5.2.3-countdown-recursion",
+        "title": "Print Numbers from n to 1 Using Recursion",
+        "assignment": "Assignment 5.2.3",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Easy",
+        "focus": "Recursion, Base Case, Decrementing",
+        "tags": [ "recursion", "countdown", "base case", "print" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a recursive method that prints numbers from `n` down to 1. Stop when the value becomes less than 1.",
+            "prompt": [
+                "public static void CountDown(int ___1___) {",
+                "    if (___1___ < 1) return;",
+                "    Console.Write(___1___ + \" \");",
+                "    CountDown(___1___ - 1);",
+                "}"
+            ],
+            "answers": [ "n" ],
+            "variables": "initial number `n`, stopping condition, recursive call with decrement",
+            "example": "Input: 5 → Output: 5 4 3 2 1",
+            "hint": "Call recursively with `n - 1` until `n < 1`."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the recursive logic to print numbers from `n` down to 1; CountDown.",
+            "prompt": [
+                "if (n < 1) return;",
+                "Console.Write(___1___ + \" \");",
+                "___2___(___1___ - 1);"
+            ],
+            "answers": [ "n", "CountDown" ],
+            "variables": "recursive input value `n`, method name, base case check",
+            "example": "Input: 3 → Output: 3 2 1",
+            "hint": "Decrement the number and call the function again."
+        }
+    },
+    {
+        "id": "assignment-5.2.4-palindrome-string-recursion",
+        "title": "Check if a String is a Palindrome Using Recursion",
+        "assignment": "Assignment 5.2.4",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "Recursion, String Comparison, Index Tracking",
+        "tags": [ "recursion", "palindrome", "string", "index", "char comparison" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a recursive method that returns true if a string is a palindrome. Compare characters at opposite ends of the string and recursively narrow toward the center.",
+            "prompt": [
+                "public static bool IsPalindrome(string ___1___, int ___2___, int ___3___) {",
+                "    if (___2___ >= ___3___) return true;",
+                "    if (___1___[___2___] != ___1___[___3___]) return false;",
+                "    return IsPalindrome(___1___, ___2___ + 1, ___3___ - 1);",
+                "}"
+            ],
+            "answers": [ "s", "left", "right" ],
+            "variables": "input string `s`, start index `left`, end index `right`, and recursive logic to compare characters",
+            "example": "Input: RADAR → Output: true",
+            "hint": "Compare characters from the ends inward until they cross."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the recursive logic to compare characters in a string from both ends; IsPalindrome.",
+            "prompt": [
+                "if (s[left] != s[right]) return ___1___;",
+                "return ___2___(s, left + 1, right - 1);"
+            ],
+            "answers": [ "false", "IsPalindrome" ],
+            "variables": "boolean result for mismatch, recursive call to the method with updated indices",
+            "example": "Input: LEVEL → Output: true",
+            "hint": "Return false if characters mismatch; otherwise recurse toward the center."
+        }
+    },
+    {
+        "id": "assignment-5.3.1-flowerbed-placement",
+        "title": "Can Place Flowers Without Adjacent Violations",
+        "assignment": "Assignment 5.3.1",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "Greedy Logic, Array Traversal, Conditionals",
+        "tags": [ "array", "greedy", "planting", "loop", "adjacency check" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given an array `flowerbed` containing 0s (empty) and 1s (planted), return true if `n` new flowers can be planted without violating the rule that no two flowers can be adjacent.",
+            "prompt": [
+                "public static bool CanPlaceFlowers(int[] ___1___, int ___2___) {",
+                "    int count = 0;",
+                "    for (int i = 0; i < ___1___.Length; i++) {",
+                "        if (___1___[i] == 0) {",
+                "            bool emptyLeft = (i == 0 || ___1___[i - 1] == 0);",
+                "            bool emptyRight = (i == ___1___.Length - 1 || ___1___[i + 1] == 0);",
+                "            if (emptyLeft && emptyRight) {",
+                "                ___1___[i] = 1;",
+                "                count++;",
+                "            }",
+                "        }",
+                "    }",
+                "    return count >= ___2___;",
+                "}"
+            ],
+            "answers": [ "flowerbed", "n" ],
+            "variables": "flowerbed array of 0s and 1s, target number `n`, left/right neighbor checks, counter",
+            "example": "Input: [1,0,0,0,1], n = 1 → Output: true",
+            "hint": "Only plant when both neighbors are empty or nonexistent."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Given an array `flowerbed` containing 0s (empty) and 1s (planted), return true if `n` new flowers can be planted without violating the rule that no two flowers can be adjacent. Complete the condition to check if both left and right plots are empty or at bounds.",
+            "prompt": [
+                "bool emptyLeft = (i == 0 || ___1___[i - 1] == 0);",
+                "bool emptyRight = (i == ___1___.Length - 1 || ___1___[i + 1] == 0);",
+                "if (emptyLeft && emptyRight) ___1___[i] = 1;"
+            ],
+            "answers": [ "flowerbed" ],
+            "variables": "plot array `flowerbed`, access to neighboring indices for adjacency logic",
+            "example": "Input: [0,0,0], n=1 → Output: true",
+            "hint": "Check both sides to ensure no violation before planting."
+        }
+    },
+    {
+        "id": "assignment-5.3.2-climbing-stairs",
+        "title": "Find Number of Distinct Ways to Climb Stairs",
+        "assignment": "Assignment 5.3.2",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "Dynamic Programming, Recurrence Relation, Memoization",
+        "tags": [ "recursion", "dp", "stairs", "combinations", "fibonacci" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given a staircase of `n` steps, return how many distinct ways you can climb to the top. Each time you can climb either 1 or 2 steps.",
+            "prompt": [
+                "public static int ClimbStairs(int ___1___) {",
+                "    if (___1___ <= 2) return ___1___;",
+                "    int[] dp = new int[___1___ + 1];",
+                "    dp[1] = 1;",
+                "    dp[2] = 2;",
+                "    for (int i = 3; i <= ___1___; i++) {",
+                "        dp[i] = dp[i - 1] + dp[i - 2];",
+                "    }",
+                "    return dp[___1___];",
+                "}"
+            ],
+            "answers": [ "n" ],
+            "variables": "total steps `n`, dynamic array `dp` for storing results, loop index for filling recurrence",
+            "example": "Input: 3 → Output: 3 (1+1+1, 1+2, 2+1)",
+            "hint": "Each step builds from the previous two: dp[i] = dp[i-1] + dp[i-2]."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Given an integer `n` representing the number of stairs, write the logic to compute how many unique ways you can climb to the top by taking either 1 or 2 steps at a time. Use a dynamic programming approach where dp[i] = dp[i-1] + dp[i-2].",
+            "prompt": [
+                "dp[1] = ___1___;",
+                "dp[2] = ___2___;",
+                "for (int i = 3; i <= n; i++) {",
+                "    dp[i] = ___3___ + ___4___;",
+                "}"
+            ],
+            "answers": [ "1", "2", "dp[i - 1]", "dp[i - 2]" ],
+            "variables": "base cases for 1 and 2 steps, recurrence relation to fill dp table",
+            "example": "Input: 4 → Output: 5 (combinations of steps)",
+            "hint": "This pattern follows the Fibonacci sequence for climbing stairs."
+        }
+    },
+    {
+        "id": "assignment-5.4.1-display-digits-recursively",
+        "title": "Display Digits of a Number Using Recursion",
+        "assignment": "Assignment 5.4.1",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "Recursion, Digit Extraction, Base Case Logic",
+        "tags": [ "recursion", "digits", "math", "print", "divide" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a recursive function that prints the individual digits of a number in order from left to right. Use division to reduce the number and modulo to extract each digit.",
+            "prompt": [
+                "public static void PrintDigits(int ___1___) {",
+                "    if (___1___ < 10) {",
+                "        Console.Write(___1___ + \" \");",
+                "        return;",
+                "    }",
+                "    PrintDigits(___1___ / 10);",
+                "    Console.Write((___1___ % 10) + \" \");",
+                "}"
+            ],
+            "answers": [ "n" ],
+            "variables": "integer input `n`, recursive division to isolate digits, print order after returning from recursive call",
+            "example": "Input: 1234 → Output: 1 2 3 4",
+            "hint": "Use `/ 10` for recursion and `% 10` after recursion to print digits in order."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Given an integer `n`, complete the recursive logic to print each digit in left-to-right order using division and modulo. Do not use string conversion; PrintDigits.",
+            "prompt": [
+                "if (n < 10) {",
+                "    Console.Write(n + \" \"); return;",
+                "}",
+                "___1___(___2___ / 10);",
+                "Console.Write((___2___ % 10) + \" \");"
+            ],
+            "answers": [ "PrintDigits", "n" ],
+            "variables": "recursive method name, input number `n`, and operators for digit access",
+            "example": "Input: 501 → Output: 5 0 1",
+            "hint": "Use integer math, not strings. The recursive call must come before the print to maintain order."
+        }
+    },
+    {
+        "id": "assignment-5.4.2-right-diagonal-sum",
+        "title": "Sum of Right Diagonal Elements in a Square Matrix",
+        "assignment": "Assignment 5.4.2",
+        "source": "Week 5 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "2D Arrays, Index Math, Diagonal Traversal",
+        "tags": [ "matrix", "2d array", "diagonal", "sum", "nested loop" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Write a program that accepts a square matrix and computes the sum of the right (secondary) diagonal. For a matrix `mat[i,j]`, the right diagonal runs from top-right to bottom-left, where `i + j == n - 1`.",
+            "prompt": [
+                "int n = 2;",
+                "int[,] mat = { { 1, 2 }, { 3, 4 } };",
+                "int sum = 0;",
+                "for (int i = 0; i < n; i++) {",
+                "    sum += mat[i, ___1___];",
+                "}",
+                "Console.WriteLine(\"Right diagonal sum: \" + sum);"
+            ],
+            "answers": [ "n - 1 - i" ],
+            "variables": "square matrix 'mat', index logic to track right diagonal element, loop control variable",
+            "example": "Input: 2x2 → Matrix = [[1,2],[3,4]] → Output: 2 + 3 = 5",
+            "hint": "In a right diagonal, the column index is always `n - 1 - i` for row `i`."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic to sum the right diagonal of a square matrix using a single loop. For a matrix of size `n`, the right diagonal has elements where `i + j == n - 1`.",
+            "prompt": [
+                "int sum = 0;",
+                "for (int i = 0; i < n; i++) {",
+                "    sum += mat[i, ___1___];",
+                "}",
+                "Console.WriteLine(\"Sum of right diagonal: \" + ___2___);"
+            ],
+            "answers": [ "n - 1 - i", "sum" ],
+            "variables": "matrix index access for secondary diagonal, sum accumulator",
+            "example": "Input: [[1,2],[3,4]] → Output: 5",
+            "hint": "Access top-right to bottom-left with decreasing column index."
+        }
+    },
+    {
+        "id": "week5lab-1-single-number",
+        "title": "Find the Single Non-Duplicate Number in Array",
+        "assignment": "Week 5 Challenge Lab 1",
+        "source": "Week 5 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Bitwise XOR, Array Traversal, Duplicate Elimination",
+        "tags": [ "array", "xor", "duplicates", "bitwise", "single value" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given an integer array `nums` where every element appears exactly twice except for one, return the single number that appears only once. You must implement a solution with linear runtime and constant extra space.",
+            "prompt": [
+                "public static int SingleNumber(int[] ___1___) {",
+                "    int result = 0;",
+                "    foreach (int num in ___1___) {",
+                "        result ^= num;",
+                "    }",
+                "    return result;",
+                "}"
+            ],
+            "answers": [ "nums" ],
+            "variables": "array of integers `nums` with one non-duplicate, result accumulator using XOR",
+            "example": "Input: [2,2,1] → Output: 1; [4,1,2,1,2] → Output: 4",
+            "hint": "Use XOR: a^a=0, a^0=a. Cancels out duplicates, leaving the unique number."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Given an array where all elements appear twice except one, complete the logic using XOR to find the non-duplicate. XOR cancels out matching pairs.",
+            "prompt": [
+                "int result = 0;",
+                "foreach (int num in nums) {",
+                "    result = result ___1___ num;",
+                "}",
+                "return ___2___;"
+            ],
+            "answers": [ "^", "result" ],
+            "variables": "bitwise XOR operation to isolate the single number",
+            "example": "Input: [1,1,2] → Output: 2",
+            "hint": "XORing a number with itself cancels it out, leaving only the unique value."
+        }
+    },
+    {
+        "id": "week5lab-2-missing-number",
+        "title": "Find the Missing Number in a Range [0, n]",
+        "assignment": "Week 5 Challenge Lab 2",
+        "source": "Week 5 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Math Sum Formula, Array Traversal, XOR Alternative",
+        "tags": [ "array", "missing number", "math", "sum formula", "range" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, return the one number that is missing from the range. Your solution should run in linear time and use constant extra space.",
+            "prompt": [
+                "public static int MissingNumber(int[] ___1___) {",
+                "    int n = ___1___.Length;",
+                "    int expectedSum = n * (n + 1) / 2;",
+                "    int actualSum = 0;",
+                "    foreach (int num in ___1___) {",
+                "        actualSum += num;",
+                "    }",
+                "    return expectedSum - actualSum;",
+                "}"
+            ],
+            "answers": [ "nums" ],
+            "variables": "array `nums`, computed length `n`, expected range sum, and actual sum from input",
+            "example": "Input: [3,0,1] → Output: 2; [0,1] → Output: 2",
+            "hint": "Use the formula sum = n(n+1)/2 to find the full sum, then subtract the actual sum."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Given an array of size `n` with distinct numbers in the range `[0, n]`, complete the logic to find the missing number using the sum formula.",
+            "prompt": [
+                "int n = nums.Length;",
+                "int expectedSum = n * (n + ___1___) / 2;",
+                "int actualSum = 0;",
+                "foreach (int num in nums) { actualSum += ___2___; }",
+                "return expectedSum - ___3___;"
+            ],
+            "answers": [ "1", "num", "actualSum" ],
+            "variables": "range endpoint, loop variable, actual sum and final return value",
+            "example": "Input: [9,6,4,2,3,5,7,0,1] → Output: 8",
+            "hint": "Use sum difference between full range and actual input to find the missing element."
+        }
+    },
+    {
+        "id": "assignment-6.1.1-linked-list-houses",
+        "title": "Implement a Singly Linked List to Store Houses",
+        "assignment": "Assignment 6.1.1",
+        "source": "Week 6 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "Singly Linked List, Custom Node Structure, Search by Key",
+        "tags": [ "linked list", "class", "custom structure", "search", "display" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a singly linked list where each node stores house information: number, address, and type. Allow the user to add nodes to the list, display them, and search for a house by number.",
+            "prompt": [
+                "House h1 = new House(101, \"123 Elm St\", \"Ranch\");",
+                "House h2 = new House(102, \"567 Town Ave\", \"Town\");",
+                "House h3 = new House(103, \"678 Roy St\", \"Colonial\");",
+                "",
+                "customList houseList = new customList();",
+                "houseList.AddLast(h1);",
+                "houseList.AddLast(h2);",
+                "houseList.AddLast(h3);",
+                "",
+                "Console.WriteLine(\"Current Houses:\");",
+                "houseList.___1___();",
+                "",
+                "Console.WriteLine(\"Enter a house number to search: \");",
+                "int searchNumber = int.Parse(Console.ReadLine());",
+                "if (houseList.Search(searchNumber, out int index))",
+                "    Console.WriteLine($\"House #{searchNumber} found at position {index}.\");"
+            ],
+            "answers": [ "Display" ],
+            "variables": "linked list 'houseList', object type 'House', user input as search key, display method for traversal",
+            "example": "Search 102 → Output: Found at position 2",
+            "hint": "Use `AddLast` to insert, and `Search` method to locate by house number."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Given a singly linked list of `House` objects, implement the `Search` method to find a house by its number. Return true if found and provide its position via an out parameter.",
+            "prompt": [
+                "public bool Search(int houseNumber, out int index) {",
+                "    HouseNode temp = head;",
+                "    int i = 1;",
+                "    while (temp != null) {",
+                "        if (temp.data.___1___ == houseNumber) {",
+                "            index = i;",
+                "            return true;",
+                "        }",
+                "        temp = temp.next;",
+                "        i++;",
+                "    }",
+                "    index = -1;",
+                "    return false;",
+                "}"
+            ],
+            "answers": [ "HouseNumber" ],
+            "variables": "node traversal pointer, target property for comparison, index tracker",
+            "example": "Input: houseNumber = 103 → Output: true, index = 3",
+            "hint": "Compare `temp.data.HouseNumber` to the search value while traversing."
+        }
+    },
+    {
+        "id": "assignment-6.1.3-move-zeroes",
+        "title": "Move All Zeroes to the End of the Array (In-Place)",
+        "assignment": "Assignment 6.1.3",
+        "source": "Week 6 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "Two-Pointer Technique, In-Place Modification, Array Reordering",
+        "tags": [ "array", "in-place", "two-pointer", "zero shift", "stable order" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given an integer array `nums`, move all 0's to the end of the array while maintaining the relative order of the non-zero elements. You must do this in-place without making a copy of the array.",
+            "prompt": [
+                "public static void MoveZeroes(int[] ___1___) {",
+                "    int ___2___ = 0;",
+                "    for (int i = 0; i < ___1___.Length; i++) {",
+                "        if (___1___[i] != 0) {",
+                "            ___1___[___2___] = ___1___[i];",
+                "            ___2___++;",
+                "        }",
+                "    }",
+                "    for (int i = ___2___; i < ___1___.Length; i++) {",
+                "        ___1___[i] = 0;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "nums", "writeIndex" ],
+            "variables": "input array `nums`, pointer for next non-zero position `writeIndex`, loop iterator `i`",
+            "example": "Input: [0,1,0,3,12] → Output: [1,3,12,0,0]",
+            "hint": "Use a write pointer to overwrite from the front, then fill in 0s at the end."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Given an array of integers, complete the in-place logic to move all zeroes to the end while preserving the order of non-zero elements. You cannot use a copy of the array.",
+            "prompt": [
+                "int writeIndex = 0;",
+                "for (int i = 0; i < nums.Length; i++) {",
+                "    if (nums[i] != 0) {",
+                "        nums[___1___] = nums[i];",
+                "        ___1___++;",
+                "    }",
+                "}",
+                "for (int i = ___1___; i < nums.Length; i++) {",
+                "    nums[i] = ___2___;",
+                "}"
+            ],
+            "answers": [ "writeIndex", "0" ],
+            "variables": "position tracker for non-zero insertion, loop counter, constant zero value",
+            "example": "Input: [0,0,1] → Output: [1,0,0]",
+            "hint": "Overwrite non-zero values at the front, then fill zeros starting from `writeIndex`."
+        }
+    },
+    {
+        "id": "assignment-6.2.1-stack-using-nodes",
+        "title": "Implement a Stack Using a Node-Based Structure",
+        "assignment": "Assignment 6.2.1",
+        "source": "Week 6 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "Custom Stack, Node Chaining, Push and Pop",
+        "tags": [ "stack", "linked list", "push", "pop", "top pointer" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Implement a stack using a linked list node structure. Each push operation should insert a new node at the top, and pop should remove and return the top node’s value.",
+            "prompt": [
+                "public void Push(int val) {",
+                "    StackArrayNode newNode = new StackArrayNode(val, ___1___);",
+                "    top = newNode;",
+                "    ___2___;",
+                "}"
+            ],
+            "answers": [ "top", "size++" ],
+            "variables": "top node reference, pointer to new node, size tracker updated after insertion",
+            "example": "Push 5, 6 → top points to 6",
+            "hint": "New nodes are always added to the top. Don’t forget to increment stack size."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic to pop a value from a linked-list stack. If the stack is empty, print an error and return -1. Otherwise, update the top pointer and decrease size.",
+            "prompt": [
+                "public int Pop() {",
+                "    if (IsEmpty()) {",
+                "        Console.WriteLine(\"Stack is empty!\");",
+                "        return -1;",
+                "    }",
+                "    int val = top.data;",
+                "    top = ___1___;",
+                "    ___2___;",
+                "    return val;",
+                "}"
+            ],
+            "answers": [ "top.next", "size--" ],
+            "variables": "pointer to next node, size tracker, top reference",
+            "example": "Top = 6 → Pop → returns 6 → top now points to 5",
+            "hint": "Pop should return the current top value and point to the next node in the stack."
+        }
+    },
+    {
+        "id": "assignment-6.2.2-product-except-self",
+        "title": "Product of Array Except Self (O(n), No Division)",
+        "assignment": "Assignment 6.2.2",
+        "source": "Week 6 - Data Structures & Algorithms",
+        "difficulty": "Hard",
+        "focus": "Prefix and Suffix Products, In-Place Array Manipulation",
+        "tags": [ "array", "prefix", "suffix", "multiplication", "in-place", "optimization" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given an integer array `nums`, return an array `answer` such that `answer[i]` is the product of all elements of `nums` except `nums[i]`. Do not use division, and the solution must run in O(n) time.",
+            "prompt": [
+                "int[] answer = new int[nums.Length];",
+                "answer[0] = 1;",
+                "for (int i = 1; i < nums.Length; i++) {",
+                "    answer[i] = answer[i - 1] * nums[i - 1];",
+                "}",
+                "",
+                "int suffix = 1;",
+                "for (int i = nums.Length - 1; i >= 0; i--) {",
+                "    answer[i] *= ___1___;",
+                "    ___1___ *= nums[i];",
+                "}"
+            ],
+            "answers": [ "suffix" ],
+            "variables": "input array `nums`, prefix result array `answer`, suffix multiplier, index `i`",
+            "example": "Input: [1,2,3,4] → Output: [24,12,8,6]",
+            "hint": "Fill `answer[i]` with prefix products, then multiply by suffix on the second pass."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Given an integer array `nums`, fill a result array where each element is the product of all other elements in `nums`, without using division. Use prefix and suffix multiplication in two passes.",
+            "prompt": [
+                "answer[0] = 1;",
+                "for (int i = 1; i < nums.Length; i++) {",
+                "    answer[i] = ___1___ * nums[i - 1];",
+                "}",
+                "",
+                "int suffix = 1;",
+                "for (int i = nums.Length - 1; i >= 0; i--) {",
+                "    answer[i] *= suffix;",
+                "    suffix *= ___2___;",
+                "}"
+            ],
+            "answers": [ "answer[i - 1]", "nums[i]" ],
+            "variables": "result array `answer`, current input value `nums[i]`, running suffix and prefix multipliers",
+            "example": "Input: [-1,1,0,-3,3] → Output: [0,0,9,0,0]",
+            "hint": "Build up products from left to right, then adjust in reverse with a suffix value."
+        }
+    },
+    {
+        "id": "assignment-6.3.1-call-queue-linkedlist",
+        "title": "Manage a Call Queue Using a Linked List Queue",
+        "assignment": "Assignment 6.3.1",
+        "source": "Week 6 - Data Structures & Algorithms",
+        "difficulty": "Medium",
+        "focus": "Queue Implementation, Enqueue/Dequeue, Linked Nodes",
+        "tags": [ "queue", "linked list", "enqueue", "dequeue", "display" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Create a queue of customers using a singly linked list. Implement enqueue to add to the rear, dequeue to remove from the front, and display to iterate the queue. Update the `front`, `rear`, and `size` accordingly.",
+            "prompt": [
+                "public void Enqueue(int val) {",
+                "    Node newNode = new Node(val, null);",
+                "    if (IsEmpty()) {",
+                "        front = newNode;",
+                "    } else {",
+                "        rear.next = newNode;",
+                "    }",
+                "    rear = newNode;",
+                "    ___1___;",
+                "    Console.WriteLine($\"Customer {val} enqueued. Size: {size}.\");",
+                "}"
+            ],
+            "answers": [ "size++" ],
+            "variables": "customer value `val`, rear pointer update, size counter increment",
+            "example": "Input: Enqueue(42) → Output: Customer 42 enqueued. Size: 1.",
+            "hint": "Always add new elements at the rear and increment the size."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic for dequeuing a customer from a linked-list queue. If the queue is empty, return null. Otherwise, update the front and size. Set rear to null if queue becomes empty after removal.",
+            "prompt": [
+                "public int? Dequeue() {",
+                "    if (IsEmpty()) {",
+                "        Console.WriteLine(\"Queue is empty!\"); return null;",
+                "    }",
+                "    int val = front.data;",
+                "    front = front.next;",
+                "    ___1___;",
+                "    if (IsEmpty()) rear = null;",
+                "    Console.WriteLine($\"Item {val} dequeued. Size: {size}.\");",
+                "    return val;",
+                "}"
+            ],
+            "answers": [ "size--" ],
+            "variables": "queue front and rear pointers, element value, size counter",
+            "example": "After Enqueue(1), Enqueue(2), Dequeue() → Output: Item 1 dequeued. Size: 1",
+            "hint": "Update both the front and size. Clear rear if last item is removed."
+        }
+    },
+    {
+        "id": "week6lab-1.1-rotate-matrix-transpose",
+        "title": "Transpose a Square Matrix In-Place",
+        "assignment": "Week 6 Challenge Lab",
+        "source": "Week 6 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Matrix Transposition Across Diagonal",
+        "tags": [ "matrix", "transpose", "2d array", "nested loop", "swap" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given an `n x n` integer matrix named `matrix`, perform an in-place transposition. Transposing means flipping the matrix across its main diagonal so that `matrix[i][j]` becomes `matrix[j][i]`. Do not allocate a second matrix.",
+            "prompt": [
+                "for (int i = 0; i < ___1___; i++) {",
+                "    for (int j = i + 1; j < ___1___; j++) {",
+                "        int temp = matrix[i][j];",
+                "        matrix[i][j] = matrix[j][i];",
+                "        matrix[j][i] = temp;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "matrix.Length" ],
+            "variables": "square 2D matrix named `matrix`, loop indices `i` and `j`, temp variable for swapping",
+            "example": "Input: [[1,2,3],[4,5,6],[7,8,9]] → After transpose: [[1,4,7],[2,5,8],[3,6,9]]",
+            "hint": "Only swap elements above the diagonal (j > i) to avoid double-swapping or reverting changes."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the logic to transpose an n x n matrix in-place by swapping values across the diagonal. This operation should make `matrix[i][j]` equal to `matrix[j][i]`.",
+            "prompt": [
+                "for (int i = 0; i < matrix.Length; i++) {",
+                "    for (int j = ___1___; j < matrix.Length; j++) {",
+                "        int temp = matrix[i][j];",
+                "        matrix[i][j] = matrix[j][i];",
+                "        matrix[j][i] = ___2___;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "i + 1", "temp" ],
+            "variables": "nested loop variables i and j, temp value used to perform in-place swaps",
+            "example": "Input: [[1,2],[3,4]] → Output: [[1,3],[2,4]]",
+            "hint": "Avoid swapping diagonal or below by starting inner loop from `j = i + 1`."
+        }
+    },
+    {
+        "id": "week6lab-1.2-rotate-matrix-reverse-row",
+        "title": "Reverse Each Row of a Matrix In-Place",
+        "assignment": "Week 6 Challenge Lab",
+        "source": "Week 6 - Challenge Labs",
+        "difficulty": "Medium",
+        "focus": "Array Reversal, Two-Pointer Technique, Row Mutation",
+        "tags": [ "matrix", "reverse", "row", "two-pointer", "in-place" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Given an `n x n` matrix named `matrix`, reverse each row of the matrix in-place using a two-pointer technique. Do not allocate additional rows or arrays. This is the second step in rotating the matrix 90 degrees clockwise.",
+            "prompt": [
+                "for (int i = 0; i < matrix.Length; i++) {",
+                "    int ___1___ = 0, ___2___ = matrix.Length - 1;",
+                "    while (___1___ < ___2___) {",
+                "        int temp = matrix[i][___1___];",
+                "        matrix[i][___1___] = matrix[i][___2___];",
+                "        matrix[i][___2___] = temp;",
+                "        ___1___++; ___2___--;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "left", "right" ],
+            "variables": "matrix as a 2D square array, `left` and `right` as row pointers for reversal",
+            "example": "Input: [[1,4,7],[2,5,8],[3,6,9]] → Output: [[7,4,1],[8,5,2],[9,6,3]]",
+            "hint": "Reverse each row using two pointers, swapping elements from outside toward center."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Reverse every row in a 2D matrix by swapping elements from left to right in-place. Use two-pointer logic inside a loop over the rows.",
+            "prompt": [
+                "for (int i = 0; i < matrix.Length; i++) {",
+                "    int left = 0, right = ___1___;",
+                "    while (left < right) {",
+                "        int temp = matrix[i][left];",
+                "        matrix[i][left] = matrix[i][right];",
+                "        matrix[i][right] = ___2___;",
+                "        left++; right--;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "matrix.Length - 1", "temp" ],
+            "variables": "2D matrix 'matrix', pointer indices 'left' and 'right', temporary swap variable",
+            "example": "Input: [1,2,3] → Output: [3,2,1]",
+            "hint": "This is row reversal — not full matrix rotation yet. Use in-place swaps only."
+        }
+    },
+    {
+        "id": "week6lab-1.3-rotate-matrix-full",
+        "title": "Rotate Matrix 90 Degrees Clockwise In-Place",
+        "assignment": "Week 6 Challenge Lab",
+        "source": "Week 6 - Challenge Labs",
+        "difficulty": "Hard",
+        "focus": "Transpose, Reverse Rows, Matrix Rotation",
+        "tags": [ "matrix", "rotation", "in-place", "transpose", "reverse", "2d array" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Rotate an `n x n` matrix named `matrix` by 90 degrees clockwise in-place. This is done by first transposing the matrix across its diagonal, and then reversing each row without allocating additional space.",
+            "prompt": [
+                "// Transpose the matrix",
+                "for (int i = 0; i < matrix.Length; i++) {",
+                "    for (int j = i + 1; j < matrix.Length; j++) {",
+                "        int temp = matrix[i][j];",
+                "        matrix[i][j] = matrix[j][i];",
+                "        matrix[j][i] = temp;",
+                "    }",
+                "}",
+                "",
+                "// Reverse each row",
+                "for (int i = 0; i < matrix.Length; i++) {",
+                "    int ___1___ = 0, ___2___ = matrix.Length - 1;",
+                "    while (___1___ < ___2___) {",
+                "        int temp = matrix[i][___1___];",
+                "        matrix[i][___1___] = matrix[i][___2___];",
+                "        matrix[i][___2___] = temp;",
+                "        ___1___++; ___2___--;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "left", "right" ],
+            "variables": "matrix dimensions, diagonal transposition, row-wise two-pointer swap logic",
+            "example": "Input: [[1,2,3],[4,5,6],[7,8,9]] → Output: [[7,4,1],[8,5,2],[9,6,3]]",
+            "hint": "Think of this as a two-step operation: transpose, then reverse each row to rotate."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Complete the code that rotates a square matrix 90 degrees clockwise. First, transpose the matrix by swapping values across the diagonal. Then reverse each row using two-pointer logic.",
+            "prompt": [
+                "// Transpose step",
+                "for (int i = 0; i < matrix.Length; i++) {",
+                "    for (int j = i + 1; j < matrix.Length; j++) {",
+                "        int temp = matrix[i][j];",
+                "        matrix[i][j] = ___1___;",
+                "        matrix[j][i] = temp;",
+                "    }",
+                "}",
+                "",
+                "// Reverse step",
+                "for (int i = 0; i < matrix.Length; i++) {",
+                "    int left = 0, right = matrix.Length - 1;",
+                "    while (left < right) {",
+                "        int temp = matrix[i][left];",
+                "        matrix[i][left] = matrix[i][right];",
+                "        matrix[i][right] = ___2___;",
+                "        left++; right--;",
+                "    }",
+                "}"
+            ],
+            "answers": [ "matrix[j][i]", "temp" ],
+            "variables": "matrix swap values during transpose and row reversal, pointer tracking",
+            "example": "Input: [[5,1,9],[2,4,8],[13,3,6]] → Output: [[13,2,5],[3,4,1],[6,8,9]]",
+            "hint": "Use symmetric indices to transpose and two-pointer logic to reverse each row."
+        }
+    },
+    {
+        "id": "week6lab-1.4-rotate-matrix-reasoning",
+        "title": "Explain Why Transpose Followed by Row-Reverse Rotates a Matrix",
+        "assignment": "Week 6 Challenge Lab",
+        "source": "Week 6 - Challenge Labs",
+        "difficulty": "Conceptual",
+        "focus": "Reasoning, Matrix Index Mapping, Algorithm Justification",
+        "tags": [ "matrix", "reasoning", "transpose", "reverse", "rotation", "interview prep" ],
+
+        "methodProblem": {
+            "language": "csharp",
+            "description": "Explain why a two-step process of transposing a square matrix and then reversing each row results in a 90° clockwise rotation. Fill in the missing terms in the reasoning.",
+            "prompt": [
+                "// A transpose swaps ___1___ and ___2___ indices, turning rows into columns.",
+                "// Reversing each ___3___ flips it horizontally, completing the clockwise turn.",
+                "// Together, these steps reposition elements from column to row in rotated order."
+            ],
+            "answers": [ "i", "j", "row" ],
+            "variables": "matrix indices (i and j), structure being reversed after transpose",
+            "example": "matrix[i][j] becomes matrix[j][i] → row is then reversed → final rotated view",
+            "hint": "Transpose aligns data vertically, reversing rows orients it clockwise."
+        },
+
+        "syntaxProblem": {
+            "language": "csharp",
+            "description": "Describe the transformation of each element through transpose and reversal. Fill in the matrix access patterns to complete the rotation.",
+            "prompt": [
+                "// Original access: matrix[___1___][___2___]",
+                "// After transpose: matrix[___2___][___1___]",
+                "// After reversing row: matrix[___2___][n - 1 - ___1___]"
+            ],
+            "answers": [ "i", "j" ],
+            "variables": "accessed indices before and after matrix transformation",
+            "example": "Input: matrix[0][2] → becomes matrix[2][0] → then matrix[2][0] becomes matrix[2][2]",
+            "hint": "Watch how each index moves step by step across the two transformations."
+        }
+    }
+]

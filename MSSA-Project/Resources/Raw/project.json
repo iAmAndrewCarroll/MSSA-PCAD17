@@ -1,0 +1,239 @@
+[
+    {
+        "id": "project-readme-overview",
+        "restate": "MSSA Final Project — C# Study Bank Overview",
+        "code_example": "This app reinforces C# mastery through interactive flashcards.\nBuilt in .NET MAUI. Modular. JSON-driven.\nFocus: Methods, Syntax, Whiteboarding.\n",
+        "logic_steps": [
+            "Project created for MSSA students seeking study tools that utilize retention and repetition.",
+            "Flashcards cover syntax drills, method challenges, and algorithm walkthroughs.",
+            "Each deck is loaded from structured JSON and rendered dynamically.",
+            "Designed for cross-platform use with consistent UI/UX."
+        ],
+        "edge_cases": [
+            "Cards must be structured to match ICard models or they fail silently.",
+            "Missing decks result in 'No Cards Loaded' warning.",
+            "Whiteboard/project cards show explanation only — no answer validation."
+        ],
+        "pseudo_code": [
+            "User launches app",
+            "Chooses 'Project Overview' deck",
+            "App loads project.json → ICard list",
+            "First card: high-level intro of project purpose and scope"
+        ],
+        "variables": "project, overview, MSSA, flashcards, C#",
+        "example": "User selects 'Project Overview' → sees this card explaining project mission"
+    },
+    {
+        "id": "project-framework",
+        "restate": "Project Philosophy and Framework",
+        "code_example": "Modular, scalable, and extensible by design.\n- Flashcards are JSON-powered\n- Logic is separated from data\n- .NET MAUI ensures cross-platform UI\n",
+        "logic_steps": [
+            "Implements ICard interface across all card types for polymorphic display.",
+            "Uses CardLoader and JsonLoader to fetch content by deck type.",
+            "MainPage.xaml.cs handles all navigation, input, and rendering logic.",
+            "No hardcoded content — all flashcards are external and reloadable."
+        ],
+        "edge_cases": [
+            "Improper JSON casing without [JsonPropertyName] causes fields to deserialize as null.",
+            "Unrecognized cardType in dropdown throws 'Unsupported card type'.",
+            "Missing fields like 'prompt' or 'answers' can crash answer logic if not guarded."
+        ],
+        "pseudo_code": [
+            "Define ICard with DisplayTitle and DisplayBody",
+            "Create MethodCard, ProblemCard, SyntaxCard, WhiteboardCard",
+            "Render using full-width for project/whiteboard cards",
+            "Load cards by deck type into card state manager"
+        ],
+        "variables": "framework, icard, jsonloader, maui",
+        "example": "Card 2 of 10 — Title: Project Philosophy and Framework"
+    },
+    {
+        "id": "project-structure",
+        "restate": "Project File & Folder Structure",
+        "code_example": "/MSSA-Project\n├── /Models/        → Card definitions (ICard, MethodCard, etc.)\n├── /Resources/Raw/ → JSON data for each deck\n├── /Utility/       → Loaders, renderers, validation tools\n├── /Notes/         → Planning docs (framework, whiteboard.md)\n├── MainPage.xaml   → Unified card viewer UI\n",
+        "logic_steps": [
+            "Organized into distinct folders for models, utilities, raw JSON, and planning notes.",
+            "Card content lives in /Resources/Raw/ as separate .json files per deck.",
+            "MainPage.xaml.cs handles all view logic and ties together components.",
+            "Files like framework.md and whiteboard.md are used for internal planning, not loaded in app."
+        ],
+        "edge_cases": [
+            "Assets missing from Resources/Raw cause deck to load empty.",
+            "Unreferenced cards in JSON will never be shown unless navigated to manually.",
+            "Changing card schema requires synchronized updates across model and JSON."
+        ],
+        "pseudo_code": [
+            "Project structure reflects component-based design",
+            "Card types and UI logic live in /Models and /Utility",
+            "App loads .json from /Resources/Raw at runtime"
+        ],
+        "variables": "models, resources, utility, mainpage, raw",
+        "example": "Card 3 of 10 — Shows layout of project and role of each major directory"
+    },
+    {
+        "id": "project-card-types",
+        "restate": "Card Types and Their Roles",
+        "code_example": "ICard Interface → Shared contract for all cards\n- MethodCard: Concept review\n- ProblemCard: Fill-in-the-blank\n- SyntaxCard: Control flow and memory concepts\n- WhiteboardCard: Algorithm drills\n- AssignmentCard: Hybrid syntax+method from MSSA labs\n",
+        "logic_steps": [
+            "All card types implement ICard to provide DisplayTitle and DisplayBody().",
+            "MethodCard shows high-level skill, error, and tag content.",
+            "ProblemCard is used for scaffolded syntax and method fill-ins with answers.",
+            "AssignmentCard wraps both method and syntax ProblemCards.",
+            "WhiteboardCard presents full problem-solving explanations with no input."
+        ],
+        "edge_cases": [
+            "Using the wrong card type for a JSON file leads to blank renders.",
+            "AssignmentCards require both methodProblem and syntaxProblem fields to be valid.",
+            "WhiteboardCard must include pseudo_code, logic_steps, etc. for full render."
+        ],
+        "pseudo_code": [
+            "Define ICard { string Id, string DisplayTitle, string DisplayBody() }",
+            "Each card implements this and loads from JSON into a list<ICard>",
+            "Renderer determines how to show based on type (e.g., input prompts vs explanations)"
+        ],
+        "variables": "methodcard, problemcard, syntaxcard, whiteboardcard, assignmentcard",
+        "example": "Card 4 of 10 — Overview of the 5 card types used in the system"
+    },
+    {
+        "id": "project-data-sources",
+        "restate": "JSON Data Sources and Deck Pipelines",
+        "code_example": "/resources/raw/\n├── methods.json             → MethodCard\n├── methodCards.json      → ProblemCard (methods)\n├── syntaxCards.json      → ProblemCard (syntax)\n├── whiteboard.json          → WhiteboardCard\n├── Assignments.json         → AssignmentCard (hybrid)\n",
+        "logic_steps": [
+            "Each deck is backed by a separate JSON file, loaded using JsonLoader.",
+            "CardLoader.cs maps dropdown selection to a file and expected model.",
+            "AssignmentCard includes both methodProblem and syntaxProblem objects inside.",
+            "Project cards are now loaded from project.json as a WhiteboardCard deck."
+        ],
+        "edge_cases": [
+            "If JSON doesn't match the expected C# class, fields will deserialize as null.",
+            "Missing or invalid files will trigger 'No Cards Loaded' error message.",
+            "Empty lists will load a blank state silently unless explicitly handled."
+        ],
+        "pseudo_code": [
+            "switch (cardType):",
+            "  'method problems' → methodCards.json → List<ProblemCard>",
+            "  'assignments'     → Assignments.json     → List<AssignmentCard>",
+            "  'project'         → project.json         → List<WhiteboardCard>"
+        ],
+        "variables": "json, resources, decks, cardloader, deserialization",
+        "example": "Card 5 of 10 — Explains how each deck maps to its JSON source"
+    },
+    {
+        "id": "project-flow-ui",
+        "restate": "UI Flow and User Interactions",
+        "code_example": "MainPage.xaml UI:\n- Dropdown → selects deck\n- Next / Previous → cycles cards\n- Submit → validate answers (if applicable)\n- Hint / Review → toggle helpers\n",
+        "logic_steps": [
+            "User selects a deck from a dropdown (Picker).",
+            "CardLoader fetches and deserializes the correct JSON file.",
+            "MainPage.xaml.cs uses CardStateManager to track navigation and mode.",
+            "ProblemCards display scaffolded prompts and input boxes with answer checking.",
+            "Whiteboard and Project cards display full-width read-only explanations."
+        ],
+        "edge_cases": [
+            "Review mode hides cards if review queue is empty.",
+            "Submit button is hidden on non-input decks like WhiteboardCard.",
+            "Hint toggling only applies to cards that define a hint string."
+        ],
+        "pseudo_code": [
+            "Dropdown changed → LoadCards(selectedType)",
+            "cardState.Next() / Previous() → updates CurrentIndex",
+            "DisplayCurrentCard() rerenders full page layout per card type"
+        ],
+        "variables": "dropdown, picker, cardstate, navigation, submit, review",
+        "example": "Card 6 of 10 — Overview of how the UI handles user actions and card types"
+    },
+    {
+        "id": "project-answer-checking",
+        "restate": "Answer Collection and Validation",
+        "code_example": "AnswerUtility.CollectAnswersFromLayout()\n→ gathers Entry text by ClassId (blank-1, blank-2, ...)\n→ returns ordered List<string> for comparison\n",
+        "logic_steps": [
+            "User submits answers via 'Submit' button on scaffolded cards.",
+            "AnswerUtility recursively walks layout to extract Entry box input.",
+            "It maps input fields using ClassId (e.g. blank-1), trims text, and validates order.",
+            "Correct answers are compared using ValidateWithDetails() and results are stored."
+        ],
+        "edge_cases": [
+            "Mismatched number of user vs expected answers causes orange warning.",
+            "Empty entries are treated as incorrect even if whitespace exists.",
+            "Review queue updates based on correctness to support spaced repetition."
+        ],
+        "pseudo_code": [
+            "OnSubmitClicked → CollectAnswersFromLayout → ValidateWithDetails",
+            "If incorrect: add cardId to review queue",
+            "HighlightAnswerBoxes sets border color feedback"
+        ],
+        "variables": "answers, validation, inputstack, blank-id, performance",
+        "example": "Card 7 of 10 — Explains how answer logic works across ProblemCards and Assignments"
+    },
+    {
+        "id": "project-why-it-matters",
+        "restate": "Why This Matters — Educational Value",
+        "code_example": "A consolidated knowledge base providing MSSA specific practice of syntax and logic.\nThis tool enforces pattern recognition, repetition, and applied problem solving.\n",
+        "logic_steps": [
+            "Provides structured repetition across core topics — methods, syntax, logic.",
+            "Scaffolded inputs mimic technical interviews and assessments.",
+            "Whiteboard breakdowns build problem-solving fluency, not just recall.",
+            "The JSON-based design allows scalable updates and personalization over time."
+        ],
+        "edge_cases": [
+            "Without repetition and guided correction, students forget syntax quickly.",
+            "Lecture-only formats often fail to provide feedback at scale.",
+            "Static worksheets lack adaptability — this solves that."
+        ],
+        "pseudo_code": [
+            "Student uses deck daily → builds muscle memory for syntax and structure",
+            "System reinforces by review queue → missed cards come back later",
+            "Conceptual and applied skills improve in parallel"
+        ],
+        "variables": "retention, spaced repetition, syntax fluency, assessment prep",
+        "example": "Card 8 of 10 — Final motivational card tying goals to practical benefit"
+    },
+    {
+        "id": "project-assignment-sync",
+        "restate": "MSSA Assignment Integration and Alignment",
+        "code_example": "Assignments.json → AssignmentCard\n- Includes methodProblem and syntaxProblem blocks\n- Maps to official MSSA curriculum exercises (e.g., 6.2.2, 7.1)\n",
+        "logic_steps": [
+            "AssignmentCard is a hybrid that includes both method and syntax ProblemCards.",
+            "Each assignment includes tags, difficulty, and source metadata for traceability.",
+            "Students can toggle between method and syntax modes using a switch in the UI.",
+            "AssignmentCard problems are taken directly from MSSA labs and coded to match original wording and variable names."
+        ],
+        "edge_cases": [
+            "If either methodProblem or syntaxProblem is null, the card will display incorrectly.",
+            "Missing 'answers' or 'variables' fields in embedded problems can cause runtime issues.",
+            "Switch toggle defaults to method unless explicitly set — users must manually toggle."
+        ],
+        "pseudo_code": [
+            "AssignmentCard { methodProblem, syntaxProblem, title, source, difficulty }",
+            "modeSwitch.IsToggled → selects display mode ('method' or 'syntax')",
+            "Render card prompt and answers accordingly"
+        ],
+        "variables": "assignmentcard, lab syncing, modeswitch, prompt toggle",
+        "example": "Card 9 of 10 — Explains how assignments.json directly mirrors MSSA curriculum"
+    },
+    {
+        "id": "project-performance-tracking",
+        "restate": "Planned Feature: Tracking Progress and Performance (Phase 3)",
+        "code_example": "Planned: AnswerUtility.TrackPerformance(cardId, wasCorrect)\n→ Will record attempts, first-try success, and timestamps for each card.\n",
+        "logic_steps": [
+            "This feature is not yet implemented but is part of the Phase 3 roadmap.",
+            "Performance tracking will collect user stats per card (correctness, attempts, timing).",
+            "Data will support review-based reappearance, skill badges, and progress graphs.",
+            "The system will enable longitudinal learning and personalized review pacing."
+        ],
+        "edge_cases": [
+            "Initial version may store data in memory only (no persistent user profile).",
+            "Incorrect attempts must still increment count to reinforce spaced repetition.",
+            "Per-deck or per-topic breakdowns will require additional metadata mapping."
+        ],
+        "pseudo_code": [
+            "// Future logic",
+            "OnSubmitClicked → TrackPerformance(cardId, result.AllCorrect)",
+            "if cardId not in performanceMap → initialize",
+            "performanceMap[cardId].Attempts++",
+            "if correct → performanceMap[cardId].Correct++"
+        ],
+        "variables": "trackperformance, userstats, spacedrepetition, phase3",
+        "example": "Card 10 of 10 — Describes a future system to track user progress and optimize review timing"
+    }
+]

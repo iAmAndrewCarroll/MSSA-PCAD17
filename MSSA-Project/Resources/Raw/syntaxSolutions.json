@@ -1,0 +1,22 @@
+[
+    {
+        "id": "namespace-class-method-structure",
+        "answers": [ "namespace", "class", "static" ]
+    },
+    {
+        "id": "parameter-passing-modes",
+        "answers": [ "ValuePass", "RefPass", "OutPass", "", "ref", "out" ]
+    },
+    {
+        "id": "value-vs-reference-types",
+        "answers": [ "Value", "Reference", "int", "class" ]
+    },
+    {
+        "id": "if-else-structure",
+        "answers": [ "score", "score" ]
+    },
+    {
+        "id": "switch-case-syntax",
+        "answers": [ "switch", "case", "break", "default" ]
+    }
+]

@@ -1,0 +1,157 @@
+[
+    {
+        "id": "array-product-without-division",
+        "language": "csharp",
+        "prompt": [
+            "public static int[] ProductExceptSelf(int[] ___1___) {",
+            "    int n = ___2___.Length;",
+            "    int[] output = new int[n];",
+            "    int prefix = 1;",
+            "    for (int i = 0; i < n; i++) {",
+            "        output[i] = prefix;",
+            "        prefix *= ___3___[i];",
+            "    }",
+            "    int suffix = 1;",
+            "    for (int i = n - 1; i >= 0; i--) {",
+            "        output[i] *= suffix;",
+            "        suffix *= ___3___[i];",
+            "    }",
+            "    return output;",
+            "}"
+        ]
+    },
+    {
+        "id": "matrix-transpose-and-rotate",
+        "language": "csharp",
+        "prompt": [
+            "public static void Rotate(int[][] ___1___) {",
+            "    int n = ___1___.Length;",
+            "    for (int i = 0; i < n; i++) {",
+            "        for (int j = i; j < n; j++) {",
+            "            int temp = ___1___[i][j];",
+            "            ___1___[i][j] = ___1___[j][i];",
+            "            ___1___[j][i] = temp;",
+            "        }",
+            "    }",
+            "    foreach (var row in ___1___) {",
+            "        Array.Reverse(row);",
+            "    }",
+            "}"
+        ]
+    },
+    {
+        "id": "string-parsing-and-last-word-extraction",
+        "language": "csharp",
+        "prompt": [
+            "public static int LengthOfLastWord(string ___1___) {",
+            "    ___1___ = ___1___.Trim();",
+            "    if (___1___.Length == 0) return 0;",
+            "    string[] words = ___1___.Split(' ');",
+            "    return words[words.Length - 1].Length;",
+            "}"
+        ]
+    },
+    {
+        "id": "reverse-string-two-pointer-swap",
+        "language": "csharp",
+        "prompt": [
+            "public static void Reverse(___1___[] s) {",
+            "    int left = 0, right = s.Length - 1;",
+            "    while (left < right) {",
+            "        ___2___ temp = s[left];",
+            "        s[left] = s[right];",
+            "        s[right] = temp;",
+            "        left++; right--;",
+            "    }",
+            "}"
+        ]
+    },
+    {
+        "id": "palindrome-check-normalized-two-pointer",
+        "language": "csharp",
+        "prompt": [
+            "public static bool IsPalindrome(string ___1___) {",
+            "    var chars = ___1___.Where(char.IsLetterOrDigit).Select(char.ToLower).ToArray();",
+            "    int left = 0, right = chars.Length - 1;",
+            "    while (left < right) {",
+            "        if (chars[left] != chars[right]) return false;",
+            "        left++; right--;",
+            "    }",
+            "    return true;",
+            "}"
+        ]
+    },
+    {
+        "id": "reverse-full-or-partial-array",
+        "language": "csharp",
+        "prompt": [
+            "public static void ReverseRange(int[] arr, int ___1___, int ___2___) {",
+            "    while (___1___ < ___2___) {",
+            "        int temp = arr[___1___];",
+            "        arr[___1___] = arr[___2___];",
+            "        arr[___2___] = temp;",
+            "        ___1___++; ___2___--;",
+            "    }",
+            "}"
+        ]
+    },
+    {
+        "id": "valid-parentheses-stack-based",
+        "language": "csharp",
+        "prompt": [
+            "public static bool IsValid(string ___1___) {",
+            "    var stack = new Stack<char>();",
+            "    var map = new Dictionary<char, char> {{ ')', '(' }, {']', '['}, {'}', '{'}};",
+            "    foreach (char c in ___1___) {",
+            "        if (map.ContainsKey(c)) {",
+            "            char top = stack.Count > 0 ? stack.Pop() : '#';",
+            "            if (top != map[c]) return false;",
+            "        } else {",
+            "            stack.Push(c);",
+            "        }",
+            "    }",
+            "    return stack.Count == 0;",
+            "}"
+        ]
+    },
+    {
+        "id": "linq-querying-over-collections",
+        "language": "csharp",
+        "prompt": [
+            "var numbers = new List<int> {1, 2, 3, 4, 5};",
+            "var evens = numbers.___1___(n => n % 2 == 0).___2___();",
+            "// Expected: 2, 4"
+        ]
+    },
+    {
+        "id": "class-inheritance-and-polymorphism",
+        "language": "csharp",
+        "prompt": [
+            "public class Animal {",
+            "    public virtual void ___1___() {",
+            "        Console.WriteLine(\"Generic sound\");",
+            "    }",
+            "}",
+            "public class Dog : Animal {",
+            "    public override void ___1___() {",
+            "        Console.WriteLine(\"Bark\");",
+            "    }",
+            "}",
+            "Animal a = new Dog();",
+            "a.___1___();"
+        ]
+    },
+    {
+        "id": "tryparse-and-input-validation",
+        "language": "csharp",
+        "prompt": [
+            "Console.Write(\"Enter a number: \");",
+            "string input = Console.ReadLine();",
+            "if (int.___1___(input, out int result)) {",
+            "    Console.WriteLine($\"You entered {result}\");",
+            "} else {",
+            "    Console.WriteLine(\"Invalid input\");",
+            "}"
+        ]
+    }
+]

@@ -1,0 +1,93 @@
+[
+    {
+        "id": "array-product-without-division",
+        "title": "Array Product Without Division",
+        "skills": [ "Prefix/Suffix arrays", "O(n) time", "No division", "Array manipulation" ],
+        "common_errors": [ "Index misalignment", "Wrong initial values", "Improper suffix construction" ],
+        "leetcode_tags": [ "Array", "Prefix Sum", "Medium" ]
+    },
+    {
+        "id": "matrix-transpose-and-rotate",
+        "title": "Matrix Transpose and Rotate",
+        "skills": [ "2D array indexing", "In-place transformation", "Transpose", "Row reversal" ],
+        "common_errors": [ "Not handling non-square matrices", "Index confusion between i/j" ],
+        "leetcode_tags": [ "Matrix", "In-place", "Medium" ]
+    },
+    {
+        "id": "string-parsing-and-last-word-extraction",
+        "title": "String Parsing and Last Word Extraction",
+        "skills": [ ".Trim()", ".Split()", "IndexOf/LastIndexOf", "Length calculation" ],
+        "common_errors": [ "Trailing spaces", "Empty strings", "No words" ],
+        "leetcode_tags": [ "String", "Easy" ]
+    },
+    {
+        "id": "reverse-string-two-pointer-swap",
+        "title": "Reverse String (Two-Pointer Swap)",
+        "skills": [ "Char array", "In-place reverse", "Pointer increment/decrement" ],
+        "common_errors": [ "Forgetting to update pointers", "Index out-of-range" ],
+        "leetcode_tags": [ "Two-Pointer", "String", "Easy" ]
+    },
+    {
+        "id": "palindrome-check-normalized-two-pointer",
+        "title": "Palindrome Check (Normalized Two-Pointer)",
+        "skills": [ "Character filtering", "Case normalization", "Two-pointer logic" ],
+        "common_errors": [ "Not skipping non-alphanumerics", "Case sensitivity" ],
+        "leetcode_tags": [ "String", "Two-Pointer", "Easy" ]
+    },
+    {
+        "id": "reverse-full-or-partial-array",
+        "title": "Reverse Full or Partial Array",
+        "skills": [ "In-place reverse", "Subarray targeting", "Helper method creation" ],
+        "common_errors": [ "Incorrect subarray bounds", "Wrong loop conditions" ],
+        "leetcode_tags": [ "Array", "In-place", "Two-Pointer", "Easy" ]
+    },
+    {
+        "id": "valid-parentheses-stack-based",
+        "title": "Valid Parentheses (Stack-Based)",
+        "skills": [ "Stack operations", "Character pair matching", "Early exit on mismatch" ],
+        "common_errors": [ "Mismatched brackets", "Empty stack exceptions" ],
+        "leetcode_tags": [ "Stack", "String", "Easy" ]
+    },
+    {
+        "id": "linq-querying-over-collections",
+        "title": "LINQ Querying over Collections",
+        "skills": [ ".Where()", ".Select()", ".FirstOrDefault()", "Anonymous types" ],
+        "common_errors": [ "Deferred execution confusion", "Empty results" ],
+        "leetcode_tags": [ "Language Specific", "Collections" ]
+    },
+    {
+        "id": "class-inheritance-and-polymorphism",
+        "title": "Class Inheritance and Polymorphism",
+        "skills": [ "Virtual/override", "Base class abstraction", "Extending functionality" ],
+        "common_errors": [ "Incorrect method signatures", "Improper base constructor chaining" ],
+        "leetcode_tags": [ "OOP", "Design Patterns" ]
+    },
+    {
+        "id": "tryparse-and-input-validation",
+        "title": "TryParse and Input Validation",
+        "skills": [ "Console input", "Validation loop", "Error handling with TryParse" ],
+        "common_errors": [ "No loop for retries", "Skipping invalid input handling" ],
+        "leetcode_tags": [ "Input Parsing", "Validation", "Console" ]
+    },
+    {
+        "id": "for-loop",
+        "title": "For Loop",
+        "skills": [ "Iteration", "Index incrementing", "Controlled loops" ],
+        "common_errors": [ "Off-by-one errors", "Incorrect increment logic" ],
+        "leetcode_tags": [ "Syntax", "Control Flow" ]
+    },
+    {
+        "id": "while-loop",
+        "title": "While Loop",
+        "skills": [ "Condition-based repetition", "Sentinel logic" ],
+        "common_errors": [ "Infinite loops", "Condition never met" ],
+        "leetcode_tags": [ "Syntax", "Control Flow" ]
+    },
+    {
+        "id": "do-while-loop",
+        "title": "Do While Loop",
+        "skills": [ "Guaranteed single execution", "Post-check logic" ],
+        "common_errors": [ "Incorrect condition placement" ],
+        "leetcode_tags": [ "Syntax", "Control Flow" ]
+    }
+]

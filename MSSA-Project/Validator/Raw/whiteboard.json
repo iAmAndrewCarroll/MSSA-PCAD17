@@ -1,0 +1,273 @@
+[
+    {
+        "id": "array-product-without-division",
+        "restate": "Given an integer array nums, return an output array where each element at index i is the product of all elements in nums except nums[i], without using division and in O(n) time.",
+        "code_example": "```csharp\nint[] nums = {1, 2, 3, 4};\nint[] result = ProductExceptSelf(nums);\n// Output: {24, 12, 8, 6}\n```",
+        "logic_steps": [
+            "Create an output array to store prefix products.",
+            "Loop from left to right, calculating running product before each index.",
+            "Loop from right to left, multiplying existing output with suffix product.",
+            "Avoid using division entirely by using two passes."
+        ],
+        "edge_cases": [
+            "Array contains zero",
+            "Array length is 1",
+            "Array contains large numbers (overflow handling)"
+        ],
+        "pseudo_code": [
+            "prefix = 1",
+            "for i in 0 to n-1:",
+            "    output[i] = prefix",
+            "    prefix *= nums[i]",
+            "suffix = 1",
+            "for i in n-1 to 0:",
+            "    output[i] *= suffix",
+            "    suffix *= nums[i]"
+        ]
+    },
+    {
+        "id": "matrix-transpose-and-rotate",
+        "restate": "Given a square matrix, transpose it (swap rows and columns) and then reverse each row to rotate the matrix 90 degrees clockwise.",
+        "code_example": "```csharp\nint[][] matrix = {\n    new int[]{1, 2, 3},\n    new int[]{4, 5, 6},\n    new int[]{7, 8, 9}\n};\nRotate(matrix);\n// Output:\n// {\n//   {7, 4, 1},\n//   {8, 5, 2},\n//   {9, 6, 3}\n// }\n```",
+        "logic_steps": [
+            "Transpose the matrix by swapping matrix[i][j] with matrix[j][i].",
+            "Reverse each row to complete the 90° rotation.",
+            "Do both steps in-place to avoid using extra space."
+        ],
+        "edge_cases": [
+            "Matrix is empty",
+            "Matrix is 1x1",
+            "Matrix is not square (transpose only works for square)"
+        ],
+        "pseudo_code": [
+            "for i from 0 to n:",
+            "    for j from i to n:",
+            "        swap(matrix[i][j], matrix[j][i])",
+            "for each row in matrix:",
+            "    reverse(row)"
+        ]
+    },
+    {
+        "id": "string-parsing-and-last-word-extraction",
+        "restate": "Given a string containing words and spaces, return the length of the last word.",
+        "code_example": "```csharp\nstring s = \"Hello World\";\nint len = LengthOfLastWord(s);\n// Output: 5\n```",
+        "logic_steps": [
+            "Trim trailing spaces.",
+            "Split the string by space or scan from the end.",
+            "Return the length of the last non-empty word."
+        ],
+        "edge_cases": [
+            "String with only spaces",
+            "String with one word",
+            "Empty string"
+        ],
+        "pseudo_code": [
+            "trimmed = s.Trim()",
+            "if empty: return 0",
+            "split = trimmed.Split(' ')",
+            "return length of last element"
+        ]
+    },
+    {
+        "id": "reverse-string-two-pointer-swap",
+        "restate": "Given a character array, reverse the characters in place using a two-pointer approach.",
+        "code_example": "```csharp\nchar[] s = {'h', 'e', 'l', 'l', 'o'};\nReverse(s);\n// Output: {'o', 'l', 'l', 'e', 'h'}\n```",
+        "logic_steps": [
+            "Use two pointers at the beginning and end of the array.",
+            "Swap characters at each pointer.",
+            "Move the pointers toward each other until they meet."
+        ],
+        "edge_cases": [
+            "Empty character array",
+            "Single character",
+            "Even and odd length arrays"
+        ],
+        "pseudo_code": [
+            "left = 0, right = s.Length - 1",
+            "while left < right:",
+            "    swap s[left] and s[right]",
+            "    left++, right--"
+        ]
+    },
+    {
+        "id": "palindrome-check-normalized-two-pointer",
+        "restate": "Check if a string is a palindrome, ignoring case and non-alphanumeric characters.",
+        "code_example": "```csharp\nstring s = \"A man, a plan, a canal: Panama\";\nbool isPalindrome = IsPalindrome(s);\n// Output: true\n```",
+        "logic_steps": [
+            "Filter the string to keep only alphanumeric characters.",
+            "Convert to lower case for uniform comparison.",
+            "Use two-pointer technique to compare characters from both ends."
+        ],
+        "edge_cases": [
+            "Empty string",
+            "Single character",
+            "String with only non-alphanumeric characters"
+        ],
+        "pseudo_code": [
+            "cleaned = filter and lower(s)",
+            "left = 0, right = cleaned.Length - 1",
+            "while left < right:",
+            "    if cleaned[left] != cleaned[right]: return false",
+            "    left++, right--",
+            "return true"
+        ]
+    },
+    {
+        "id": "reverse-full-or-partial-array",
+        "restate": "Reverse an entire array or a specific subarray in place.",
+        "code_example": "```csharp\nint[] arr = {1, 2, 3, 4};\nReverse(arr, 1, 3);\n// Output: {1, 4, 3, 2}\n```",
+        "logic_steps": [
+            "Accept start and end indices.",
+            "Use two-pointer swap within that range.",
+            "Ensure bounds are valid before reversing."
+        ],
+        "edge_cases": [
+            "Start equals end",
+            "Start > end (invalid)",
+            "Empty array"
+        ],
+        "pseudo_code": [
+            "while start < end:",
+            "    swap(arr[start], arr[end])",
+            "    start++, end--"
+        ]
+    },
+    {
+        "id": "valid-parentheses-stack-based",
+        "restate": "Determine if a string of parentheses is valid — every open bracket must have a matching closing bracket in the correct order.",
+        "code_example": "```csharp\nstring s = \"()[]{}\";\nbool isValid = IsValidParentheses(s);\n// Output: true\n```",
+        "logic_steps": [
+            "Use a stack to store open brackets.",
+            "When a close bracket appears, pop from stack and check if it matches.",
+            "If the stack is empty at the end, it's valid."
+        ],
+        "edge_cases": [
+            "Empty string",
+            "Unmatched opening or closing bracket",
+            "Wrong bracket order"
+        ],
+        "pseudo_code": [
+            "stack = new Stack<char>()",
+            "for each char in string:",
+            "    if opening: push",
+            "    if closing: check match",
+            "return stack is empty"
+        ]
+    },
+    {
+        "id": "linq-querying-over-collections",
+        "restate": "Use LINQ to filter, transform, or aggregate data in collections like arrays or lists.",
+        "code_example": "```csharp\nvar evens = numbers.Where(n => n % 2 == 0).ToList();\n```",
+        "logic_steps": [
+            "Understand what filtering or transformation is needed.",
+            "Use LINQ methods like Where, Select, FirstOrDefault.",
+            "Chain methods to build expressive queries."
+        ],
+        "edge_cases": [
+            "Empty input list",
+            "No matches found",
+            "Null references in collection"
+        ],
+        "pseudo_code": [
+            "result = collection.Where(condition).Select(transform)",
+            "return result"
+        ]
+    },
+    {
+        "id": "class-inheritance-and-polymorphism",
+        "restate": "Use class inheritance to reuse logic and virtual methods to enable polymorphism.",
+        "code_example": "```csharp\nclass Animal { public virtual void Speak() { } }\nclass Dog : Animal { public override void Speak() => Console.WriteLine(\"Bark\"); }\n```",
+        "logic_steps": [
+            "Create a base class with virtual methods.",
+            "Inherit and override methods in child classes.",
+            "Use base-class references to call derived implementations."
+        ],
+        "edge_cases": [
+            "Missing override keyword",
+            "Incorrect method signature",
+            "Base constructor requirements"
+        ],
+        "pseudo_code": [
+            "class Base { virtual method }",
+            "class Derived : Base { override method }",
+            "Base obj = new Derived()",
+            "obj.method() // uses derived implementation"
+        ]
+    },
+    {
+        "id": "tryparse-and-input-validation",
+        "restate": "Read and validate user input using TryParse to prevent runtime exceptions.",
+        "code_example": "```csharp\nConsole.Write(\"Enter a number: \");\nif (int.TryParse(Console.ReadLine(), out int number)) {\n    Console.WriteLine($\"You entered {number}\");\n} else {\n    Console.WriteLine(\"Invalid input.\");\n}\n```",
+        "logic_steps": [
+            "Prompt the user for input.",
+            "Use TryParse to convert input safely.",
+            "Use conditionals to handle valid/invalid input."
+        ],
+        "edge_cases": [
+            "Non-numeric input",
+            "Empty input",
+            "Multiple invalid retries"
+        ],
+        "pseudo_code": [
+            "read input from user",
+            "if TryParse succeeds: proceed",
+            "else: show error and repeat"
+        ]
+    },
+    {
+        "id": "for-loop",
+        "restate": "Repeat a block of code a specific number of times using a counter.",
+        "code_example": "```csharp\nfor (int i = 0; i < 5; i++) {\n    Console.WriteLine(i);\n}\n```",
+        "logic_steps": [
+            "Initialize a counter",
+            "Check loop condition before each run",
+            "Increment the counter after each iteration"
+        ],
+        "edge_cases": [
+            "Loop runs zero times",
+            "Loop runs once",
+            "Counter overflows"
+        ],
+        "pseudo_code": [
+            "for i = 0 to n-1:",
+            "    do something"
+        ]
+    },
+    {
+        "id": "while-loop",
+        "restate": "Repeat a block of code while a condition remains true.",
+        "code_example": "```csharp\nint i = 0;\nwhile (i < 5) {\n    Console.WriteLine(i);\n    i++;\n}\n```",
+        "logic_steps": [
+            "Check condition before each iteration",
+            "Execute loop body only if true",
+            "Ensure condition eventually becomes false"
+        ],
+        "edge_cases": [
+            "Infinite loop",
+            "Loop never runs",
+            "Modifying loop variable improperly"
+        ],
+        "pseudo_code": [
+            "while condition is true:",
+            "    do something"
+        ]
+    },
+    {
+        "id": "do-while-loop",
+        "restate": "Run a block of code once and then repeat it while a condition remains true.",
+        "code_example": "```csharp\nint i = 0;\ndo {\n    Console.WriteLine(i);\n    i++;\n} while (i < 5);\n```",
+        "logic_steps": [
+            "Execute loop body once before checking condition",
+            "Continue looping as long as condition remains true"
+        ],
+        "edge_cases": [
+            "Condition false on first check — loop still runs once",
+            "Loop never ends if condition always true"
+        ],
+        "pseudo_code": [
+            "do:",
+            "    do something",
+            "while condition is true"
+        ]
+    }
+]

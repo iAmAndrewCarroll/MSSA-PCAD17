@@ -1651,3 +1651,24 @@ static void Main(string[] args)
 {
 
 }
+
+# Graph ADT
+
+![Konigsberg Bridge Problem](Assets/konigsberg.png)
+![Graph Definition](Assets/graph.png)
+![graph-vertex](Assets/graph-vertex.png)
+![graph-edge](Assets/graph-edge.png)
+![graph-edges](Assets/graph-edges.png)
+![routes and distances between cities](Assets/cities.png)
+![define path](Assets/graph-path.png)
+![cycle definition](Assets/graph-cycle.png)
+![cycle detection](Assets/graph-cycle-detection.png)
+![degree of vertex](Assets/graph-degree-vertex.png)
+![out degree](Assets/graph-out-degree.png)
+![un/directed graphs : types of graphs](Assets/graph-types.png)
+![weighted graph](Assets/graph-weighted.png)
+![graph adjacency](Assets/graph-adjacency.png)
+![graph undirected](Assets/graph-undirected.png)
+![graph weighted / directed](Assets/graph-weightedDirected.png)
+![graph traversal algorithms](Assets/graph-traversal.png)
+

@@ -1,0 +1,42 @@
+[
+    {
+        "id": "array-product-without-division",
+        "answers": [ "nums", "nums", "nums" ]
+    },
+    {
+        "id": "matrix-transpose-and-rotate",
+        "answers": [ "matrix" ]
+    },
+    {
+        "id": "string-parsing-and-last-word-extraction",
+        "answers": [ "s" ]
+    },
+    {
+        "id": "reverse-string-two-pointer-swap",
+        "answers": [ "char", "char" ]
+    },
+    {
+        "id": "palindrome-check-normalized-two-pointer",
+        "answers": [ "s" ]
+    },
+    {
+        "id": "reverse-full-or-partial-array",
+        "answers": [ "start", "end" ]
+    },
+    {
+        "id": "valid-parentheses-stack-based",
+        "answers": [ "s" ]
+    },
+    {
+        "id": "linq-querying-over-collections",
+        "answers": [ "Where", "ToList" ]
+    },
+    {
+        "id": "class-inheritance-and-polymorphism",
+        "answers": [ "Speak" ]
+    },
+    {
+        "id": "tryparse-and-input-validation",
+        "answers": [ "TryParse" ]
+    }
+]

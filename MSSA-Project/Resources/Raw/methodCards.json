@@ -1,0 +1,412 @@
+[
+    {
+        "id": "array-product-without-division",
+        "title": "Array Product Without Division",
+        "language": "csharp",
+        "prompt": [
+            "public static int[] ProductExceptSelf(int[] ___1___) {",
+            "    int n = ___1___.Length;",
+            "    int[] output = new int[n];",
+            "    int prefix = 1;",
+            "    for (int i = 0; i < n; i++) {",
+            "        output[i] = prefix;",
+            "        prefix *= ___1___[i];",
+            "    }",
+            "    int suffix = 1;",
+            "    for (int i = n - 1; i >= 0; i--) {",
+            "        output[i] *= suffix;",
+            "        suffix *= ___1___[i];",
+            "    }",
+            "    return output;",
+            "}"
+        ],
+        "answers": [
+            "nums"
+        ],
+        "skills": [
+            "Prefix/Suffix arrays",
+            "O(n) time",
+            "No division",
+            "Array manipulation"
+        ],
+        "common_errors": [
+            "Index misalignment",
+            "Wrong initial values",
+            "Improper suffix construction"
+        ],
+        "tags": [
+            "Array",
+            "Prefix Sum",
+            "Medium"
+        ],
+        "hint": "Track both prefix and suffix product values when filling the output.",
+        "variables": [
+            "nums",
+            "output",
+            "prefix",
+            "suffix",
+            "n",
+            "i"
+        ]
+    },
+    {
+        "id": "matrix-transpose-and-rotate",
+        "title": "Matrix Transpose and Rotate",
+        "language": "csharp",
+        "prompt": [
+            "public static void Rotate(int[][] ___1___) {",
+            "    int n = ___1___.Length;",
+            "    for (int i = 0; i < n; i++) {",
+            "        for (int j = i; j < n; j++) {",
+            "            int temp = ___1___[i][j];",
+            "            ___1___[i][j] = ___1___[j][i];",
+            "            ___1___[j][i] = temp;",
+            "        }",
+            "    }",
+            "    foreach (var row in ___1___) {",
+            "        Array.Reverse(row);",
+            "    }",
+            "}"
+        ],
+        "answers": [
+            "matrix"
+        ],
+        "skills": [
+            "2D array indexing",
+            "In-place transformation",
+            "Transpose",
+            "Row reversal"
+        ],
+        "common_errors": [
+            "Not handling non-square matrices",
+            "Index confusion between i/j"
+        ],
+        "tags": [
+            "Matrix",
+            "In-place",
+            "Medium"
+        ],
+        "hint": "First transpose the matrix, then reverse each row.",
+        "variables": [
+            "matrix",
+            "n",
+            "i",
+            "j",
+            "row"
+        ]
+    },
+    {
+        "id": "string-parsing-and-last-word-extraction",
+        "title": "String Parsing and Last Word Extraction",
+        "language": "csharp",
+        "prompt": [
+            "public static int LengthOfLastWord(string ___1___) {",
+            "    ___1___ = ___1___.Trim();",
+            "    if (___1___.Length == 0) return 0;",
+            "    string[] words = ___1___.Split(' ');",
+            "    return words[words.Length - 1].Length;",
+            "}"
+        ],
+        "answers": [
+            "s"
+        ],
+        "skills": [
+            ".Trim()",
+            ".Split()",
+            "IndexOf/LastIndexOf",
+            "Length calculation"
+        ],
+        "common_errors": [
+            "Trailing spaces",
+            "Empty strings",
+            "No words"
+        ],
+        "tags": [
+            "String",
+            "Easy"
+        ],
+        "hint": "Trim the string and split by spaces to find the last word.",
+        "variables": [
+            "s",
+            "words"
+        ]
+    },
+    {
+        "id": "reverse-string-two-pointer-swap",
+        "title": "Reverse String (Two-Pointer Swap)",
+        "language": "csharp",
+        "prompt": [
+            "public static void Reverse(___1___[] s) {",
+            "    int left = 0, right = s.Length - 1;",
+            "    while (left < right) {",
+            "        ___1___ temp = s[left];",
+            "        s[left] = s[right];",
+            "        s[right] = temp;",
+            "        left++; right--;",
+            "    }",
+            "}"
+        ],
+        "answers": [
+            "char"
+        ],
+        "skills": [
+            "Char array",
+            "In-place reverse",
+            "Pointer increment/decrement"
+        ],
+        "common_errors": [
+            "Forgetting to update pointers",
+            "Index out-of-range"
+        ],
+        "tags": [
+            "Two-Pointer",
+            "String",
+            "Easy"
+        ],
+        "hint": "Use a two-pointer approach to swap characters from both ends.",
+        "variables": [
+            "s",
+            "temp",
+            "left",
+            "right"
+        ]
+    },
+    {
+        "id": "palindrome-check-normalized-two-pointer",
+        "title": "Palindrome Check (Normalized Two-Pointer)",
+        "language": "csharp",
+        "prompt": [
+            "public static bool IsPalindrome(string ___1___) {",
+            "    var chars = ___1___.Where(char.IsLetterOrDigit).Select(char.ToLower).ToArray();",
+            "    int left = 0, right = chars.Length - 1;",
+            "    while (left < right) {",
+            "        if (chars[left] != chars[right]) return false;",
+            "        left++; right--;",
+            "    }",
+            "    return true;",
+            "}"
+        ],
+        "answers": [
+            "s"
+        ],
+        "skills": [
+            "Character filtering",
+            "Case normalization",
+            "Two-pointer logic"
+        ],
+        "common_errors": [
+            "Not skipping non-alphanumerics",
+            "Case sensitivity"
+        ],
+        "tags": [
+            "String",
+            "Two-Pointer",
+            "Easy"
+        ],
+        "hint": "Normalize input: filter and lowercase alphanumerics.",
+        "variables": [
+            "s",
+            "chars",
+            "left",
+            "right"
+        ]
+    },
+    {
+        "id": "reverse-full-or-partial-array",
+        "title": "Reverse Full or Partial Array",
+        "language": "csharp",
+        "prompt": [
+            "public static void ReverseRange(int[] arr, int ___1___, int ___2___) {",
+            "    while (___1___ < ___2___) {",
+            "        int temp = arr[___1___];",
+            "        arr[___1___] = arr[___2___];",
+            "        arr[___2___] = temp;",
+            "        ___1___++; ___2___--;",
+            "    }",
+            "}"
+        ],
+        "answers": [
+            "start",
+            "end"
+        ],
+        "skills": [
+            "In-place reverse",
+            "Subarray targeting",
+            "Helper method creation"
+        ],
+        "common_errors": [
+            "Incorrect subarray bounds",
+            "Wrong loop conditions"
+        ],
+        "tags": [
+            "Array",
+            "In-place",
+            "Two-Pointer",
+            "Easy"
+        ],
+        "hint": "Use a while loop to reverse the array between two indexes.",
+        "variables": [
+            "arr",
+            "start",
+            "end",
+            "temp"
+        ]
+    },
+    {
+        "id": "valid-parentheses-stack-based",
+        "title": "Valid Parentheses (Stack-Based)",
+        "language": "csharp",
+        "prompt": [
+            "public static bool IsValid(string ___1___) {",
+            "    var stack = new Stack<char>();",
+            "    var map = new Dictionary<char, char> {{ ')', '(' }, {']', '['}, {'}', '{'}};",
+            "    foreach (char c in ___1___) {",
+            "        if (map.ContainsKey(c)) {",
+            "            char top = stack.Count > 0 ? stack.Pop() : '#';",
+            "            if (top != map[c]) return false;",
+            "        } else {",
+            "            stack.Push(c);",
+            "        }",
+            "    }",
+            "    return stack.Count == 0;",
+            "}"
+        ],
+        "answers": [
+            "s"
+        ],
+        "skills": [
+            "Stack operations",
+            "Character pair matching",
+            "Early exit on mismatch"
+        ],
+        "common_errors": [
+            "Mismatched brackets",
+            "Empty stack exceptions"
+        ],
+        "tags": [
+            "Stack",
+            "String",
+            "Easy"
+        ],
+        "hint": "Use a stack to track opening brackets and match pairs.",
+        "variables": [
+            "s",
+            "stack",
+            "map",
+            "c",
+            "top"
+        ]
+    },
+    {
+        "id": "linq-querying-over-collections",
+        "title": "LINQ Querying over Collections",
+        "language": "csharp",
+        "prompt": [
+            "var numbers = new List<int> {1, 2, 3, 4, 5};",
+            "var evens = numbers.___1___(n => n % 2 == 0).___2___();",
+            "// Expected: 2, 4"
+        ],
+        "answers": [
+            "Where",
+            "ToList"
+        ],
+        "skills": [
+            ".Where()",
+            ".Select()",
+            ".FirstOrDefault()",
+            "Anonymous types"
+        ],
+        "common_errors": [
+            "Deferred execution confusion",
+            "Empty results"
+        ],
+        "tags": [
+            "Language Specific",
+            "Collections"
+        ],
+        "hint": "Use .Where to filter and .ToList to realize the results.",
+        "variables": [
+            "numbers",
+            "evens",
+            "n"
+        ]
+    },
+    {
+        "id": "class-inheritance-and-polymorphism",
+        "title": "Class Inheritance and Polymorphism",
+        "language": "csharp",
+        "prompt": [
+            "public class Animal {",
+            "    public virtual void ___1___() {",
+            "        Console.WriteLine(\"Generic sound\");",
+            "    }",
+            "}",
+            "public class Dog : Animal {",
+            "    public override void ___1___() {",
+            "        Console.WriteLine(\"Bark\");",
+            "    }",
+            "}",
+            "Animal a = new Dog();",
+            "a.___1___();"
+        ],
+        "answers": [
+            "Speak"
+        ],
+        "skills": [
+            "Virtual/override",
+            "Base class abstraction",
+            "Extending functionality"
+        ],
+        "common_errors": [
+            "Incorrect method signatures",
+            "Improper base constructor chaining"
+        ],
+        "tags": [
+            "OOP",
+            "Design Patterns"
+        ],
+        "hint": "Use virtual and override methods for polymorphic behavior.",
+        "variables": [
+            "Animal",
+            "Dog",
+            "Speak",
+            "a"
+        ]
+    },
+    {
+        "id": "tryparse-and-input-validation",
+        "title": "TryParse and Input Validation",
+        "language": "csharp",
+        "prompt": [
+            "Console.Write(\"Enter a number: \");",
+            "string input = Console.ReadLine();",
+            "if (int.___1___(input, out int result)) {",
+            "    Console.WriteLine($\"You entered {result}\");",
+            "} else {",
+            "    Console.WriteLine(\"Invalid input\");",
+            "}"
+        ],
+        "answers": [
+            "TryParse"
+        ],
+        "skills": [
+            "Console input",
+            "Validation loop",
+            "Error handling with TryParse"
+        ],
+        "common_errors": [
+            "No loop for retries",
+            "Skipping invalid input handling"
+        ],
+        "tags": [
+            "Input Parsing",
+            "Validation",
+            "Console"
+        ],
+        "hint": "Use TryParse to safely convert string input to int.",
+        "variables": [
+            "input",
+            "result"
+        ]
+    }
+]

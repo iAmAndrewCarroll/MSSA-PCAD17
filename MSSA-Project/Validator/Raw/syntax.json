@@ -1,0 +1,37 @@
+[
+    {
+        "id": "namespace-class-method-structure",
+        "title": "Namespace-Class-Method Structure",
+        "skills": [ "Program scaffolding", "Entry point recognition", "Access modifiers" ],
+        "common_errors": [ "Incorrect method signature", "Missing brackets or keywords" ],
+        "tags": [ "C#", "Structure", "Syntax" ]
+    },
+    {
+        "id": "parameter-passing-modes",
+        "title": "Parameter Passing Modes",
+        "skills": [ "ref", "out", "value", "pass by reference" ],
+        "common_errors": [ "Incorrect modifier usage", "Uninitialized out parameters" ],
+        "tags": [ "C#", "Parameters", "Functions" ]
+    },
+    {
+        "id": "value-vs-reference-types",
+        "title": "Value vs Reference Types",
+        "skills": [ "Stack vs Heap", "Memory model", "Primitive vs object types" ],
+        "common_errors": [ "Confusing value vs reference semantics", "Unintended shared references" ],
+        "tags": [ "C#", "Memory", "Data Types" ]
+    },
+    {
+        "id": "if-else-structure",
+        "title": "If-Else Structure",
+        "skills": [ "Branching logic", "Condition evaluation" ],
+        "common_errors": [ "Incorrect if condition", "Missing else if or else" ],
+        "tags": [ "C#", "Control Flow", "Conditions" ]
+    },
+    {
+        "id": "switch-case-syntax",
+        "title": "Switch-Case Syntax",
+        "skills": [ "Branching logic", "Matching values", "Using break" ],
+        "common_errors": [ "Missing break", "Omitting default case", "Syntax errors" ],
+        "tags": [ "C#", "Control Flow", "Switch" ]
+    }
+]
