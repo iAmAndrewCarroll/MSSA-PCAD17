@@ -6,7 +6,7 @@ A cross-platform .NET MAUI application designed to reinforce C# programming fund
 
 ### Purpose
 
-This application was developed as a final capstone for the Microsoft Software & Systems Academy (MSSA). It provides structured, self-paced study support for mastering:
+This application was developed as a midterm project for the Microsoft Software & Systems Academy (MSSA). It provides structured, self-paced study support for mastering:
 
 - C# syntax and method usage
 - Inline logic reasoning
