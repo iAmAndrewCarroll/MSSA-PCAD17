@@ -1,0 +1,55 @@
+﻿Tyrell Gordon's Approach
+Step 1: Understand and Validate the Problem
+Step 2: Generate Simple Test Cases
+Step 3: Brute Force / Naive Solution
+Step 4: Optimize
+Step 5: Dry Run the Code
+Step 6: Clean Code and Edge Case Review
+Step 7: Explain Trade-offs
+ 
+The order isn't necessarily the most important part, just having a framework or methodical approach is. 
+
+
+
+
+
+
+
+Write a function that takes a string of lowercase characters and returns the index of the 
+first non-repeating character or -1 if there is no such character. 
+
+Clarifying Questions :
+Will there only be lowercase input?  Yes, assume it is always lowercase.
+Do we need to parse any of the inputs?
+What does non-repeating mean?  Is it abcda repeats?  Yes, return idex b.  Is it AABCDAB?  Yes, C, return index C.
+
+null or empty? -1; return 'no such character'
+Do we handle spaces? 
+Single character? return 0;
+
+Input will only be lowercase characters.
+any string of any length containing only those characters may be passed in.
+
+
+restate the problem :
+given string s of lowercase characters
+return index of first non-repeating char;
+return -1 if no such character (null or empty)
+return 0 if single character
+
+verbal logic step through :
+abcdabc : aabcd : b : bcdaa
+
+create an array string[]
+
+lowest first seen index of non-repeating char
+
+method that returns int(string s)
+	if s = null / empty
+		return -1
+	if s.Length == 1
+		return 0
+	
+	Dictionary char = new dictionary<char, int>
+		
+ 
